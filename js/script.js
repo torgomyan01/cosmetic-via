@@ -16,3 +16,13 @@ AOS.init({
   once: true,
   duration: 1000
 });
+
+
+const blockNewsContentMain = $('.block-news-content-main');
+const blockNewsContentDescription = $('.block-news-content-description');
+
+$(window).on('resize', function () {
+
+  blockNewsContentDescription.height(blockNewsContentMain.height());
+
+});
