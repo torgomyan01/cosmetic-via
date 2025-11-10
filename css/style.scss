@@ -94,6 +94,7 @@ a {
   &:hover {
     background-color: white;
     color: #8B957C;
+    transition: all 0.3s ease;
   }
 
 }
@@ -123,6 +124,7 @@ a {
 
   &:hover {
     background-color: white;
+    transition: all 0.3s ease;
   }
 
 }
@@ -140,11 +142,12 @@ a {
   font-size: 18px;
   font-weight: 400;
   color: white;
-  padding: 31px 73px;
+  padding: 31px 30px;
   cursor: pointer;
 
   &:hover {
     background: #A3AA87;
+    transition: all 0.5s ease;
   }
 
 }
@@ -163,7 +166,7 @@ a {
   font-size: 18px;
   font-weight: 400;
   color: #4B4B4B;
-  padding: 31px 73px;
+  padding: 31px 30px;
   cursor: pointer;
 
 
@@ -171,6 +174,7 @@ a {
     color: white;
     background: #858C68;
     border: none;
+    transition: all 0.3s ease;
 
   }
 
@@ -223,6 +227,10 @@ a {
 
   & input {
     background-color: transparent;
+   
+  }
+  &:hover {
+    transition: all 0.3s ease;
   }
 
 }
@@ -298,6 +306,7 @@ a {
       align-items: center;
       gap: 40px;
       padding: 20px;
+      border-bottom: 1px solid white;
 
       ul {
         display: flex;
@@ -351,6 +360,7 @@ a {
 
 
       .header-logo {
+        width: 275px;
         @media (max-width: 1400px) {
           display: none;
         }
@@ -406,9 +416,11 @@ a {
         border: 1px solid white;
         border-radius: 27px;
         padding: 8px;
+        
 
         & input {
           background-color: transparent;
+          color: white;
         }
 
         @media (max-width: 1500px) {
@@ -438,7 +450,7 @@ a {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 10px;
+        gap: 20px;
 
         @media (max-width: 1400px) {
           gap: 30px;
@@ -507,6 +519,8 @@ a {
       justify-content: space-between;
       align-items: center;
       margin-top: 83px;
+      position: relative;
+      
 
       .header-content-des {
         & h2 {
@@ -515,6 +529,7 @@ a {
           font-weight: 300;
           text-transform: uppercase;
           line-height: 117.84%;
+          letter-spacing: 0.84px;
         }
 
         & p {
@@ -531,6 +546,7 @@ a {
           position: relative;
           width: 700px;
           height: 600px;
+          z-index: 1
 
 
 
@@ -570,6 +586,17 @@ a {
           }
         }
       }
+
+      
+    }
+    &-descphoto {
+      position: absolute;
+      bottom: 0;
+      right: 691px;
+      
+     
+
+      
     }
 
   }
@@ -579,7 +606,7 @@ a {
 .block-top-header {
   transform: translateY(-50%);
   display: flex;
-  justify-content: space-center;
+  justify-content: space-between;
   align-items: center;
 
   & .block {
@@ -616,62 +643,58 @@ a {
   margin-top: -96px;
   padding: 0 53px;
 
-  & .top-block {
+  &-top-block {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    & h2 {
+    &-title {
       color: #434540;
       font-size: 100px;
       font-weight: 200;
       text-transform: uppercase;
     }
+    &-slide {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+  
+      &-icon {
+        background-color: transparent;
+        border: 1px solid #626E52;
+        color: #626E52 ;
+        padding: 32px 61px;
+        border-radius: 60px;
+        cursor: pointer;
+        font-size: 24px;
+
+        &:hover {
+          background-color: #626E52;
+          color: white;
+          transition: all 0.3s ease;
+        }
+  
+        
+  
+      }
+  
+    
+    }
+    
   }
 
 
 
-  .slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 25px;
 
-    .left-slide {
-      background-color: transparent;
-      border: 1px solid #626E52;
-      padding: 38px 70px;
-      border-radius: 60px;
-      cursor: pointer;
 
-      img {
-        width: 24px;
-        height: 24px;
-      }
-
-    }
-
-    .rigth-slide {
-      background-color: transparent;
-      border: 1px solid #626E52;
-      padding: 38px 70px;
-      border-radius: 60px;
-      cursor: pointer;
-
-      img {
-        width: 24px;
-        height: 24px;
-      }
-    }
-  }
-
-  .content {
+  &-content {
     margin-top: 50px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: stretch;
 
-    .box {
+    &-box {
       background-color: white;
       border-radius: 30px;
       box-shadow: 0 49px 64.8px -21px rgba(0, 0, 0, 0.15);
@@ -682,12 +705,13 @@ a {
 
       &:hover {
         box-shadow: 0 96px 120px 3px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
       }
 
-      .content-des {
+      &-content-des {
         padding: 0 15px;
 
-        h5 {
+       & h5 {
           color: #858C68;
           font-size: 30px;
           font-weight: 300;
@@ -697,7 +721,7 @@ a {
           text-transform: uppercase;
         }
 
-        p {
+        &-description {
           font-size: 16px;
           color: #4B4B4B;
           text-align: center;
@@ -706,10 +730,11 @@ a {
           padding: 24px 0;
         }
 
-        & .price {
+        &-price {
           font-size: 30px;
           color: #4B4B4B;
           font-weight: 300;
+          text-align: center;
 
           & span {
             font-size: 16px;
@@ -719,19 +744,34 @@ a {
           }
         }
 
-        & .kupit {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding-bottom: 15px;
+       
+      
+      }
+      &-kupit {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 24px;
+        padding-bottom: 15px;
+        gap: 10px;
 
-          & .heart {
-            background: #EEE;
-            padding: 32px;
-            border-radius: 50%;
-            cursor: pointer;
+        &-btn {
+          width: 100%;
+          white-space: nowrap;
+          padding: 31px 30px;
+        }
 
+        
 
+        &-heart {
+          background: #EEE;
+          padding:  34px 35px;
+          border-radius: 70px;
+          cursor: pointer;
+
+          &:hover {
+            background: rgba(133, 140, 104, 0.25);
+            transition: all 0.3s ease;
           }
         }
       }
@@ -1222,10 +1262,10 @@ a {
     &-icons-count {
       background-color: red;
       border-radius: 50%;
-      padding: 5px;
+      padding: 5.5px;
       width: 16px;
       height: 16px;
-
+      font-size: 11px;
       font-weight: 600;
       color: white;
       display: flex;

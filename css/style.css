@@ -76,6 +76,7 @@ a {
 .btn-white:hover {
   background-color: white;
   color: #8B957C;
+  transition: all 0.3s ease;
 }
 
 .container {
@@ -99,6 +100,7 @@ a {
 }
 .btn-white-outline:hover {
   background-color: white;
+  transition: all 0.3s ease;
 }
 
 .btn-green {
@@ -110,11 +112,12 @@ a {
   font-size: 18px;
   font-weight: 400;
   color: white;
-  padding: 31px 73px;
+  padding: 31px 30px;
   cursor: pointer;
 }
 .btn-green:hover {
   background: #A3AA87;
+  transition: all 0.5s ease;
 }
 
 .btn-green-outline {
@@ -127,13 +130,14 @@ a {
   font-size: 18px;
   font-weight: 400;
   color: #4B4B4B;
-  padding: 31px 73px;
+  padding: 31px 30px;
   cursor: pointer;
 }
 .btn-green-outline:hover {
   color: white;
   background: #858C68;
   border: none;
+  transition: all 0.3s ease;
 }
 
 .input-name,
@@ -173,6 +177,9 @@ a {
 }
 .btn-input input {
   background-color: transparent;
+}
+.btn-input:hover {
+  transition: all 0.3s ease;
 }
 
 .header {
@@ -231,6 +238,7 @@ a {
   align-items: center;
   gap: 40px;
   padding: 20px;
+  border-bottom: 1px solid white;
 }
 .header .bg-header .header-menu ul {
   display: flex;
@@ -284,6 +292,9 @@ a {
   color: white;
   font-size: 18px;
   white-space: nowrap;
+}
+.header .bg-header .header-menu .header-logo {
+  width: 275px;
 }
 @media (max-width: 1400px) {
   .header .bg-header .header-menu .header-logo {
@@ -346,6 +357,7 @@ a {
 }
 .header .bg-header .header-menu label input {
   background-color: transparent;
+  color: white;
 }
 @media (max-width: 1500px) {
   .header .bg-header .header-menu label {
@@ -376,7 +388,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 20px;
 }
 @media (max-width: 1400px) {
   .header .bg-header .header-menu .header-menu-icons {
@@ -444,6 +456,7 @@ a {
   justify-content: space-between;
   align-items: center;
   margin-top: 83px;
+  position: relative;
 }
 .header .bg-header .header-content .header-content-des h2 {
   color: white;
@@ -451,6 +464,7 @@ a {
   font-weight: 300;
   text-transform: uppercase;
   line-height: 117.84%;
+  letter-spacing: 0.84px;
 }
 .header .bg-header .header-content .header-content-des p {
   color: white;
@@ -463,6 +477,7 @@ a {
   position: relative;
   width: 700px;
   height: 600px;
+  z-index: 1;
 }
 .header .bg-header .header-content .header-content-images-img {
   width: 100%;
@@ -491,11 +506,16 @@ a {
   transform: translateX(5px);
   margin-left: -3px;
 }
+.header .bg-header-descphoto {
+  position: absolute;
+  bottom: 0;
+  right: 691px;
+}
 
 .block-top-header {
   transform: translateY(-50%);
   display: flex;
-  justify-content: space-center;
+  justify-content: space-between;
   align-items: center;
 }
 .block-top-header .block {
@@ -527,52 +547,44 @@ a {
   margin-top: -96px;
   padding: 0 53px;
 }
-.block-popular-products .top-block {
+.block-popular-products-top-block {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.block-popular-products .top-block h2 {
+.block-popular-products-top-block-title {
   color: #434540;
   font-size: 100px;
   font-weight: 200;
   text-transform: uppercase;
 }
-.block-popular-products .slide {
+.block-popular-products-top-block-slide {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 25px;
 }
-.block-popular-products .slide .left-slide {
+.block-popular-products-top-block-slide-icon {
   background-color: transparent;
   border: 1px solid #626E52;
-  padding: 38px 70px;
+  color: #626E52;
+  padding: 32px 61px;
   border-radius: 60px;
   cursor: pointer;
+  font-size: 24px;
 }
-.block-popular-products .slide .left-slide img {
-  width: 24px;
-  height: 24px;
+.block-popular-products-top-block-slide-icon:hover {
+  background-color: #626E52;
+  color: white;
+  transition: all 0.3s ease;
 }
-.block-popular-products .slide .rigth-slide {
-  background-color: transparent;
-  border: 1px solid #626E52;
-  padding: 38px 70px;
-  border-radius: 60px;
-  cursor: pointer;
-}
-.block-popular-products .slide .rigth-slide img {
-  width: 24px;
-  height: 24px;
-}
-.block-popular-products .content {
+.block-popular-products-content {
   margin-top: 50px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
 }
-.block-popular-products .content .box {
+.block-popular-products-content-box {
   background-color: white;
   border-radius: 30px;
   box-shadow: 0 49px 64.8px -21px rgba(0, 0, 0, 0.15);
@@ -580,13 +592,14 @@ a {
   width: calc(25% - 50px);
   cursor: pointer;
 }
-.block-popular-products .content .box:hover {
+.block-popular-products-content-box:hover {
   box-shadow: 0 96px 120px 3px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
 }
-.block-popular-products .content .box .content-des {
+.block-popular-products-content-box-content-des {
   padding: 0 15px;
 }
-.block-popular-products .content .box .content-des h5 {
+.block-popular-products-content-box-content-des h5 {
   color: #858C68;
   font-size: 30px;
   font-weight: 300;
@@ -595,7 +608,7 @@ a {
   padding-top: 20px;
   text-transform: uppercase;
 }
-.block-popular-products .content .box .content-des p {
+.block-popular-products-content-box-content-des-description {
   font-size: 16px;
   color: #4B4B4B;
   text-align: center;
@@ -603,28 +616,40 @@ a {
   font-weight: 300;
   padding: 24px 0;
 }
-.block-popular-products .content .box .content-des .price {
+.block-popular-products-content-box-content-des-price {
   font-size: 30px;
   color: #4B4B4B;
   font-weight: 300;
+  text-align: center;
 }
-.block-popular-products .content .box .content-des .price span {
+.block-popular-products-content-box-content-des-price span {
   font-size: 16px;
   text-decoration: line-through;
   color: #B1B1B1;
   font-weight: 400;
 }
-.block-popular-products .content .box .content-des .kupit {
+.block-popular-products-content-box-kupit {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 24px;
   padding-bottom: 15px;
+  gap: 10px;
 }
-.block-popular-products .content .box .content-des .kupit .heart {
+.block-popular-products-content-box-kupit-btn {
+  width: 100%;
+  white-space: nowrap;
+  padding: 31px 30px;
+}
+.block-popular-products-content-box-kupit-heart {
   background: #EEE;
-  padding: 32px;
-  border-radius: 50%;
+  padding: 34px 35px;
+  border-radius: 70px;
   cursor: pointer;
+}
+.block-popular-products-content-box-kupit-heart:hover {
+  background: rgba(133, 140, 104, 0.25);
+  transition: all 0.3s ease;
 }
 
 .block-description {
@@ -1054,9 +1079,10 @@ a {
 .footer-content-box-icons-count {
   background-color: red;
   border-radius: 50%;
-  padding: 5px;
+  padding: 5.5px;
   width: 16px;
   height: 16px;
+  font-size: 11px;
   font-weight: 600;
   color: white;
   display: flex;
