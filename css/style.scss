@@ -455,7 +455,7 @@ a {
     .header-content {
       display: flex;
       justify-content: space-between;
-      align-items: center;
+      align-items: start;
       margin-top: 83px;
       position: relative;
 
@@ -467,6 +467,17 @@ a {
           text-transform: uppercase;
           line-height: 117.84%;
           letter-spacing: 0.84px;
+
+          @media (max-width: 1650px) {
+            font-size: 60px;
+          }
+
+          @media (max-width: 1400px) {
+            font-size: 50px;
+          }
+
+          @media (max-width: 1200px) {
+          }
         }
 
         & p {
@@ -484,6 +495,16 @@ a {
           width: 700px;
           height: 600px;
           z-index: 1;
+
+          @media (max-width: 1650px) {
+            width: 600px;
+            height: 500px;
+          }
+
+          @media (max-width: 1400px) {
+            width: 450px;
+            height: 350px;
+          }
         }
 
         &-img {
@@ -696,15 +717,19 @@ a {
 .block-description {
   padding-top: 160px;
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
-  gap: 45px;
+  gap: 214px;
   background: #f7f9f4;
 
   @media (max-width: 650px) {
     flex-direction: column;
     gap: 0;
     width: 100%;
+  }
+
+  @media (max-width: 990px) {
+    gap: 100px;
   }
 
   .images {
@@ -716,7 +741,8 @@ a {
     }
 
     @media (max-width: 990px) {
-      height: 400px;
+      width: 50%;
+      height: 500px;
     }
 
     @media (max-width: 650px) {
@@ -888,6 +914,8 @@ a {
 
     &-button {
       background: #ededed;
+      color: #4b4b4b;
+      opacity: 0.5;
       border-radius: 4px;
       font-size: 20px;
       font-weight: 400;
