@@ -189,17 +189,67 @@ a {
   width: 100%;
   height: 1000px;
 
+  @media (max-width: 1450px) {
+    height: 1300px;
+  }
   @media (max-width: 1400px) {
-    height: 900px;
+    height: 1150px;
   }
-  @media (max-width: 1300px) {
-    height: 900px;
+  @media (max-width: 1180px) {
+    height: 1200px;
   }
-  @media (max-width: 1100px) {
-    height: 1500px;
+
+  @media (max-width: 990px) {
+    height: 1700px;
   }
   @media (max-width: 700px) {
     height: 1200px;
+  }
+
+  &-logo-mobile {
+    display: none;
+
+    @media (max-width: 1400px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding-top: 20px;
+
+      @media (max-width: 990px) {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+      }
+    }
+  }
+
+  &-img {
+    @media (max-width: 450px) {
+      width: 200px;
+    }
+
+    @media (max-width: 350px) {
+      width: 170px;
+    }
+  }
+
+  &-mobile-menu {
+    font-size: 18px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    @media (max-width: 1400px) {
+      display: none;
+    }
+    @media (max-width: 990px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
   }
 
   .bg-header {
@@ -211,43 +261,6 @@ a {
     height: 100%;
     position: relative;
 
-    .header-logo-mobile {
-      display: none;
-
-      .header-logo-mobile-logo {
-        @media (max-width: 450px) {
-          width: 200px;
-        }
-
-        @media (max-width: 350px) {
-          width: 170px;
-        }
-      }
-
-      @media (max-width: 1400px) {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding-top: 20px;
-
-        @media (max-width: 990px) {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 20px;
-        }
-      }
-
-      .header-logo-mobile-menu {
-        font-size: 18px;
-        color: white;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 10px;
-      }
-    }
-
     .header-menu {
       display: flex;
       justify-content: space-between;
@@ -255,6 +268,10 @@ a {
       gap: 40px;
       padding: 20px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+
+      @media (max-width: 990px) {
+        padding: 0;
+      }
 
       ul {
         display: flex;
@@ -340,6 +357,7 @@ a {
 
         @media (max-width: 990px) {
           display: none;
+          padding: 0;
         }
 
         .search-midea {
@@ -454,7 +472,7 @@ a {
       max-width: 1900px;
       width: 100%;
       margin: 0 auto;
-      padding: 0 120px;
+      padding: 0 30px;
     }
 
     .header-content {
@@ -465,7 +483,7 @@ a {
       position: relative;
       gap: 80px;
 
-      @media (max-width: 1100px) {
+      @media (max-width: 990px) {
         flex-direction: column;
         align-items: start;
         justify-content: start;
@@ -477,7 +495,7 @@ a {
       }
 
       .header-content-des {
-        @media (max-width: 1100px) {
+        @media (max-width: 990px) {
           width: 100%;
         }
         & h2 {
@@ -499,7 +517,7 @@ a {
           @media (max-width: 1300px) {
             font-size: 40px;
           }
-          @media (max-width: 1100px) {
+          @media (max-width: 990px) {
             font-size: 60px;
           }
           @media (max-width: 700px) {
@@ -541,7 +559,7 @@ a {
             width: 320px;
             height: 248px;
           }
-          @media (max-width: 1100px) {
+          @media (max-width: 990px) {
             display: none;
           }
         }
@@ -580,8 +598,9 @@ a {
 
       &-mobile {
         display: none;
-        @media (max-width: 1100px) {
+        @media (max-width: 990px) {
           display: block;
+          z-index: 1;
         }
 
         &-box {
@@ -627,20 +646,24 @@ a {
           width: 100%;
         }
       }
-
-      &-descphoto {
-        position: absolute;
-        bottom: -30px;
-        right: 50%;
-        transform: translateX(50%);
-      }
     }
-
     &-descphoto {
       position: absolute;
       bottom: -30px;
-      right: 50%;
+      right: 40%;
       transform: translateX(50%);
+
+      @media (max-width: 1450px) {
+        bottom: 45%;
+        left: 50%;
+        transform: translateX(0%);
+        width: 150px;
+        height: 150px;
+      }
+      @media (max-width: 990px) {
+        bottom: 59%;
+        left: 69%;
+      }
     }
   }
 }
@@ -650,7 +673,7 @@ a {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 10px;
-  padding: 0;
+  padding: 0 25px;
 
   @media (max-width: 1450px) {
     grid-template-columns: repeat(2, 1fr);
@@ -666,6 +689,12 @@ a {
 
   &-block {
     transform: translateY(-50%);
+    @media (max-width: 1450px) {
+      transform: translateY(-150%);
+    }
+    @media (max-width: 700px) {
+      transform: translateY(-80%);
+    }
     padding: 15px;
     background-color: white;
     width: 100%;
@@ -713,7 +742,7 @@ a {
         font-size: 60px;
       }
       @media (max-width: 1100px) {
-        font-size: 32px;
+        font-size: 64px;
         color: #434540;
       }
     }
@@ -734,12 +763,7 @@ a {
         border-radius: 60px;
         cursor: pointer;
         font-size: 24px;
-
-        @media (max-width: 1100px) {
-          padding: 15px 30px;
-          font-size: 18px;
-        }
-        @media (max-width: 650px) {
+        @media (max-width: 900px) {
           display: none;
         }
 
@@ -861,8 +885,8 @@ a {
     width: 100%;
   }
 
-  @media (max-width: 990px) {
-    gap: 100px;
+  @media (max-width: 1100px) {
+    gap: 60px;
   }
 
   .images {
@@ -1108,7 +1132,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: start;
-    gap: 80px;
+    gap: 43px;
     margin-top: 55px;
 
     @media (max-width: 600px) {
@@ -1159,7 +1183,7 @@ a {
       width: 100%;
       max-width: 364px;
       border-left: 1px solid #cccccc;
-      padding-left: 37px;
+      padding-left: 43px;
       height: 100%;
       overflow-y: auto;
       padding-right: 10px;
