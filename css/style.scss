@@ -61,28 +61,20 @@ a {
   padding: 31px 73px;
   border: 1px solid white;
   cursor: pointer;
+  gap: 10px;
 
-  & i {
-    opacity: 0;
-    padding-left: 8px;
-    transform: translateY(2px);
-
-    &:active {
-      opacity: 1;
-      background-color: transparent;
-      border: solid 1px white;
-      color: white;
-    }
-
-    &:hover {
-      opacity: 1;
-    }
+  i {
+    transition: all 0.3s ease;
   }
 
   &:hover {
     background-color: white;
     color: #8b957c;
     transition: all 0.3s ease;
+
+    i {
+      transform: translateX(5px);
+    }
   }
 }
 
@@ -262,7 +254,7 @@ a {
       align-items: center;
       gap: 40px;
       padding: 20px;
-      border-bottom: 1px solid white;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
 
       ul {
         display: flex;
@@ -738,7 +730,7 @@ a {
         background-color: transparent;
         border: 1px solid #626e52;
         color: #626e52;
-        padding: 32px 61px;
+        padding: 26px 61px;
         border-radius: 60px;
         cursor: pointer;
         font-size: 24px;
@@ -791,7 +783,7 @@ a {
       &-des {
         padding: 0 15px;
 
-        & h5 {
+        h5 {
           color: #858c68;
           font-size: 30px;
           font-weight: 300;
@@ -799,6 +791,7 @@ a {
           line-height: 35px;
           padding-top: 20px;
           text-transform: uppercase;
+          height: 130px;
         }
 
         &-description {
@@ -1086,17 +1079,6 @@ a {
       padding: 0;
     }
 
-    &-button-active {
-      background: #fff;
-      border-radius: 4px;
-      font-size: 20px;
-      font-weight: 400;
-      color: #4b4b4b;
-      width: 100%;
-      height: 100%;
-      cursor: pointer;
-    }
-
     &-button {
       background: #ededed;
       color: #4b4b4b;
@@ -1107,7 +1089,18 @@ a {
       color: #4b4b4b;
       width: 100%;
       height: 100%;
-      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &.active {
+        background: #fff;
+        border-radius: 4px;
+        font-size: 20px;
+        font-weight: 400;
+        color: #4b4b4b;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+      }
     }
   }
 
