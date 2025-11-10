@@ -142,7 +142,7 @@ a {
   font-size: 18px;
   font-weight: 400;
   color: white;
-  padding: 31px 30px;
+  padding: 31px 73px;
   cursor: pointer;
 
   &:hover {
@@ -166,7 +166,7 @@ a {
   font-size: 18px;
   font-weight: 400;
   color: #4B4B4B;
-  padding: 31px 30px;
+  padding: 31px 73px;
   cursor: pointer;
 
 
@@ -604,12 +604,15 @@ a {
 
 
 .block-top-header {
-  transform: translateY(-50%);
+  background: #F7F9F4;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 
   & .block {
+    transform: translateY(-50%);
     padding: 15px;
     background-color: white;
     width: calc(100% / 4 - 20px);
@@ -642,6 +645,7 @@ a {
 .block-popular-products {
   margin-top: -96px;
   padding: 0 53px;
+  background: #F7F9F4;
 
   &-top-block {
     display: flex;
@@ -708,7 +712,11 @@ a {
         transition: all 0.3s ease;
       }
 
-      &-content-des {
+      &-images {
+        background: #F5F4F4;
+      }
+
+      &-des {
         padding: 0 15px;
 
        & h5 {
@@ -735,7 +743,7 @@ a {
           color: #4B4B4B;
           font-weight: 300;
           text-align: center;
-
+          padding-bottom: 24px;
           & span {
             font-size: 16px;
             text-decoration: line-through;
@@ -751,7 +759,8 @@ a {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-top: 24px;
+        
+        padding: 0 15px;
         padding-bottom: 15px;
         gap: 10px;
 
@@ -785,11 +794,13 @@ a {
 
 
 .block-description {
-  margin-top: 160px;
+  padding-top: 160px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 45px;
+  background: #F7F9F4;
+
 
   @media (max-width: 650px) {
     flex-direction: column;
@@ -967,7 +978,7 @@ a {
     width: 480px;
     height: 57px;
     background: #EDEDED;
-    padding: 8px;
+    padding: 4px;
     border-radius: 4px;
 
     @media (max-width: 600px) {
@@ -1120,7 +1131,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   width: 100%;
-  height: 1000px;
+  height: 578px;
   padding: 0 50px;
   margin-top: 120px;
   position: relative;
@@ -1142,6 +1153,10 @@ a {
     justify-content: space-between;
     align-items: center;
     padding-top: 30px;
+
+    &-logo {
+      width: 275px;
+    }
 
     @media (max-width: 1024px) {
       justify-content: center;
@@ -1317,14 +1332,25 @@ a {
         font-size: 15px;
         font-weight: 400;
         padding: 30px 0;
+        cursor: pointer;
 
         @media (max-width: 500px) {
           padding: 10px 0;
         }
       }
 
+      &-description-one {
+        color: white;
+        font-size: 15px;
+        font-weight: 400;
+        letter-spacing: -0.15px;
+        text-decoration-line: underline;
+        cursor: pointer;
+      } @media (max-width: 500px) {
+        padding: 10px 0;
+        }
+
+      }
 
     }
-
   }
-}
