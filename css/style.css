@@ -187,6 +187,16 @@ a {
   width: 100%;
   height: 1000px;
 }
+@media (max-width: 1400px) {
+  .header {
+    height: 900px;
+  }
+}
+@media (max-width: 1300px) {
+  .header {
+    height: 900px;
+  }
+}
 .header .bg-header {
   background: #8c977c url(../images/bg-header.png);
   background-size: cover;
@@ -458,6 +468,7 @@ a {
   align-items: start;
   margin-top: 83px;
   position: relative;
+  gap: 80px;
 }
 .header .bg-header .header-content .header-content-des h2 {
   color: white;
@@ -475,6 +486,11 @@ a {
 @media (max-width: 1400px) {
   .header .bg-header .header-content .header-content-des h2 {
     font-size: 50px;
+  }
+}
+@media (max-width: 1300px) {
+  .header .bg-header .header-content .header-content-des h2 {
+    font-size: 40px;
   }
 }
 .header .bg-header .header-content .header-content-des p {
@@ -500,6 +516,12 @@ a {
   .header .bg-header .header-content .header-content-images-box {
     width: 450px;
     height: 350px;
+  }
+}
+@media (max-width: 990px) {
+  .header .bg-header .header-content .header-content-images-box {
+    width: 320px;
+    height: 248px;
   }
 }
 .header .bg-header .header-content .header-content-images-img {
@@ -536,32 +558,48 @@ a {
   transform: translateX(50%);
 }
 
-.block-top-header {
+.top-header {
   background: #f7f9f4;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  padding: 0;
 }
-.block-top-header .block {
+@media (max-width: 1450px) {
+  .top-header {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    padding: 20px;
+  }
+}
+@media (max-width: 650px) {
+  .top-header {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    padding: 20px;
+  }
+}
+.top-header-block {
   transform: translateY(-50%);
   padding: 15px;
   background-color: white;
-  width: calc(25% - 20px);
+  width: 100%;
+  box-sizing: border-box;
 }
-.block-top-header .block .content {
+.top-header-content {
   padding: 0 27px;
   padding-bottom: 80px;
   padding-top: 40px;
   border: 1px solid rgba(139, 151, 124, 0.25);
 }
-.block-top-header .block .content h5 {
+.top-header-content h5 {
   color: #858c68;
   font-size: 30px;
   font-weight: 300;
   text-transform: uppercase;
   text-align: center;
 }
-.block-top-header .block .content p {
+.top-header-content p {
   color: #717171;
   font-size: 18px;
   font-weight: 300;
@@ -606,9 +644,10 @@ a {
 }
 .block-popular-products-content {
   margin-top: 50px;
-  display: flex;
-  justify-content: space-between;
-  align-items: stretch;
+}
+.block-popular-products-content .slick-track {
+  padding-bottom: 200px;
+  padding-top: 50px;
 }
 .block-popular-products-content-box {
   background-color: white;
@@ -617,10 +656,13 @@ a {
   overflow: hidden;
   width: calc(25% - 50px);
   cursor: pointer;
+  margin-right: 20px;
+  transform: translateY(0);
+  transition: all 0.3s ease;
 }
 .block-popular-products-content-box:hover {
   box-shadow: 0 96px 120px 3px rgba(0, 0, 0, 0.15);
-  transition: all 0.3s ease;
+  transform: translateY(-20px);
 }
 .block-popular-products-content-box-images {
   background: #f5f4f4;
@@ -683,7 +725,6 @@ a {
 }
 
 .block-description {
-  padding-top: 160px;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -733,6 +774,15 @@ a {
   justify-content: center;
   align-items: center;
 }
+.block-description-content-main #slider-laboratory {
+  width: 100%;
+}
+.block-description-content-main #slider-laboratory .slick-arrow {
+  display: none !important;
+}
+.block-description-content-main #slider-laboratory .slick-dots {
+  margin-top: 40px;
+}
 @media (max-width: 650px) {
   .block-description-content-main {
     width: 100%;
@@ -762,6 +812,35 @@ a {
   font-weight: 400;
   padding-top: 16px;
   padding-bottom: 45px;
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+}
+.slick-dots li.slick-active button {
+  background-color: #a3aa87;
+  width: 27px;
+  border-radius: 8px;
+}
+.slick-dots li button {
+  font-size: 0 !important;
+  width: 12px;
+  height: 12px;
+  background-color: rgba(133, 140, 104, 0.4);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.slick-dots li button:hover {
+  background-color: #a3aa87;
 }
 
 .block-animation {
