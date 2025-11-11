@@ -37,12 +37,6 @@ a {
   text-decoration: none;
 }
 
-@media (max-width: 1024px) {
-  html {
-    font-size: 15px;
-  }
-}
-
 @media (max-width: 992px) {
   html {
     font-size: 14px;
@@ -114,6 +108,10 @@ a {
   color: white;
   padding: 31px 73px;
   cursor: pointer;
+
+  @media (max-width: 768px) {
+    padding: 18px;
+  }
 
   &:hover {
     background: #a3aa87;
@@ -728,6 +726,10 @@ a {
   padding: 0 53px;
   background: #f7f9f4;
 
+  @media (max-width: 1200px) {
+    padding: 0;
+  }
+
   &-top-block {
     display: flex;
     justify-content: space-between;
@@ -745,6 +747,16 @@ a {
         font-size: 64px;
         color: #434540;
       }
+
+      @media (max-width: 992px) {
+        font-size: 40px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 32px;
+        line-height: 117.84%;
+        letter-spacing: -0.32px;
+      }
     }
     &-slide {
       display: flex;
@@ -755,6 +767,10 @@ a {
         gap: 15px;
       }
 
+      @media (max-width: 576px) {
+        display: none;
+      }
+
       &-icon {
         background-color: transparent;
         border: 1px solid #626e52;
@@ -763,8 +779,14 @@ a {
         border-radius: 60px;
         cursor: pointer;
         font-size: 24px;
-        @media (max-width: 900px) {
-          display: none;
+
+        @media (max-width: 992px) {
+          height: 62px;
+          width: 118px;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
         }
 
         &:hover {
@@ -779,9 +801,29 @@ a {
   &-content {
     margin-top: 50px;
 
+    @media (max-width: 992px) {
+      margin-top: 0;
+    }
+
     .slick-track {
       padding-bottom: 200px;
       padding-top: 50px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      @media (max-width: 576px) {
+        padding-left: 70px;
+      }
+      @media (max-width: 480px) {
+        padding-left: 50px;
+      }
+    }
+
+    .slick-slide {
+      margin-right: 20px;
+    }
+    .slide-content {
+      margin: 0 40px; /* Adjust horizontal margin for spacing */
     }
 
     &-box {
@@ -791,7 +833,6 @@ a {
       overflow: hidden;
       width: calc(100% / 4 - 50px);
       cursor: pointer;
-      margin-right: 20px;
       transform: translateY(0);
       transition: all 0.3s ease;
 
@@ -802,6 +843,31 @@ a {
 
       &-images {
         background: #f5f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        .view-product-type {
+          width: 44px;
+          height: 44px;
+          position: absolute;
+          bottom: 10px;
+          left: 10px;
+          background-color: #fff;
+          border-radius: 10px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          img {
+            width: 60%;
+            height: 60%;
+          }
+        }
+        .img-product {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
       }
 
       &-des {
@@ -816,6 +882,12 @@ a {
           padding-top: 20px;
           text-transform: uppercase;
           height: 130px;
+
+          @media (max-width: 768px) {
+            font-size: 20px;
+            line-height: 24px;
+            height: 80px;
+          }
         }
 
         &-description {
@@ -854,6 +926,10 @@ a {
           width: 100%;
           white-space: nowrap;
           padding: 31px 30px;
+
+          @media (max-width: 768px) {
+            padding: 18px 13px;
+          }
         }
 
         &-heart {
@@ -861,6 +937,16 @@ a {
           padding: 34px 35px;
           border-radius: 70px;
           cursor: pointer;
+
+          @media (max-width: 768px) {
+            width: 62px;
+            min-width: 62px;
+            height: 62px;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
 
           &:hover {
             background: rgba(133, 140, 104, 0.25);
@@ -878,6 +964,14 @@ a {
   align-items: center;
   gap: 214px;
   background: #f7f9f4;
+
+  @media (max-width: 1450px) {
+    gap: 100px;
+  }
+
+  @media (max-width: 1100px) {
+    gap: 30px;
+  }
 
   @media (max-width: 650px) {
     flex-direction: column;
