@@ -496,7 +496,7 @@ a {
         @media (max-width: 990px) {
           width: 100%;
         }
-        & h2 {
+        &-title {
           color: white;
           font-size: 84px;
           font-weight: 300;
@@ -723,7 +723,7 @@ a {
 
 .block-popular-products {
   margin-top: -96px;
-  padding: 0 53px;
+  // padding: 0 53px;
   background: #f7f9f4;
 
   @media (max-width: 1200px) {
@@ -734,6 +734,11 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 53px;
+
+    @media (max-width: 576px) {
+      padding: 0 16px;
+    }
 
     &-title {
       color: #434540;
@@ -808,15 +813,8 @@ a {
     .slick-track {
       padding-bottom: 200px;
       padding-top: 50px;
-      padding-left: 20px;
+      padding-left: 10px;
       padding-right: 20px;
-
-      @media (max-width: 576px) {
-        padding-left: 70px;
-      }
-      @media (max-width: 480px) {
-        padding-left: 50px;
-      }
     }
 
     .slick-slide {
@@ -927,6 +925,19 @@ a {
           white-space: nowrap;
           padding: 31px 30px;
 
+          i {
+            display: none;
+            @media (max-width: 768px) {
+              display: block;
+            }
+          }
+
+          .text {
+            @media (max-width: 768px) {
+              display: none;
+            }
+          }
+
           @media (max-width: 768px) {
             padding: 18px 13px;
           }
@@ -1012,6 +1023,8 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 0 16px;
+    padding-bottom: 20px;
 
     #slider-laboratory {
       width: 100%;
@@ -1022,6 +1035,10 @@ a {
 
       .slick-dots {
         margin-top: 40px;
+
+        @media (max-width: 768px) {
+          justify-content: center;
+        }
       }
     }
 
@@ -1057,6 +1074,10 @@ a {
     font-weight: 400;
     padding-top: 16px;
     padding-bottom: 45px;
+
+    @media (max-width: 7688px) {
+      text-align: start;
+    }
   }
 }
 
@@ -1096,6 +1117,10 @@ a {
 .block-animation {
   margin-top: 127px;
 
+  @media (max-width: 768px) {
+    margin-top: 50px;
+  }
+
   &-title {
     color: #858c68;
     font-size: 100px;
@@ -1119,6 +1144,10 @@ a {
   &-images {
     margin-top: 80px;
     padding: 0 173px;
+
+    @media (max-width: 992px) {
+      padding: 0 16px;
+    }
 
     &-img {
       width: 100%;

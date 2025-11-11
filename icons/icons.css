@@ -155,6 +155,10 @@
   content: "\f060";
 }
 
+.fa-basket-shopping:before {
+  content: "\f291";
+}
+
 /*---------------------------------*/
 
 @font-face {

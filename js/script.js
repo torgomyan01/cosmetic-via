@@ -10,14 +10,21 @@ $("#slider-laboratory").slick({
   dots: true,
 });
 
-$("#slider-popular-products").slick({
+// First, check if the required DOM elements exist to prevent 'undefined' errors that break slick.
+const $sliderPopularProducts = $("#slider-popular-products");
+const $prevArrow = $(".block-popular-products-top-block-slide-icon.prev");
+const $nextArrow = $(".block-popular-products-top-block-slide-icon.next");
+
+$sliderPopularProducts.slick({
   infinite: true,
   autoplay: true,
   autoplaySpeed: 2000,
   slidesToShow: 4,
-  slidesToScroll: 2,
-  prevArrow: $(".block-popular-products-top-block-slide-icon.prev"),
-  nextArrow: $(".block-popular-products-top-block-slide-icon.next"),
+  slidesToScroll: 3,
+  centerMode: true,
+  centerPadding: "60px",
+  prevArrow: $prevArrow,
+  nextArrow: $nextArrow,
   responsive: [
     {
       breakpoint: 1400,
@@ -29,12 +36,16 @@ $("#slider-popular-products").slick({
       breakpoint: 1200,
       settings: {
         slidesToShow: 2,
+        slidesToScroll: 1,
+        centerPadding: "40px",
       },
     },
     {
-      breakpoint: 576,
+      breakpoint: 768,
       settings: {
-        slidesToShow: 1.1,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        centerPadding: "32px",
       },
     },
   ],
