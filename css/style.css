@@ -13,12 +13,12 @@
 /* Handle */
 ::-webkit-scrollbar-thumb {
   border-radius: 5px;
-  background: #033862;
+  background: rgba(98, 110, 82, 0.4392156863);
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #033862;
+  background: #788865;
 }
 
 * {
