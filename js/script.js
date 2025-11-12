@@ -110,7 +110,7 @@ mobileMenuListBox.on("click", function () {
 // Mobile menu
 const mobileMenu = $(".mobile-menu");
 const headerMobileMenu = $(".header-mobile-menu");
-const mobileMenuClose = $(".mobile-menu-content i");
+const mobileMenuClose = $(".mobile-menu-content .fa-xmark");
 
 headerMobileMenu.on("click", function () {
   mobileMenu.addClass("active");
