@@ -15,6 +15,8 @@ const $sliderPopularProducts = $("#slider-popular-products");
 const $prevArrow = $(".block-popular-products-top-block-slide-icon.prev");
 const $nextArrow = $(".block-popular-products-top-block-slide-icon.next");
 
+$sliderPopularProducts.removeClass("default");
+
 $sliderPopularProducts.slick({
   infinite: true,
   autoplay: true,
