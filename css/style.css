@@ -255,7 +255,7 @@ a {
   width: 100%;
   height: 100%;
   background: url(../images/bg-header.png) repeat center center;
-  opacity: 0.2;
+  opacity: 0.1;
 }
 .header .bg-header .header-menu {
   display: flex;
@@ -889,6 +889,10 @@ a {
 .block-popular-products-content .slide-content {
   margin: 0 40px; /* Adjust horizontal margin for spacing */
 }
+.block-popular-products-content .slick-dots {
+  transform: translateY(-150px);
+  justify-content: center;
+}
 .block-popular-products-content-box {
   background-color: white;
   border-radius: 30px;
@@ -1448,7 +1452,7 @@ a {
 }
 
 .footer {
-  background: #7a8667 url(../images/bg-header.png);
+  background: #7a8667;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1457,6 +1461,16 @@ a {
   padding: 0 50px;
   margin-top: 120px;
   position: relative;
+}
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(../images/bg-header.png) repeat center center;
+  opacity: 0.1;
 }
 @media (max-width: 1600px) {
   .footer {

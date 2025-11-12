@@ -27,13 +27,13 @@ $sliderPopularProducts.slick({
   nextArrow: $nextArrow,
   responsive: [
     {
-      breakpoint: 1400,
+      breakpoint: 1460,
       settings: {
         slidesToShow: 3,
       },
     },
     {
-      breakpoint: 1200,
+      breakpoint: 1100,
       settings: {
         slidesToShow: 2,
         slidesToScroll: 1,
@@ -46,6 +46,7 @@ $sliderPopularProducts.slick({
         slidesToShow: 1,
         slidesToScroll: 1,
         centerPadding: "32px",
+        dots: true,
       },
     },
   ],
