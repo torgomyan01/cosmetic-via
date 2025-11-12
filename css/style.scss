@@ -575,8 +575,9 @@ a {
           width: 80px;
           height: 80px;
           position: absolute;
-          top: 45%;
-          left: 45%;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
           display: flex;
           justify-content: center;
           align-items: center;
@@ -664,6 +665,10 @@ a {
       }
     }
   }
+}
+
+.header-info {
+  background: #f7f9f4;
 }
 
 .top-header {
@@ -975,23 +980,24 @@ a {
   align-items: center;
   gap: 214px;
   background: #f7f9f4;
+  margin-top: -100px;
 
   @media (max-width: 1450px) {
     gap: 100px;
   }
 
   @media (max-width: 1100px) {
-    gap: 30px;
+    gap: 60px;
+  }
+
+  @media (max-width: 992px) {
+    gap: 20px;
   }
 
   @media (max-width: 650px) {
     flex-direction: column;
     gap: 0;
     width: 100%;
-  }
-
-  @media (max-width: 1100px) {
-    gap: 60px;
   }
 
   .images {
@@ -1009,6 +1015,7 @@ a {
 
     @media (max-width: 650px) {
       width: 100%;
+      height: 300px;
     }
 
     img {
@@ -1128,6 +1135,7 @@ a {
     text-transform: uppercase;
     line-height: 100px;
     text-align: center;
+    padding: 0 16px;
 
     @media (max-width: 1400px) {
       font-size: 65px;
@@ -1149,6 +1157,10 @@ a {
       padding: 0 16px;
     }
 
+    @media (max-width: 600px) {
+      padding: 0;
+    }
+
     &-img {
       width: 100%;
       height: 100%;
@@ -1161,15 +1173,20 @@ a {
 
     &-img-mobile {
       display: none;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
 
-      @media (max-width: 990px) {
-        display: block;
+      &-min {
+        display: none;
         width: 100%;
-        height: 100%;
-        object-fit: cover;
+        @media (max-width: 600px) {
+          display: block;
+        }
       }
 
-      @media (max-width: 600px) {
+      @media (max-width: 990px) and (min-width: 600px) {
+        display: block;
       }
     }
   }
@@ -1177,7 +1194,7 @@ a {
 
 .block-news {
   margin-top: 120px;
-  padding: 0 37px;
+  padding: 0 16px;
 
   &-top {
     display: flex;
@@ -1197,10 +1214,7 @@ a {
       @media (max-width: 990px) {
         font-size: 32px;
         color: #858c68;
-      }
-
-      @media (max-width: 600px) {
-        font-size: 29px;
+        margin-bottom: 20px;
       }
     }
 
@@ -1223,7 +1237,10 @@ a {
 
     @media (max-width: 600px) {
       width: 320px;
-      padding: 0;
+    }
+
+    @media (max-width: 420px) {
+      width: 100%;
     }
 
     &-button {
@@ -1295,6 +1312,11 @@ a {
           flex-direction: column;
         }
 
+        @media (max-width: 768px) {
+          gap: 30px;
+          margin-top: 30px;
+        }
+
         &-images {
           width: 100%;
           height: 100%;
@@ -1316,6 +1338,7 @@ a {
         border-left: none;
         padding-left: 0;
         padding-right: 0;
+        margin-top: 34px;
       }
 
       &::-webkit-scrollbar {
