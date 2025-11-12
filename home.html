@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/aos.css" />
     <link rel="stylesheet" href="css/slick.css" />
     <link rel="stylesheet" href="icons/icons.css" />
 
@@ -16,18 +17,6 @@
 
   <body>
     <div style="overflow: hidden">
-      <!-- Mobile menu -->
-      <div class="mobile-menu">
-        <div class="mobile-menu-content">
-          <div class="mobile-menu-content-box">
-            <img
-              src="images/logo.svg"
-              alt="logo"
-              class="mobile-menu-content-box-logo"
-            />
-          </div>
-        </div>
-      </div>
       <!-- Header -->
       <header class="header">
         <div class="bg-header">
@@ -47,11 +36,11 @@
               <li><a href="#">Производители</a></li>
               <li>
                 <a href="#">Применение</a>
-                <img src="images/icons/chervon-down.svg" alt="logo" />
+                <i class="fa-solid fa-chevron-down"></i>
               </li>
               <li>
                 <a href="#">О компании</a>
-                <img src="images/icons/chervon-down.svg" alt="logo" />
+                <i class="fa-solid fa-chevron-down"></i>
               </li>
             </ul>
             <img src="images/logo.svg" alt="logo" class="header-logo" />
@@ -86,35 +75,31 @@
           </div>
 
           <div class="container header-content">
-            <div class="header-content-mobile">
-              <div class="header-content-mobile-box">
-                <img
-                  src="images/header-content-img.jpg"
-                  alt=""
-                  class="header-content-mobile-img"
-                />
-                <div class="header-content-mobile-pauza">
-                  <img src="images/icons/pauza.svg" alt="" />
-                </div>
-              </div>
-            </div>
             <div class="header-content-des">
               <h1 class="header-content-des-title" data-aos="fade-up">
                 Сырьё <br />для косметики <br />и бытовой химии
               </h1>
-              <p>
+              <p data-aos="fade-up" data-aos-delay="100">
                 Мы поставляем сырьё для косметики и бытовой химии со всего мира.
                 <br />В нашем портфолио — как проверенные хиты с неизменным
                 <br />
                 качеством, так и самые инновационные разработки индустрии.
               </p>
-              <button class="btn-white header-content-btn">
+              <button
+                class="btn-white header-content-btn"
+                data-aos="fade-up"
+                data-aos-delay="200"
+              >
                 В каталог
                 <i class="fa-solid fa-arrow-right"></i>
               </button>
             </div>
             <div class="header-content-images">
-              <div class="header-content-images-box">
+              <div
+                class="header-content-images-box"
+                data-aos="fade"
+                data-aos-delay="300"
+              >
                 <img
                   src="images/header-content-img.jpg"
                   alt=""
@@ -772,13 +757,11 @@
         </div>
         <div class="footer-content-mobile">
           <div class="footer-content-mobile-box">
-            <p class="footer-content-mobile-box-description">
-              +7 495 249-88-50
-            </p>
-            <a href="#" class="footer-content-mobile-box-description"
+            <p class="footer-content-mobile-box-info">+7 495 249-88-50</p>
+            <a href="#" class="footer-content-mobile-box-info"
               >info@cosmeticvia.ru</a
             >
-            <a href="#" class="footer-content-mobile-box-description"
+            <a href="#" class="footer-content-mobile-box-info"
               >г. Москва, Рязанский проспект, дом. 32, корп. 3, офис 412</a
             >
             <div class="footer-content-box-item telegram">

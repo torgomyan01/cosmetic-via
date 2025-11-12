@@ -159,6 +159,10 @@
   content: "\f291";
 }
 
+.fa-chevron-down:before {
+  content: "\f078";
+}
+
 /*---------------------------------*/
 
 @font-face {
