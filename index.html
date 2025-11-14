@@ -148,6 +148,42 @@
         Сер |
         <input type="text" />
       </button>
+
+      <button
+        class="btn-green"
+        data-modal="successModal"
+        style="margin-top: 20px"
+      >
+        Открыть модальное окно
+      </button>
     </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+      <div class="modal-content">
+        <button class="modal-close" data-close-modal="successModal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2 class="modal-title">ВАШЕ СООБЩЕНИЕ ОТПРАВЛЕНО!</h2>
+        <p class="modal-message">Мы свяжемся с вами в ближайшее время</p>
+        <button class="btn-green-outline" data-modal-close>Ок</button>
+      </div>
+    </div>
+
+    <!-- Example: Another Modal (you can add more modals like this) -->
+    <!--
+    <div class="modal-overlay" id="anotherModal">
+      <div class="modal-content">
+        <button class="modal-close" data-close-modal="anotherModal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2 class="modal-title">ДРУГОЕ МОДАЛЬНОЕ ОКНО</h2>
+        <p class="modal-message">Это пример второго модального окна</p>
+        <button class="btn-green-outline" data-modal-close>Ок</button>
+      </div>
+    </div>
+    -->
+
+    <script src="js/script.js"></script>
   </body>
 </html>
