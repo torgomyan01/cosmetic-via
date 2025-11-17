@@ -163,6 +163,26 @@
   content: "\f078";
 }
 
+.fa-chevron-left:before {
+  content: "\f053";
+}
+
+.fa-chevron-right:before {
+  content: "\f054";
+}
+
+.fa-chevron-up:before {
+  content: "\f077";
+}
+
+.fa-minus:before {
+  content: "\f068";
+}
+
+.fa-heart:before {
+  content: "\f004";
+}
+
 /*---------------------------------*/
 
 @font-face {

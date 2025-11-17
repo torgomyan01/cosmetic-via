@@ -376,10 +376,37 @@
             </nav>
             <img src="images/logo.svg" alt="logo" class="header-logo" />
             <div class="header-menu-contact">
-              <label for="search">
-                <img src="images/icons/search.svg" alt="search" />
-                <input type="text" />
-              </label>
+              <div class="search-wrapper">
+                <label>
+                  <svg
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M22 22L20 20"
+                      stroke="white"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+
+                  <input type="text" id="search-input" placeholder="Поиск" />
+                </label>
+                <div class="search-dropdown">
+                  <ul class="search-suggestions"></ul>
+                </div>
+              </div>
               <p>+7 952 482-47-58</p>
               <p>RU</p>
               <div class="header-menu-icons">
@@ -495,17 +522,17 @@
           </h3>
           <div class="block-popular-products-top-block-slide">
             <button class="block-popular-products-top-block-slide-icon prev">
-              <i class="fa-solid fa-arrow-left"></i>
+              <i class="fa-light fa-chevron-left"></i>
             </button>
             <button class="block-popular-products-top-block-slide-icon next">
-              <i class="fa-solid fa-arrow-right"></i>
+              <i class="fa-light fa-chevron-right"></i>
             </button>
           </div>
         </div>
         <div class="block-popular-products-content">
           <div id="slider-popular-products" class="default">
-            <div class="block-popular-products-content-box">
-              <div class="block-popular-products-content-box-images">
+            <div class="product-card">
+              <div class="product-card-images">
                 <img
                   src="images/section2-img3.png"
                   alt=""
@@ -515,31 +542,27 @@
                   <img src="images/icons/product-type-liquid.svg" alt="" />
                 </div>
               </div>
-              <div class="block-popular-products-content-box-des">
+              <div class="product-card-des">
                 <a href="#">
                   <h5>Порошок для шампуней Luxury 123–4gF</h5>
                 </a>
-                <p class="block-popular-products-content-box-des-description">
+                <p class="product-card-description">
                   INCI PEG-PPG 15/15 Allyl Ether Acetate)
                 </p>
-                <p class="block-popular-products-content-box-des-price">
-                  1 999 ₽ <span>1 999 ₽</span>
-                </p>
+                <p class="product-card-price">1 999 ₽ <span>1 999 ₽</span></p>
               </div>
-              <div class="block-popular-products-content-box-kupit">
-                <button
-                  class="btn-green block-popular-products-content-box-kupit-btn"
-                >
+              <div class="product-card-actions">
+                <button class="btn-green product-card-btn">
                   <span class="text">Добавить к заказу</span>
                   <i class="fa-solid fa-basket-shopping"></i>
                 </button>
-                <div class="block-popular-products-content-box-kupit-heart">
+                <div class="product-card-heart">
                   <img src="images/icons/section2-heart.svg" alt="" />
                 </div>
               </div>
             </div>
-            <div class="block-popular-products-content-box">
-              <div class="block-popular-products-content-box-images">
+            <div class="product-card">
+              <div class="product-card-images">
                 <img
                   src="images/section2-img2.png"
                   alt=""
@@ -549,31 +572,27 @@
                   <img src="images/icons/product-type-liquid.svg" alt="" />
                 </div>
               </div>
-              <div class="block-popular-products-content-box-des">
+              <div class="product-card-des">
                 <a href="#">
                   <h5>Порошок для шампуней Luxury</h5>
                 </a>
-                <p class="block-popular-products-content-box-des-description">
+                <p class="product-card-description">
                   INCI PEG-PPG 15/15 Allyl Ether Acetate)
                 </p>
-                <p class="block-popular-products-content-box-des-price">
-                  1 999 ₽ <span>1 999 ₽</span>
-                </p>
+                <p class="product-card-price">1 999 ₽ <span>1 999 ₽</span></p>
               </div>
-              <div class="block-popular-products-content-box-kupit">
-                <button
-                  class="btn-green block-popular-products-content-box-kupit-btn"
-                >
+              <div class="product-card-actions">
+                <button class="btn-green product-card-btn">
                   <span class="text">Добавить к заказу</span>
                   <i class="fa-solid fa-basket-shopping"></i>
                 </button>
-                <div class="block-popular-products-content-box-kupit-heart">
+                <div class="product-card-heart">
                   <img src="images/icons/section2-heart.svg" alt="" />
                 </div>
               </div>
             </div>
-            <div class="block-popular-products-content-box">
-              <div class="block-popular-products-content-box-images">
+            <div class="product-card">
+              <div class="product-card-images">
                 <img
                   src="images/section2-img4.jpg"
                   alt=""
@@ -583,31 +602,27 @@
                   <img src="images/icons/product-type-powder.svg" alt="" />
                 </div>
               </div>
-              <div class="block-popular-products-content-box-des">
+              <div class="product-card-des">
                 <a href="#">
                   <h5>Порошок для шампуней Luxury</h5>
                 </a>
-                <p class="block-popular-products-content-box-des-description">
+                <p class="product-card-description">
                   INCI PEG-PPG 15/15 Allyl Ether Acetate)
                 </p>
-                <p class="block-popular-products-content-box-des-price">
-                  1 999 ₽ <span>1 999 ₽</span>
-                </p>
+                <p class="product-card-price">1 999 ₽ <span>1 999 ₽</span></p>
               </div>
-              <div class="block-popular-products-content-box-kupit">
-                <button
-                  class="btn-green block-popular-products-content-box-kupit-btn"
-                >
+              <div class="product-card-actions">
+                <button class="btn-green product-card-btn">
                   <span class="text">Добавить к заказу</span>
                   <i class="fa-solid fa-basket-shopping"></i>
                 </button>
-                <div class="block-popular-products-content-box-kupit-heart">
+                <div class="product-card-heart">
                   <img src="images/icons/section2-heart.svg" alt="" />
                 </div>
               </div>
             </div>
-            <div class="block-popular-products-content-box">
-              <div class="block-popular-products-content-box-images">
+            <div class="product-card">
+              <div class="product-card-images">
                 <img
                   src="images/section2-img5.jpg"
                   alt=""
@@ -617,31 +632,27 @@
                   <img src="images/icons/product-type-powder.svg" alt="" />
                 </div>
               </div>
-              <div class="block-popular-products-content-box-des">
+              <div class="product-card-des">
                 <a href="#">
                   <h5>Порошок для шампуней Luxury</h5>
                 </a>
-                <p class="block-popular-products-content-box-des-description">
+                <p class="product-card-description">
                   INCI PEG-PPG 15/15 Allyl Ether Acetate)
                 </p>
-                <p class="block-popular-products-content-box-des-price">
-                  1 999 ₽ <span>1 999 ₽</span>
-                </p>
+                <p class="product-card-price">1 999 ₽ <span>1 999 ₽</span></p>
               </div>
-              <div class="block-popular-products-content-box-kupit">
-                <button
-                  class="btn-green block-popular-products-content-box-kupit-btn"
-                >
+              <div class="product-card-actions">
+                <button class="btn-green product-card-btn">
                   <span class="text">Добавить к заказу</span>
                   <i class="fa-solid fa-basket-shopping"></i>
                 </button>
-                <div class="block-popular-products-content-box-kupit-heart">
+                <div class="product-card-heart">
                   <img src="images/icons/section2-heart.svg" alt="" />
                 </div>
               </div>
             </div>
-            <div class="block-popular-products-content-box">
-              <div class="block-popular-products-content-box-images">
+            <div class="product-card">
+              <div class="product-card-images">
                 <img
                   src="images/section2-img3.png"
                   alt=""
@@ -651,31 +662,27 @@
                   <img src="images/icons/product-type-liquid.svg" alt="" />
                 </div>
               </div>
-              <div class="block-popular-products-content-box-des">
+              <div class="product-card-des">
                 <a href="#">
                   <h5>Порошок для шампуней Luxury 123–4gF</h5>
                 </a>
-                <p class="block-popular-products-content-box-des-description">
+                <p class="product-card-description">
                   INCI PEG-PPG 15/15 Allyl Ether Acetate)
                 </p>
-                <p class="block-popular-products-content-box-des-price">
-                  1 999 ₽ <span>1 999 ₽</span>
-                </p>
+                <p class="product-card-price">1 999 ₽ <span>1 999 ₽</span></p>
               </div>
-              <div class="block-popular-products-content-box-kupit">
-                <button
-                  class="btn-green block-popular-products-content-box-kupit-btn"
-                >
+              <div class="product-card-actions">
+                <button class="btn-green product-card-btn">
                   <span class="text">Добавить к заказу</span>
                   <i class="fa-solid fa-basket-shopping"></i>
                 </button>
-                <div class="block-popular-products-content-box-kupit-heart">
+                <div class="product-card-heart">
                   <img src="images/icons/section2-heart.svg" alt="" />
                 </div>
               </div>
             </div>
-            <div class="block-popular-products-content-box">
-              <div class="block-popular-products-content-box-images">
+            <div class="product-card">
+              <div class="product-card-images">
                 <img
                   src="images/section2-img2.png"
                   alt=""
@@ -685,31 +692,27 @@
                   <img src="images/icons/product-type-liquid.svg" alt="" />
                 </div>
               </div>
-              <div class="block-popular-products-content-box-des">
+              <div class="product-card-des">
                 <a href="#">
                   <h5>Порошок для шампуней Luxury</h5>
                 </a>
-                <p class="block-popular-products-content-box-des-description">
+                <p class="product-card-description">
                   INCI PEG-PPG 15/15 Allyl Ether Acetate)
                 </p>
-                <p class="block-popular-products-content-box-des-price">
-                  1 999 ₽ <span>1 999 ₽</span>
-                </p>
+                <p class="product-card-price">1 999 ₽ <span>1 999 ₽</span></p>
               </div>
-              <div class="block-popular-products-content-box-kupit">
-                <button
-                  class="btn-green block-popular-products-content-box-kupit-btn"
-                >
+              <div class="product-card-actions">
+                <button class="btn-green product-card-btn">
                   <span class="text">Добавить к заказу</span>
                   <i class="fa-solid fa-basket-shopping"></i>
                 </button>
-                <div class="block-popular-products-content-box-kupit-heart">
+                <div class="product-card-heart">
                   <img src="images/icons/section2-heart.svg" alt="" />
                 </div>
               </div>
             </div>
-            <div class="block-popular-products-content-box">
-              <div class="block-popular-products-content-box-images">
+            <div class="product-card">
+              <div class="product-card-images">
                 <img
                   src="images/section2-img4.jpg"
                   alt=""
@@ -719,31 +722,27 @@
                   <img src="images/icons/product-type-powder.svg" alt="" />
                 </div>
               </div>
-              <div class="block-popular-products-content-box-des">
+              <div class="product-card-des">
                 <a href="#">
                   <h5>Порошок для шампуней Luxury</h5>
                 </a>
-                <p class="block-popular-products-content-box-des-description">
+                <p class="product-card-description">
                   INCI PEG-PPG 15/15 Allyl Ether Acetate)
                 </p>
-                <p class="block-popular-products-content-box-des-price">
-                  1 999 ₽ <span>1 999 ₽</span>
-                </p>
+                <p class="product-card-price">1 999 ₽ <span>1 999 ₽</span></p>
               </div>
-              <div class="block-popular-products-content-box-kupit">
-                <button
-                  class="btn-green block-popular-products-content-box-kupit-btn"
-                >
+              <div class="product-card-actions">
+                <button class="btn-green product-card-btn">
                   <span class="text">Добавить к заказу</span>
                   <i class="fa-solid fa-basket-shopping"></i>
                 </button>
-                <div class="block-popular-products-content-box-kupit-heart">
+                <div class="product-card-heart">
                   <img src="images/icons/section2-heart.svg" alt="" />
                 </div>
               </div>
             </div>
-            <div class="block-popular-products-content-box">
-              <div class="block-popular-products-content-box-images">
+            <div class="product-card">
+              <div class="product-card-images">
                 <img
                   src="images/section2-img5.jpg"
                   alt=""
@@ -753,25 +752,21 @@
                   <img src="images/icons/product-type-powder.svg" alt="" />
                 </div>
               </div>
-              <div class="block-popular-products-content-box-des">
+              <div class="product-card-des">
                 <a href="#">
                   <h5>Порошок для шампуней Luxury</h5>
                 </a>
-                <p class="block-popular-products-content-box-des-description">
+                <p class="product-card-description">
                   INCI PEG-PPG 15/15 Allyl Ether Acetate)
                 </p>
-                <p class="block-popular-products-content-box-des-price">
-                  1 999 ₽ <span>1 999 ₽</span>
-                </p>
+                <p class="product-card-price">1 999 ₽ <span>1 999 ₽</span></p>
               </div>
-              <div class="block-popular-products-content-box-kupit">
-                <button
-                  class="btn-green block-popular-products-content-box-kupit-btn"
-                >
+              <div class="product-card-actions">
+                <button class="btn-green product-card-btn">
                   <span class="text">Добавить к заказу</span>
                   <i class="fa-solid fa-basket-shopping"></i>
                 </button>
-                <div class="block-popular-products-content-box-kupit-heart">
+                <div class="product-card-heart">
                   <img src="images/icons/section2-heart.svg" alt="" />
                 </div>
               </div>
