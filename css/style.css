@@ -2455,9 +2455,6 @@ a {
 }
 
 .catalog-title-container {
-  display: flex;
-  align-items: center;
-  justify-content: start;
   margin-top: 44px;
   gap: 20px;
 }
@@ -2497,6 +2494,7 @@ a {
   line-height: 100px;
   letter-spacing: -1px;
   text-transform: uppercase;
+  display: inline-block;
 }
 @media (max-width: 1200px) {
   .catalog-title {
