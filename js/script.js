@@ -446,18 +446,6 @@ $(document).ready(function () {
 
 // Catalog Filter functionality
 $(document).ready(function () {
-  // Initialize active sections - set their max-height for smooth initial state
-  $(".catalog-filter-section.active .catalog-filter-section-content").each(
-    function () {
-      $(this).css("max-height", $(this)[0].scrollHeight + 16 + "px");
-    }
-  );
-  $(
-    ".catalog-filter-subsection.active .catalog-filter-subsection-content"
-  ).each(function () {
-    $(this).css("max-height", $(this)[0].scrollHeight + 16 + "px");
-  });
-
   // Initialize active subsection icons - ensure minus icon for active subsections
   $(".catalog-filter-subsection.active .catalog-filter-subsection-toggle").each(
     function () {
@@ -465,78 +453,36 @@ $(document).ready(function () {
     }
   );
 
-  // Toggle filter sections with smooth animation
+  // Toggle filter sections
   $(".catalog-filter-section-header").on("click", function () {
     const section = $(this).closest(".catalog-filter-section");
-    const content = section.find(".catalog-filter-section-content");
-
-    if (section.hasClass("active")) {
-      // Close with animation
-      content.css("max-height", content[0].scrollHeight + 16 + "px");
-      // Force reflow for smooth animation
-      content[0].offsetHeight;
-      content.css("max-height", "0");
-      section.removeClass("active");
-    } else {
-      // Open with animation
-      section.addClass("active");
-      content.css("max-height", "0");
-      // Force reflow for smooth animation
-      content[0].offsetHeight;
-      const scrollHeight = content[0].scrollHeight;
-      content.css("max-height", scrollHeight + 16 + "px");
-    }
+    section.toggleClass("active");
   });
 
-  // Toggle filter subsections with smooth animation
+  // Toggle filter subsections
   $(".catalog-filter-subsection-header").on("click", function () {
     const subsection = $(this).closest(".catalog-filter-subsection");
-    const content = subsection.find(".catalog-filter-subsection-content");
     const toggleIcon = subsection.find(".catalog-filter-subsection-toggle");
 
-    if (content.length === 0) return; // Skip if no content
+    subsection.toggleClass("active");
 
+    // Change icon
     if (subsection.hasClass("active")) {
-      // Close with animation
-      content.css("max-height", content[0].scrollHeight + 16 + "px");
-      // Force reflow for smooth animation
-      content[0].offsetHeight;
-      content.css("max-height", "0");
-      subsection.removeClass("active");
-      // Change icon to plus
-      toggleIcon.removeClass("fa-minus").addClass("fa-plus");
-    } else {
-      // Open with animation
-      subsection.addClass("active");
-      content.css("max-height", "0");
-      // Force reflow for smooth animation
-      content[0].offsetHeight;
-      const scrollHeight = content[0].scrollHeight;
-      content.css("max-height", scrollHeight + 16 + "px");
-      // Change icon to minus
       toggleIcon.removeClass("fa-plus").addClass("fa-minus");
+    } else {
+      toggleIcon.removeClass("fa-minus").addClass("fa-plus");
     }
   });
 
-  // Reset filter with animation
+  // Reset filter
   $(".catalog-filter-reset").on("click", function (e) {
     e.preventDefault();
 
-    // Animate closing all sections and reset icons
+    // Close all sections and reset icons
     $(".catalog-filter-section.active, .catalog-filter-subsection.active").each(
       function () {
         const $this = $(this);
-        const content = $this.find(
-          ".catalog-filter-section-content, .catalog-filter-subsection-content"
-        );
         const toggleIcon = $this.find(".catalog-filter-subsection-toggle");
-
-        if (content.length) {
-          content.css("max-height", content[0].scrollHeight + 16 + "px");
-          // Force reflow
-          content[0].offsetHeight;
-          content.css("max-height", "0");
-        }
 
         // Reset icon to plus
         if (toggleIcon.length) {

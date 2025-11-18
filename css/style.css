@@ -2108,6 +2108,7 @@ a {
   transition: opacity 0.3s ease 0.15s, transform 0.3s ease 0.15s;
 }
 .desktop-menu-content {
+  max-width: calc(100% - 100px);
   background: #fff;
   width: 100%;
   height: calc(100dvh - 188px);
@@ -2453,8 +2454,42 @@ a {
   letter-spacing: -0.16px;
 }
 
-.catalog-title {
+.catalog-title-container {
+  display: flex;
+  align-items: center;
+  justify-content: start;
   margin-top: 44px;
+  gap: 20px;
+}
+@media (max-width: 992px) {
+  .catalog-title-container {
+    margin-top: 23px;
+  }
+}
+.catalog-title-container span {
+  align-self: stretch;
+  color: #434540;
+  font-size: 90px;
+  font-weight: 200;
+  line-height: 100px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+}
+@media (max-width: 1200px) {
+  .catalog-title-container span {
+    font-size: 60px;
+    line-height: 80px;
+    letter-spacing: -0.8px;
+  }
+}
+@media (max-width: 992px) {
+  .catalog-title-container span {
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: -0.32px;
+  }
+}
+.catalog-title {
   align-self: stretch;
   color: #434540;
   font-size: 100px;
@@ -2475,7 +2510,6 @@ a {
     font-size: 32px;
     line-height: 32px;
     letter-spacing: -0.32px;
-    margin-top: 23px;
   }
 }
 .catalog-description {
@@ -2574,16 +2608,11 @@ a {
   margin: 0;
 }
 .catalog-filter-section-content {
-  padding-top: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding-top 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
+  display: none;
+  padding-top: 16px;
 }
 .catalog-filter-section.active .catalog-filter-section-content {
-  max-height: 5000px;
-  opacity: 1;
-  padding-top: 16px;
+  display: block;
 }
 .catalog-filter-section .catalog-filter-toggle {
   font-size: 14px;
@@ -2613,16 +2642,12 @@ a {
   margin: 0;
 }
 .catalog-filter-subsection-content {
+  display: none;
   padding-left: 12px;
   padding-top: 8px;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding-top 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
 }
 .catalog-filter-subsection.active .catalog-filter-subsection-content {
-  max-height: 2000px;
-  opacity: 1;
+  display: block;
 }
 .catalog-filter-subsection-toggle {
   color: #858c68;
