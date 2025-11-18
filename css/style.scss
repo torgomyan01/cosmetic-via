@@ -1637,6 +1637,7 @@ a {
   padding: 0 50px;
   margin-top: 120px;
   position: relative;
+  overflow: hidden;
 
   &::before {
     content: "";
@@ -1646,7 +1647,7 @@ a {
     width: 100%;
     height: 100%;
     background: url(../images/bg-header.png) repeat center center;
-    opacity: 0.1;
+    opacity: 0.07;
   }
 
   @media (max-width: 1600px) {
@@ -1667,6 +1668,7 @@ a {
     justify-content: space-between;
     align-items: center;
     padding-top: 30px;
+    position: relative;
 
     &-logo {
       width: 275px;
@@ -1698,7 +1700,7 @@ a {
   &-content {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     gap: 100px;
     margin-top: 64px;
     padding-right: 50px;
@@ -1751,21 +1753,25 @@ a {
       font-size: 18px;
       font-weight: 400;
       text-transform: uppercase;
-      padding-bottom: 60px;
+      padding-bottom: 30px;
+      position: relative;
+
+      &.hidden {
+        opacity: 0;
+      }
     }
 
     & ul {
       list-style: none;
-      margin-top: 30px;
     }
 
     &-item {
       color: #e1e9d5;
       font-size: 18px;
       font-weight: 400;
-      padding-bottom: 15px;
       white-space: nowrap;
       position: relative;
+      margin-bottom: 16px;
 
       a {
         color: #e1e9d5;
@@ -3055,6 +3061,10 @@ a {
     gap: 44px;
     margin-top: 38px;
 
+    @media (max-width: 1170px) {
+      flex-direction: column;
+    }
+
     &-left {
       width: 100%;
       max-width: 769px;
@@ -3072,7 +3082,7 @@ a {
         gap: 20px;
         justify-content: center;
         align-items: center;
-        height: 643px;
+        max-height: 643px;
         background-color: #f5f4f4;
         position: relative;
 
@@ -3272,6 +3282,8 @@ a {
     gap: 16px;
     border-radius: 52px;
     background: #eee;
+    position: sticky;
+    top: 20px;
 
     &-price {
       width: 100%;

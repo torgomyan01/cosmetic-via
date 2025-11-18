@@ -1621,6 +1621,7 @@ a {
   padding: 0 50px;
   margin-top: 120px;
   position: relative;
+  overflow: hidden;
 }
 .footer::before {
   content: "";
@@ -1630,7 +1631,7 @@ a {
   width: 100%;
   height: 100%;
   background: url(../images/bg-header.png) repeat center center;
-  opacity: 0.1;
+  opacity: 0.07;
 }
 @media (max-width: 1600px) {
   .footer {
@@ -1653,6 +1654,7 @@ a {
   justify-content: space-between;
   align-items: center;
   padding-top: 30px;
+  position: relative;
 }
 .footer-top-logo {
   width: 275px;
@@ -1682,7 +1684,7 @@ a {
 .footer-content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: start;
   gap: 100px;
   margin-top: 64px;
   padding-right: 50px;
@@ -1737,19 +1739,22 @@ a {
   font-size: 18px;
   font-weight: 400;
   text-transform: uppercase;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
+  position: relative;
+}
+.footer-content-box-title.hidden {
+  opacity: 0;
 }
 .footer-content-box ul {
   list-style: none;
-  margin-top: 30px;
 }
 .footer-content-box-item {
   color: #e1e9d5;
   font-size: 18px;
   font-weight: 400;
-  padding-bottom: 15px;
   white-space: nowrap;
   position: relative;
+  margin-bottom: 16px;
 }
 .footer-content-box-item a {
   color: #e1e9d5;
@@ -2936,6 +2941,11 @@ a {
   gap: 44px;
   margin-top: 38px;
 }
+@media (max-width: 1170px) {
+  .product-page-content {
+    flex-direction: column;
+  }
+}
 .product-page-content-left {
   width: 100%;
   max-width: 769px;
@@ -2952,7 +2962,7 @@ a {
   gap: 20px;
   justify-content: center;
   align-items: center;
-  height: 643px;
+  max-height: 643px;
   background-color: #f5f4f4;
   position: relative;
 }
@@ -3131,6 +3141,8 @@ a {
   gap: 16px;
   border-radius: 52px;
   background: #eee;
+  position: sticky;
+  top: 20px;
 }
 .product-page-checkout-price {
   width: 100%;
