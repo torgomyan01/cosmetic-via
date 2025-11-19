@@ -86,7 +86,23 @@ const blockNewsContentDescription = $(".block-news-content-description");
 
 $(window).on("resize", function () {
   resizeBlockNewsContentDescription(blockNewsContentActive);
+  productPageContentLeftSlider();
 });
+
+productPageContentLeftSlider();
+
+function productPageContentLeftSlider() {
+  if (window.innerWidth <= 1170) {
+    $(".product-page-content-left").slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      dots: true,
+    });
+  } else {
+    $(".product-page-content-left").slick("destroy");
+  }
+}
 
 function resizeBlockNewsContentDescription(element) {
   if (window.innerWidth > 768) {
