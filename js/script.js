@@ -619,3 +619,34 @@ $(document).ready(function () {
     }
   });
 });
+
+// Basket Functionality
+$(document).ready(function () {
+  $(".basket-table-count-btn.minus").on("click", function () {
+    const $btn = $(this);
+    const $count = $btn.siblings("span");
+    const count = parseInt($count.text());
+    if ($btn.is(":disabled")) {
+      return;
+    }
+    $count.text(count - 1);
+
+    disableMinusButton(count);
+  });
+
+  $(".basket-table-count-btn.plus").on("click", function () {
+    const $btn = $(this);
+    const $count = $btn.siblings("span");
+    const count = parseInt($count.text()) + 1;
+    $count.text(count);
+    disableMinusButton(count);
+  });
+});
+
+function disableMinusButton(count) {
+  if (count <= 1) {
+    $(".basket-table-count-btn.minus").prop("disabled", true);
+  } else {
+    $(".basket-table-count-btn.minus").prop("disabled", false);
+  }
+}
