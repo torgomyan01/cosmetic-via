@@ -30,142 +30,47 @@
   </head>
 
   <body>
-    <div class="container" style="margin-top: 100px">
-      <h1
-        style="
-          font-size: 40px;
-          font-weight: 600;
-          color: #8b957c;
-          text-align: center;
-        "
-      >
+    <div class="container welcome-section">
+      <h1 class="welcome-title">
         Welcome to the CosmeticVia <span style="color: red">❤</span>
       </h1>
-      <p
-        style="
-          font-size: 16px;
-          font-weight: 400;
-          color: #8b957c;
-          text-align: center;
-        "
-      >
+      <p class="welcome-text">
         We are a team of professionals who are dedicated to providing the best
         quality products and services to our clients.
       </p>
 
       <nav class="main-nav">
-        <ul
-          style="
-            display: flex;
-            gap: 32px;
-            justify-content: center;
-            align-items: center;
-            list-style: none;
-            margin: 40px 0 0 0;
-            padding: 0;
-          "
-        >
+        <ul class="main-nav-list">
           <li>
-            <a
-              href="home.html"
-              style="
-                padding: 12px 28px;
-                border-radius: 30px;
-                border: 1px solid #8b957c;
-                color: #8b957c;
-                font-size: 20px;
-                font-weight: 500;
-                background: transparent;
-                transition: all 0.3s;
-              "
-            >
+            <a href="home.html" class="nav-link">
               Home
-              <i class="fa-solid fa-arrow-right" style="font-size: 13px"></i>
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </li>
           <li>
-            <a
-              href="catalog.html"
-              style="
-                padding: 12px 28px;
-                border-radius: 30px;
-                border: 1px solid #8b957c;
-                color: #8b957c;
-                font-size: 20px;
-                font-weight: 500;
-                background: transparent;
-                transition: all 0.3s;
-              "
-            >
+            <a href="catalog.html" class="nav-link">
               Catalog
-              <i class="fa-solid fa-arrow-right" style="font-size: 13px"></i>
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </li>
           <li>
-            <a
-              href="product-card.html"
-              style="
-                padding: 12px 28px;
-                border-radius: 30px;
-                border: 1px solid #8b957c;
-                color: #8b957c;
-                font-size: 20px;
-                font-weight: 500;
-                background: transparent;
-                transition: all 0.3s;
-              "
-            >
+            <a href="product-card.html" class="nav-link">
               Product Card
-              <i class="fa-solid fa-arrow-right" style="font-size: 13px"></i>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </li>
+          <li>
+            <a href="basket.html" class="nav-link">
+              Basket
+              <i class="fa-solid fa-arrow-right"></i>
             </a>
           </li>
         </ul>
       </nav>
-      <style>
-        .main-nav ul li a:hover {
-          background: #8b957c;
-          color: #fff;
-          border: 1px solid #8b957c;
-          box-shadow: 0 8px 20px rgba(139, 149, 124, 0.13);
-        }
-        @media (max-width: 600px) {
-          .main-nav ul {
-            flex-direction: column;
-            gap: 16px;
-            align-items: stretch;
-          }
-          .main-nav ul li a {
-            font-size: 16px !important;
-            padding: 10px 0 !important;
-            text-align: center;
-            width: 100%;
-            border-radius: 20px !important;
-          }
-        }
-      </style>
     </div>
 
-    <div
-      class="container"
-      style="
-        display: flex;
-        gap: 10px;
-        flex-direction: column;
-        margin-top: 20px;
-        align-items: start;
-      "
-    >
-      <h4
-        style="
-          font-size: 40px;
-          font-weight: 600;
-          color: #8b957c;
-          text-align: center;
-          margin-top: 80px;
-        "
-      >
-        Components
-      </h4>
+    <div class="container components-section">
+      <h4 class="components-title">Components</h4>
       <button class="btn-white">
         В каталог
         <i class="fa-solid fa-arrow-right"></i>
@@ -193,6 +98,219 @@
         Открыть модальное окно
       </button>
     </div>
+
+    <style>
+      /* Welcome Section Styles */
+      .welcome-section {
+        margin-top: 100px;
+        padding: 0 16px;
+      }
+
+      .welcome-title {
+        font-size: 40px;
+        font-weight: 600;
+        color: #8b957c;
+        text-align: center;
+        margin-bottom: 20px;
+        line-height: 1.2;
+      }
+
+      .welcome-text {
+        font-size: 16px;
+        font-weight: 400;
+        color: #8b957c;
+        text-align: center;
+        line-height: 1.5;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      /* Navigation Styles */
+      .main-nav-list {
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+        align-items: center;
+        list-style: none;
+        margin: 40px 0 0 0;
+        padding: 0;
+        flex-wrap: wrap;
+      }
+
+      .nav-link {
+        padding: 12px 28px;
+        border-radius: 30px;
+        border: 1px solid #8b957c;
+        color: #8b957c;
+        font-size: 20px;
+        font-weight: 500;
+        background: transparent;
+        transition: all 0.3s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+      }
+
+      .nav-link i {
+        font-size: 13px;
+        transition: transform 0.3s;
+      }
+
+      .nav-link:hover {
+        background: #8b957c;
+        color: #fff;
+        border: 1px solid #8b957c;
+        box-shadow: 0 8px 20px rgba(139, 149, 124, 0.13);
+      }
+
+      .nav-link:hover i {
+        transform: translateX(3px);
+      }
+
+      /* Components Section Styles */
+      .components-section {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        margin-top: 20px;
+        align-items: start;
+        padding: 0 16px;
+      }
+
+      .components-title {
+        font-size: 40px;
+        font-weight: 600;
+        color: #8b957c;
+        text-align: center;
+        margin-top: 80px;
+        margin-bottom: 20px;
+        width: 100%;
+      }
+
+      /* Mobile Responsive Styles */
+      @media (max-width: 768px) {
+        .welcome-section {
+          margin-top: 60px;
+          padding: 0 16px;
+        }
+
+        .welcome-title {
+          font-size: 28px;
+          margin-bottom: 16px;
+          padding: 0 10px;
+        }
+
+        .welcome-text {
+          font-size: 14px;
+          padding: 0 10px;
+        }
+
+        .main-nav-list {
+          flex-direction: column;
+          gap: 16px;
+          align-items: stretch;
+          margin-top: 30px;
+        }
+
+        .nav-link {
+          font-size: 16px;
+          padding: 12px 20px;
+          text-align: center;
+          width: 100%;
+          justify-content: center;
+          border-radius: 20px;
+        }
+
+        .components-section {
+          margin-top: 40px;
+          padding: 0 16px;
+        }
+
+        .components-title {
+          font-size: 28px;
+          margin-top: 40px;
+          text-align: center;
+        }
+
+        .btn-white,
+        .btn-white-outline,
+        .btn-green,
+        .btn-green-outline {
+          width: 100%;
+          padding: 18px 20px !important;
+          font-size: 16px;
+        }
+
+        .input-name,
+        .input-phone,
+        .input-comment {
+          width: 100%;
+          padding-right: 32px !important;
+          padding-left: 20px !important;
+          font-size: 16px;
+        }
+
+        .btn-input {
+          width: 100%;
+          padding-right: 20px !important;
+          padding-left: 20px !important;
+        }
+
+        .btn-input input {
+          width: 100%;
+          font-size: 16px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .welcome-section {
+          margin-top: 40px;
+        }
+
+        .welcome-title {
+          font-size: 24px;
+        }
+
+        .welcome-text {
+          font-size: 13px;
+        }
+
+        .components-title {
+          font-size: 24px;
+          margin-top: 30px;
+        }
+
+        .main-nav-list {
+          gap: 12px;
+        }
+
+        .nav-link {
+          font-size: 14px;
+          padding: 10px 16px;
+        }
+      }
+
+      /* Tablet Styles */
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .welcome-title {
+          font-size: 36px;
+        }
+
+        .components-title {
+          font-size: 36px;
+        }
+
+        .main-nav-list {
+          gap: 24px;
+        }
+
+        .nav-link {
+          font-size: 18px;
+          padding: 12px 24px;
+        }
+      }
+    </style>
 
     <!-- Success Modal -->
     <div class="modal-overlay" id="successModal">
