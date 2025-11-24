@@ -650,3 +650,12 @@ function disableMinusButton(count) {
     $(".basket-table-count-btn.minus").prop("disabled", false);
   }
 }
+
+const phoneInput = $(".number-mask");
+
+phoneInput.each((index, element) => {
+  const maskOptions = {
+    mask: "+{7}(000)000-00-00",
+  };
+  const mask = IMask(element, maskOptions);
+});

@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="icons/icons.css" />
+
+    <script src="js/imask.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/aos.js"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Название компании",
+        "url": "https://www.example.com",
+        "logo": "https://www.example.com/logo.png",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+7 123 456-78-90",
+            "contactType": "customer service"
+          }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Адрес компании",
+          "addressLocality": "Город",
+          "addressRegion": "Регион",
+          "postalCode": "Индекс",
+          "addressCountry": "RU"
+        },
+        "description": "Краткое описание деятельности компании",
+        "sameAs": ["https://vk.com/company", "https://t.me/company"]
+      }
+    </script>
+
+    <title>Contact | CosmeticVia</title>
+  </head>
+
+  <body>
+    <div class="mobile-menu">
+      <div class="mobile-menu-fon"></div>
+      <div class="mobile-menu-content">
+        <i class="fa-solid fa-xmark"></i>
+
+        <label class="mobile-menu-content-search">
+          <input type="text" placeholder="Поиск по сайту" />
+          <img src="images/icons/search-green.svg" alt="search" />
+        </label>
+
+        <div class="mobile-menu-content-list">
+          <div class="mobile-menu-content-list-box">
+            <p class="mobile-menu-content-list-title">
+              Каталог <i class="fa-solid fa-chevron-down"></i>
+            </p>
+            <ul class="mobile-menu-content-list-items">
+              <li>
+                <a href="#">Производители</a>
+              </li>
+              <li>
+                <a href="#">Производители</a>
+              </li>
+              <li>
+                <a href="#">Производители</a>
+              </li>
+              <li>
+                <a href="#">Производители</a>
+              </li>
+            </ul>
+          </div>
+          <div class="mobile-menu-content-list-box">
+            <p class="mobile-menu-content-list-title">
+              Применение <i class="fa-solid fa-chevron-down"></i>
+            </p>
+            <ul class="mobile-menu-content-list-items">
+              <li>
+                <a href="#">Производители</a>
+              </li>
+              <li>
+                <a href="#">Производители</a>
+              </li>
+              <li>
+                <a href="#">Производители</a>
+              </li>
+              <li>
+                <a href="#">Производители</a>
+              </li>
+            </ul>
+          </div>
+          <div class="mobile-menu-content-list-box">
+            <p class="mobile-menu-content-list-title">Производители</p>
+          </div>
+          <div class="mobile-menu-content-list-box">
+            <p class="mobile-menu-content-list-title">
+              О компании <i class="fa-solid fa-chevron-down"></i>
+            </p>
+            <ul class="mobile-menu-content-list-items">
+              <li>
+                <a href="#">О компании</a>
+              </li>
+              <li>
+                <a href="#">О компании</a>
+              </li>
+              <li>
+                <a href="#">О компании</a>
+              </li>
+              <li>
+                <a href="#">О компании</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="tel:+7 952 482-47-58" class="mobile-menu-content-phone"
+          >+7 952 482-47-58</a
+        >
+        <a href="#" class="mobile-menu-content-language">RU</a>
+
+        <hr />
+
+        <ul class="mobile-menu-content-account-list">
+          <li>
+            <a href="#">
+              <img src="images/icons/user-green.svg" alt="user" /> Личный
+              кабинет</a
+            >
+          </li>
+          <li>
+            <a href="#">
+              <div class="mobile-menu-content-notification">
+                <div class="mobile-menu-content-notification-count">9</div>
+                <img src="images/icons/basket-green.svg" alt="basket" />
+              </div>
+              Корзина
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="mobile-menu-content-notification">
+                <div class="mobile-menu-content-notification-count">2</div>
+                <img src="images/icons/basket-green.svg" alt="basket" />
+              </div>
+              Избранное
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="desktop-menu" id="application">
+      <div class="container desktop-menu-content">
+        <div class="desktop-menu-content-left">
+          <ul>
+            <li class="active"><a href="#">Средства по уходу за телом</a></li>
+            <li><a href="#">Антисептики (санитайзеры)</a></li>
+            <li><a href="#">Зубные пасты</a></li>
+            <li><a href="#">Краски для волос</a></li>
+            <li><a href="#">Масла</a></li>
+            <li><a href="#">Салфетки</a></li>
+            <li><a href="#">Средства для загара</a></li>
+            <li><a href="#">Бытовая химия</a></li>
+            <li><a href="#">Декоративная косметика</a></li>
+            <li><a href="#">Средства по уходу за волосами</a></li>
+            <li><a href="#">Средства по уходу за кожей лица</a></li>
+          </ul>
+        </div>
+        <div class="desktop-menu-content-sublist">
+          <h3 class="desktop-menu-content-sublist-title">
+            Средства по уходу за телом
+          </h3>
+          <div class="desktop-menu-content-sublist-list">
+            <ul>
+              <li><a href="#">Жидкость для снятия макияжа</a></li>
+              <li><a href="#">Кремы для лица</a></li>
+              <li><a href="#">Лосьоны для лица</a></li>
+              <li><a href="#">Маски для лица</a></li>
+              <li><a href="#">Мицеллярная вода</a></li>
+              <li><a href="#">Молочко для лица</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Пенка для умывания</a></li>
+              <li><a href="#">Пилинг</a></li>
+              <li><a href="#">Скрабы для лица</a></li>
+              <li><a href="#">Средства для бритья</a></li>
+              <li><a href="#">Сыворотка</a></li>
+              <li><a href="#">Тоник</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="desktop-menu-content-ads">
+          <div class="desktop-menu-content-ads-box">
+            <img src="images/section2-img2.png" alt="" />
+            <div class="desktop-menu-content-ads-box-content">
+              <h5 class="desktop-menu-content-ads-box-content-title">
+                Порошок для моющего средства Htfg-345
+              </h5>
+              <p class="desktop-menu-content-ads-box-content-description">
+                INC IDiethylhexyl Sodium Sulfosuccinate
+              </p>
+              <button class="btn-green">Подробнее</button>
+            </div>
+          </div>
+          <div class="desktop-menu-content-ads-box">
+            <img src="images/section2-img2.png" alt="" />
+            <div class="desktop-menu-content-ads-box-content">
+              <h5 class="desktop-menu-content-ads-box-content-title">
+                Порошок для моющего средства Htfg-345
+              </h5>
+              <p class="desktop-menu-content-ads-box-content-description">
+                INC IDiethylhexyl Sodium Sulfosuccinate
+              </p>
+              <button class="btn-green">Подробнее</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="desktop-menu" id="manufacturers">
+      <div class="container desktop-menu-content">
+        <div class="desktop-menu-content-left">
+          <ul>
+            <li class="active"><a href="#">Активные ингредиенты</a></li>
+            <li><a href="#">ПАВ</a></li>
+            <li><a href="#">Солюбилизаторы</a></li>
+            <li><a href="#">Частицы</a></li>
+            <li><a href="#">Натуральные абразивы</a></li>
+            <li><a href="#">Декоративные частицы</a></li>
+            <li><a href="#">Функциональные компоненты</a></li>
+            <li><a href="#">Кондиционирующие добавки</a></li>
+            <li><a href="#">Силиконы</a></li>
+            <li><a href="#">Консерванты</a></li>
+            <li><a href="#">Отдушки и капсулы</a></li>
+            <li><a href="#">Продукты для Oral care</a></li>
+            <li><a href="#">УФ-защита</a></li>
+            <li><a href="#">Масла</a></li>
+            <li><a href="#">Продукты для бытовой химии</a></li>
+            <li><a href="#">Красители</a></li>
+            <li><a href="#">Пигменты</a></li>
+            <li><a href="#">Перламутры</a></li>
+            <li><a href="#">Наполнители</a></li>
+          </ul>
+        </div>
+        <div class="desktop-menu-content-sublist">
+          <h3 class="desktop-menu-content-sublist-title">
+            Активные ингредиенты
+          </h3>
+          <div class="desktop-menu-content-sublist-list">
+            <ul>
+              <li><a href="#">Активные ингредиенты для лица и тела</a></li>
+              <li>
+                <a href="#">Активные ингредиенты для волос и кожи головы</a>
+              </li>
+              <li><a href="#">Антиоксиданты</a></li>
+              <li><a href="#">Бисаболол</a></li>
+              <li>
+                <a href="#">Гиалуроновые кислоты и активы на их основе</a>
+              </li>
+              <li><a href="#">Инкапсулированные активные ингредиенты</a></li>
+              <li><a href="#">Кислоты и их производные</a></li>
+              <li><a href="#">Коллаген</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Пенка для умывания</a></li>
+              <li><a href="#">НУФ (натуральный увлажняющий фактор)</a></li>
+              <li><a href="#">Пептиды</a></li>
+              <li><a href="#">Пребиотики</a></li>
+              <li><a href="#">Пробиотики</a></li>
+              <li><a href="#">Сквалан</a></li>
+              <li><a href="#">Церамиды</a></li>
+              <li><a href="#">Шелк</a></li>
+              <li><a href="#">Увлажняющие добавки</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="desktop-menu-content-ads">
+          <div class="desktop-menu-content-ads-box">
+            <img src="images/section2-img2.png" alt="" />
+            <div class="desktop-menu-content-ads-box-content">
+              <h5 class="desktop-menu-content-ads-box-content-title">
+                Порошок для моющего средства Htfg-345
+              </h5>
+              <p class="desktop-menu-content-ads-box-content-description">
+                INC IDiethylhexyl Sodium Sulfosuccinate
+              </p>
+              <button class="btn-green">Подробнее</button>
+            </div>
+          </div>
+          <div class="desktop-menu-content-ads-box">
+            <img src="images/section2-img2.png" alt="" />
+            <div class="desktop-menu-content-ads-box-content">
+              <h5 class="desktop-menu-content-ads-box-content-title">
+                Порошок для моющего средства Htfg-345
+              </h5>
+              <p class="desktop-menu-content-ads-box-content-description">
+                INC IDiethylhexyl Sodium Sulfosuccinate
+              </p>
+              <button class="btn-green">Подробнее</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="desktop-menu" id="company">
+      <div class="container desktop-menu-content">
+        <div class="desktop-menu-content-sublist">
+          <h3 class="desktop-menu-content-sublist-title">О компании</h3>
+          <div class="desktop-menu-content-sublist-list">
+            <ul>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Новости</a></li>
+              <li><a href="#">Команда</a></li>
+              <li><a href="#">Карьера</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Лаборатория</a></li>
+              <li><a href="#">Наука</a></li>
+              <li><a href="#">Склад</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Тренинги</a></li>
+              <li><a href="#">Статьи</a></li>
+              <li><a href="#">Часто задаваемые вопросы</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="bg-header dont-header">
+        <div class="header-logo-mobile">
+          <img src="images/logo.svg" alt="logo" class="header-img" />
+          <div class="header-mobile-menu">
+            <p>Меню</p>
+            <img src="images/menu-icon.svg" alt="" />
+          </div>
+        </div>
+        <div class="header-menu">
+          <nav>
+            <ul>
+              <li data-menu="manufacturers">
+                <img
+                  src="images/menu-icon.svg"
+                  alt="menu-icon"
+                  id="catalog-menu-icon"
+                />
+                <i
+                  class="fa-regular fa-xmark d-none"
+                  id="close-catalog-menu-icon"
+                  style="font-size: 20px"
+                ></i>
+                <span>КАТАЛОГ</span>
+              </li>
+              <li>
+                <span>Производители</span>
+              </li>
+              <li data-menu="application">
+                <span>Применение</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </li>
+              <li data-menu="company">
+                <span>О компании</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </li>
+            </ul>
+          </nav>
+          <img src="images/logo.svg" alt="logo" class="header-logo" />
+          <div class="header-menu-contact">
+            <div class="search-wrapper">
+              <label>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M22 22L20 20"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+
+                <input type="text" id="search-input" placeholder="Поиск" />
+              </label>
+              <div class="search-dropdown">
+                <ul class="search-suggestions"></ul>
+              </div>
+            </div>
+            <p>+7 952 482-47-58</p>
+            <p>RU</p>
+            <div class="header-menu-icons">
+              <img class="search-midea" src="images/icons/search.svg" alt="" />
+              <img src="images/icons/user.svg" alt="user" />
+              <div class="header-menu-icons-basket">
+                <img src="images/icons/basket.svg" alt="basket" />
+                <div class="header-menu-icons-basket-count">
+                  <p>9</p>
+                </div>
+              </div>
+              <div class="header-menu-icons-basket">
+                <img src="images/icons/heart.svg" alt="basket" />
+                <div class="header-menu-icons-basket-count">
+                  <p>1</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="contact">
+      <div class="container max">
+        <!-- Breadcrumbs -->
+        <div class="breadcrumbs">
+          <a href="/">Главная</a>
+          /
+          <span>Контакты</span>
+        </div>
+
+        <h1 class="contact-title">Контакты</h1>
+
+        <!-- Content -->
+        <div class="contact-content">
+          <article class="contact-content-info">
+            <div class="contact-content-info-item">
+              <a href="tel:8(495) 249 88 50" class="tel-link"
+                >8(495) 249 88 50</a
+              >
+              <p class="text">Позвонить нам</p>
+            </div>
+            <div class="contact-content-info-item">
+              <a href="mailto:info@cosmeticvia.ru" class="email-link"
+                >info@cosmeticvia.ru</a
+              >
+              <p class="text">
+                Получить консультацию или оставить заявку на заказ
+              </p>
+            </div>
+            <div class="contact-content-info-item">
+              <a href="mailto:info@cosmeticvia.ru" class="email-link"
+                >info@cosmeticvia.ru</a
+              >
+              <p class="text">Оставить рекламацию</p>
+            </div>
+            <div class="contact-content-info-item">
+              <button class="btn-white-outline">Скачать реквизиты</button>
+            </div>
+          </article>
+
+          <div class="contact-content-map">
+            <div class="contact-content-map-left">
+              <iframe
+                src="https://yandex.ru/map-widget/v1/?um=constructor%3A1b5fcc29a5d90ac7e3b50e031f273ab2eeaca626f96e1e67252ac0b9fd92f1d2&amp;source=constructor"
+                width="100%"
+                height="400"
+                frameborder="0"
+                style="border: 0"
+                allowfullscreen
+              ></iframe>
+            </div>
+
+            <div class="contact-content-map-right">
+              <h2 class="contact-content-map-right-title">Наши реквизиты</h2>
+              <h4 class="contact-content-map-right-subtitle">
+                ООО "Косметик Виа"
+              </h4>
+
+              <ul class="contact-content-map-right-list">
+                <li>
+                  <p class="contact-content-map-right-list-item-title">
+                    Юридический адрес:
+                  </p>
+                  <p class="contact-content-map-right-list-item-value">
+                    121596, г. Москва, улица Горбунова, дом 2, строение 3, этаж
+                    5, помещение II, комната 31д, офис 4
+                  </p>
+                </li>
+                <li>
+                  <p class="contact-content-map-right-list-item-title">
+                    Почтовый адрес:
+                  </p>
+                  <p class="contact-content-map-right-list-item-value">
+                    109377, г. Москва, проспект Рязанский, д. 32 корп. 3 пом.
+                    412
+                  </p>
+                </li>
+                <li>
+                  <p class="contact-content-map-right-list-item-title">
+                    Фактический адрес:
+                  </p>
+                  <p class="contact-content-map-right-list-item-value">
+                    109377, г. Москва, проспект Рязанский, д. 32 корп. 3 пом.
+                    412
+                  </p>
+                </li>
+                <li>
+                  <p class="contact-content-map-right-list-item-title">
+                    ИНН/КПП:
+                  </p>
+                  <p class="contact-content-map-right-list-item-value">
+                    9721036610/ 773101001
+                  </p>
+                </li>
+                <li>
+                  <p class="contact-content-map-right-list-item-title">ОГРН:</p>
+                  <p class="contact-content-map-right-list-item-value">
+                    1177746030824
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <section class="connect-me">
+          <h4 class="connect-me-title">
+            Есть вопросы? заполни форму, оставь заявку
+          </h4>
+          <form action="#" action="POST" class="connect-me-form">
+            <label class="def-input">
+              <input type="text" placeholder="Ваше имя" />
+            </label>
+            <label class="def-input">
+              <input
+                type="text"
+                placeholder="+7 000 000 000"
+                class="number-mask"
+              />
+            </label>
+            <label class="def-input last-input">
+              <input type="text" placeholder="Комментарий" />
+            </label>
+            <div class="connect-me-form-buttons">
+              <button class="btn-white-outline">Отправить</button>
+              <p class="connect-me-form-buttons-description">
+                Нажимая кнопку, вы соглашаетесь с
+                <a href="#">политикой конфиденциальности</a> и обработкой ваших
+                персональных данных
+              </p>
+            </div>
+          </form>
+        </section>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <img src="images/logo.svg" alt="logo" class="footer-top-logo" />
+        <p class="footer-top-description">+7 495 249-88-50</p>
+      </div>
+      <div class="footer-hr"></div>
+
+      <div class="footer-content">
+        <nav class="footer-content-box">
+          <h4 class="footer-content-box-title">Покупателю</h4>
+          <ul>
+            <li class="footer-content-box-item"><a href="#">Каталог</a></li>
+            <li class="footer-content-box-item">
+              <a href="#">Производители</a>
+            </li>
+            <li class="footer-content-box-item">
+              <a href="#">Применение</a>
+            </li>
+            <li class="footer-content-box-item"><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-content-box">
+          <h4 class="footer-content-box-title">О компании</h4>
+          <ul>
+            <li class="footer-content-box-item"><a href="#">О нас</a></li>
+            <li class="footer-content-box-item"><a href="#">Новости</a></li>
+            <li class="footer-content-box-item"><a href="#">Команда</a></li>
+            <li class="footer-content-box-item"><a href="#"> Карьера</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-content-box">
+          <h4 class="footer-content-box-title hidden">Контакты</h4>
+          <ul>
+            <li class="footer-content-box-item">
+              <a href="#">Лаборатория </a>
+            </li>
+            <li class="footer-content-box-item"><a href="#"> Наука</a></li>
+            <li class="footer-content-box-item"><a href="#">Склад</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-content-box">
+          <h4 class="footer-content-box-title hidden">Контакты</h4>
+          <ul>
+            <li class="footer-content-box-item"><a href="#">Тренинги</a></li>
+            <li class="footer-content-box-item"><a href="#">Статьи</a></li>
+            <li class="footer-content-box-item">
+              <a href="#">Часто задаваемые <br />вопросы</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer-content-box">
+          <h4 class="footer-content-box-title">Контакты</h4>
+          <ul>
+            <li class="footer-content-box-item">
+              <a href="#">+7 495 249-88-50</a>
+            </li>
+            <li class="footer-content-box-item">
+              <a href="#">info@cosmeticvia.ru</a>
+            </li>
+            <li class="footer-content-box-item">
+              <a href="#"
+                >г. Москва, Рязанский проспект, <br />
+                дом. 32, корп. 3, офис 412</a
+              >
+            </li>
+            <li class="footer-content-box-item telegram">
+              <img src="images/icons/telegram.svg" alt="telegram" />
+              <a href="#">Наш телеграмм</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer-content-box">
+          <h4 class="footer-content-box-title hidden">Контакты</h4>
+          <ul>
+            <li class="footer-content-box-item footer-content-box-telegram">
+              <img src="images/icons/user.svg" alt="telegram" />
+              <a href="#">Личный кабинет</a>
+            </li>
+            <li
+              class="footer-content-box-item footer-content-box-telegram footer-content-box-basket"
+            >
+              <div class="footer-content-box-item footer-content-box-telegram">
+                <img src="images/icons/basket.svg" alt="basket" />
+                <div class="footer-content-box-icons-count">
+                  <a>1</a>
+                </div>
+              </div>
+              <a href="#">Корзина</a>
+            </li>
+            <li class="footer-content-box-item footer-content-box-telegram">
+              <div class="footer-content-box-item footer-content-box-telegram">
+                <img src="images/icons/heart.svg" alt="basket" />
+                <div class="footer-content-box-icons-count">
+                  <a>1</a>
+                </div>
+              </div>
+              <a href="#">Избранное</a>
+            </li>
+
+            <li class="footer-content-box-item"><a href="#">RU</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-content-mobile">
+        <div class="footer-content-mobile-box">
+          <p class="footer-content-mobile-box-info">+7 495 249-88-50</p>
+          <a href="#" class="footer-content-mobile-box-info"
+            >info@cosmeticvia.ru</a
+          >
+          <a href="#" class="footer-content-mobile-box-info"
+            >г. Москва, Рязанский проспект, дом. 32, корп. 3, офис 412</a
+          >
+          <div class="footer-content-box-item telegram">
+            <img src="images/icons/telegram.svg" alt="telegram" />
+            <a href="#">Наш телеграмм</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-hr"></div>
+        <div class="footer-bottom-content">
+          <p class="footer-bottom-content-description ploicy">
+            Политика конфендициальности
+          </p>
+          <p class="footer-bottom-content-description">
+            All rights reserved 2025
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
