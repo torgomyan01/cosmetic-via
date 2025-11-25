@@ -4251,6 +4251,30 @@ a {
   }
 }
 
+.page-title {
+  color: #4b4b4b;
+  font-size: 100px;
+  font-weight: 200;
+  line-height: 100px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin-top: 44px;
+  margin-bottom: 55px;
+
+  @media (max-width: 1200px) {
+    font-size: 60px;
+    line-height: 80px;
+    letter-spacing: -0.8px;
+  }
+  @media (max-width: 992px) {
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: -0.32px;
+    margin-bottom: 32px;
+    margin-top: 16px;
+  }
+}
+
 // warehouse
 .warehouse {
   &-title {
@@ -4313,6 +4337,7 @@ a {
       }
 
       &-title {
+        min-width: 492px;
         width: 492px;
         color: #858c68;
         font-size: 30px;
@@ -4323,6 +4348,7 @@ a {
 
         @media (max-width: 992px) {
           width: 100%;
+          min-width: 100%;
           font-size: 20px;
         }
       }
@@ -4405,6 +4431,182 @@ a {
             color: #4b4b4b;
             font-size: 16px;
             font-weight: 400;
+          }
+        }
+      }
+    }
+  }
+}
+
+// find-manufacturer
+.find-manufacturer {
+  &-content {
+    &-search {
+      width: 100%;
+      display: flex;
+      justify-content: end;
+      margin-bottom: 51px;
+      label {
+        width: 100%;
+        max-width: 607px;
+        height: 56px;
+        padding: 12px 32px;
+        border-radius: 45px;
+        border: 1px solid #ebebeb;
+        background: #f7f7f7;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        input {
+          width: 100%;
+          background: transparent;
+          color: #4b4b4b;
+        }
+      }
+    }
+
+    &-box {
+      display: flex;
+      justify-content: space-between;
+      align-items: start;
+      gap: 115px;
+
+      @media (max-width: 1400px) {
+        gap: 20px;
+      }
+
+      @media (max-width: 660px) {
+        flex-direction: column;
+        gap: 58px;
+      }
+
+      .featured-fanufacturers {
+        width: 50%;
+
+        @media (max-width: 660px) {
+          width: 100%;
+        }
+
+        &-title {
+          color: #b1b1b1;
+          font-size: 30px;
+          font-weight: 300;
+          line-height: 35px;
+          letter-spacing: -0.3px;
+          text-transform: uppercase;
+          margin-bottom: 13px;
+
+          @media (max-width: 992px) {
+            font-size: 20px;
+          }
+        }
+
+        &-list {
+          list-style: none;
+          li,
+          a {
+            color: #434540;
+            font-size: 30px;
+            font-weight: 300;
+            line-height: 35px;
+            letter-spacing: -0.3px;
+            text-transform: uppercase;
+            transition: color 0.3s ease;
+
+            @media (max-width: 992px) {
+              font-size: 20px;
+            }
+            &:hover {
+              color: #858c68;
+            }
+          }
+          li {
+            margin-bottom: 8px;
+
+            @media (max-width: 992px) {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+
+      .fanufacturers-all {
+        width: 50%;
+
+        @media (max-width: 660px) {
+          width: 100%;
+        }
+
+        &-title {
+          color: #b1b1b1;
+          font-weight: 300;
+          line-height: 35px;
+          letter-spacing: -0.3px;
+          text-transform: uppercase;
+          margin-bottom: 13px;
+          font-size: 20px;
+          display: none;
+
+          @media (max-width: 992px) {
+            display: block;
+          }
+        }
+
+        &-item {
+          display: flex;
+          align-items: start;
+          justify-content: start;
+          gap: 238px;
+          margin-bottom: 40px;
+
+          @media (max-width: 1400px) {
+            gap: 50px;
+          }
+
+          @media (max-width: 992px) {
+            flex-direction: column;
+            gap: 0;
+          }
+
+          &-symbol {
+            color: #858c68;
+            font-size: 65px;
+            font-weight: 200;
+            line-height: 50px;
+            letter-spacing: -0.65px;
+            text-transform: uppercase;
+
+            @media (max-width: 992px) {
+              font-size: 40px;
+            }
+          }
+
+          &-list {
+            list-style: none;
+            li {
+              margin-bottom: 20px;
+
+              @media (max-width: 992px) {
+                margin-bottom: 0;
+              }
+              a {
+                color: #434540;
+                font-size: 30px;
+                font-weight: 300;
+                line-height: 35px;
+                letter-spacing: -0.3px;
+                text-transform: uppercase;
+                transition: color 0.3s ease;
+
+                @media (max-width: 992px) {
+                  font-size: 20px;
+                }
+
+                &:hover {
+                  color: #858c68;
+                }
+              }
+            }
           }
         }
       }

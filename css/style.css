@@ -4093,6 +4093,33 @@ a {
   color: #fda3a3;
 }
 
+.page-title {
+  color: #4b4b4b;
+  font-size: 100px;
+  font-weight: 200;
+  line-height: 100px;
+  letter-spacing: -1px;
+  text-transform: uppercase;
+  margin-top: 44px;
+  margin-bottom: 55px;
+}
+@media (max-width: 1200px) {
+  .page-title {
+    font-size: 60px;
+    line-height: 80px;
+    letter-spacing: -0.8px;
+  }
+}
+@media (max-width: 992px) {
+  .page-title {
+    font-size: 32px;
+    line-height: 32px;
+    letter-spacing: -0.32px;
+    margin-bottom: 32px;
+    margin-top: 16px;
+  }
+}
+
 .warehouse-title {
   color: #4b4b4b;
   font-size: 100px;
@@ -4158,6 +4185,7 @@ a {
   }
 }
 .warehouse-content-section-title {
+  min-width: 492px;
   width: 492px;
   color: #858c68;
   font-size: 30px;
@@ -4169,6 +4197,7 @@ a {
 @media (max-width: 992px) {
   .warehouse-content-section-title {
     width: 100%;
+    min-width: 100%;
     font-size: 20px;
   }
 }
@@ -4240,5 +4269,181 @@ a {
   color: #4b4b4b;
   font-size: 16px;
   font-weight: 400;
+}
+
+.find-manufacturer-content-search {
+  width: 100%;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 51px;
+}
+.find-manufacturer-content-search label {
+  width: 100%;
+  max-width: 607px;
+  height: 56px;
+  padding: 12px 32px;
+  border-radius: 45px;
+  border: 1px solid #ebebeb;
+  background: #f7f7f7;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.find-manufacturer-content-search label input {
+  width: 100%;
+  background: transparent;
+  color: #4b4b4b;
+}
+.find-manufacturer-content-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 115px;
+}
+@media (max-width: 1400px) {
+  .find-manufacturer-content-box {
+    gap: 20px;
+  }
+}
+@media (max-width: 660px) {
+  .find-manufacturer-content-box {
+    flex-direction: column;
+    gap: 58px;
+  }
+}
+.find-manufacturer-content-box .featured-fanufacturers {
+  width: 50%;
+}
+@media (max-width: 660px) {
+  .find-manufacturer-content-box .featured-fanufacturers {
+    width: 100%;
+  }
+}
+.find-manufacturer-content-box .featured-fanufacturers-title {
+  color: #b1b1b1;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 35px;
+  letter-spacing: -0.3px;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+}
+@media (max-width: 992px) {
+  .find-manufacturer-content-box .featured-fanufacturers-title {
+    font-size: 20px;
+  }
+}
+.find-manufacturer-content-box .featured-fanufacturers-list {
+  list-style: none;
+}
+.find-manufacturer-content-box .featured-fanufacturers-list li,
+.find-manufacturer-content-box .featured-fanufacturers-list a {
+  color: #434540;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 35px;
+  letter-spacing: -0.3px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+@media (max-width: 992px) {
+  .find-manufacturer-content-box .featured-fanufacturers-list li,
+  .find-manufacturer-content-box .featured-fanufacturers-list a {
+    font-size: 20px;
+  }
+}
+.find-manufacturer-content-box .featured-fanufacturers-list li:hover,
+.find-manufacturer-content-box .featured-fanufacturers-list a:hover {
+  color: #858c68;
+}
+.find-manufacturer-content-box .featured-fanufacturers-list li {
+  margin-bottom: 8px;
+}
+@media (max-width: 992px) {
+  .find-manufacturer-content-box .featured-fanufacturers-list li {
+    margin-bottom: 0;
+  }
+}
+.find-manufacturer-content-box .fanufacturers-all {
+  width: 50%;
+}
+@media (max-width: 660px) {
+  .find-manufacturer-content-box .fanufacturers-all {
+    width: 100%;
+  }
+}
+.find-manufacturer-content-box .fanufacturers-all-title {
+  color: #b1b1b1;
+  font-weight: 300;
+  line-height: 35px;
+  letter-spacing: -0.3px;
+  text-transform: uppercase;
+  margin-bottom: 13px;
+  font-size: 20px;
+  display: none;
+}
+@media (max-width: 992px) {
+  .find-manufacturer-content-box .fanufacturers-all-title {
+    display: block;
+  }
+}
+.find-manufacturer-content-box .fanufacturers-all-item {
+  display: flex;
+  align-items: start;
+  justify-content: start;
+  gap: 238px;
+  margin-bottom: 40px;
+}
+@media (max-width: 1400px) {
+  .find-manufacturer-content-box .fanufacturers-all-item {
+    gap: 50px;
+  }
+}
+@media (max-width: 992px) {
+  .find-manufacturer-content-box .fanufacturers-all-item {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+.find-manufacturer-content-box .fanufacturers-all-item-symbol {
+  color: #858c68;
+  font-size: 65px;
+  font-weight: 200;
+  line-height: 50px;
+  letter-spacing: -0.65px;
+  text-transform: uppercase;
+}
+@media (max-width: 992px) {
+  .find-manufacturer-content-box .fanufacturers-all-item-symbol {
+    font-size: 40px;
+  }
+}
+.find-manufacturer-content-box .fanufacturers-all-item-list {
+  list-style: none;
+}
+.find-manufacturer-content-box .fanufacturers-all-item-list li {
+  margin-bottom: 20px;
+}
+@media (max-width: 992px) {
+  .find-manufacturer-content-box .fanufacturers-all-item-list li {
+    margin-bottom: 0;
+  }
+}
+.find-manufacturer-content-box .fanufacturers-all-item-list li a {
+  color: #434540;
+  font-size: 30px;
+  font-weight: 300;
+  line-height: 35px;
+  letter-spacing: -0.3px;
+  text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+@media (max-width: 992px) {
+  .find-manufacturer-content-box .fanufacturers-all-item-list li a {
+    font-size: 20px;
+  }
+}
+.find-manufacturer-content-box .fanufacturers-all-item-list li a:hover {
+  color: #858c68;
 }
 /*# sourceMappingURL=style.css.map */
