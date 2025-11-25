@@ -54,38 +54,77 @@ $sliderPopularProducts.slick({
   ],
 });
 
-const blockNewsSliderButton = $(".block-news-slider-button");
-
-const blockNewsContent = $(".block-news-content-main");
-
-blockNewsContent.hide();
-
-const fondACtiveIndex = blockNewsSliderButton.filter(".active").data("tab");
-
-const blockNewsContentActive = $(`[data-tabContent="${fondACtiveIndex}"]`);
-
-blockNewsContentActive.show();
-
-blockNewsSliderButton.on("click", function () {
-  const fondACtiveIndexNew = $(this).data("tab");
-
-  blockNewsSliderButton.removeClass("active");
-  $(this).addClass("active");
-
-  blockNewsContent.hide();
-  const blockNewsContentActiveNew = $(
-    `[data-tabContent="${fondACtiveIndexNew}"]`
+// Initialize each block-news slider independently
+// Find all sliders and initialize each one separately
+$(".block-news-slider").each(function () {
+  const $slider = $(this);
+  // Find the parent container that contains both slider and content
+  // This works for both .block-news and .warehouse-content-section-content structures
+  const $container = $slider.parent();
+  const $sliderButtons = $slider.find(".block-news-slider-button");
+  const $contentContainer = $container.find(".block-news-content");
+  const $contentItems = $contentContainer.find(".block-news-content-main");
+  const $contentDescription = $container.find(
+    ".block-news-content-description"
   );
 
-  blockNewsContentActiveNew.show();
+  // Hide all content items in this slider
+  $contentItems.hide();
 
-  resizeBlockNewsContentDescription(blockNewsContentActiveNew);
+  // Find and show the active content
+  const activeIndex = $sliderButtons.filter(".active").data("tab");
+  const $activeContent = $contentContainer.find(
+    `[data-tabContent="${activeIndex}"]`
+  );
+
+  if ($activeContent.length) {
+    $activeContent.show();
+    resizeBlockNewsContentDescription($activeContent, $contentDescription);
+  }
+
+  // Handle button clicks within this slider
+  $sliderButtons.on("click", function () {
+    const $clickedButton = $(this);
+    const newActiveIndex = $clickedButton.data("tab");
+
+    // Remove active class from all buttons in this slider
+    $sliderButtons.removeClass("active");
+    // Add active class to clicked button
+    $clickedButton.addClass("active");
+
+    // Hide all content items in this slider
+    $contentItems.hide();
+    // Show the selected content
+    const $newActiveContent = $contentContainer.find(
+      `[data-tabContent="${newActiveIndex}"]`
+    );
+
+    if ($newActiveContent.length) {
+      $newActiveContent.show();
+      resizeBlockNewsContentDescription($newActiveContent, $contentDescription);
+    }
+  });
 });
 
-const blockNewsContentDescription = $(".block-news-content-description");
-
 $(window).on("resize", function () {
-  resizeBlockNewsContentDescription(blockNewsContentActive);
+  // Resize all active sliders
+  $(".block-news-slider").each(function () {
+    const $slider = $(this);
+    const $container = $slider.parent();
+    const $sliderButtons = $slider.find(".block-news-slider-button");
+    const $contentContainer = $container.find(".block-news-content");
+    const activeIndex = $sliderButtons.filter(".active").data("tab");
+    const $activeContent = $contentContainer.find(
+      `[data-tabContent="${activeIndex}"]`
+    );
+    const $contentDescription = $container.find(
+      ".block-news-content-description"
+    );
+
+    if ($activeContent.length) {
+      resizeBlockNewsContentDescription($activeContent, $contentDescription);
+    }
+  });
   productPageContentLeftSlider();
 });
 
@@ -104,11 +143,11 @@ function productPageContentLeftSlider() {
   }
 }
 
-function resizeBlockNewsContentDescription(element) {
-  if (window.innerWidth > 768) {
-    blockNewsContentDescription.height(element.height());
-  } else {
-    blockNewsContentDescription.height("auto");
+function resizeBlockNewsContentDescription(element, contentDescription) {
+  if (window.innerWidth > 768 && contentDescription.length) {
+    contentDescription.height(element.height());
+  } else if (contentDescription.length) {
+    contentDescription.height("auto");
   }
 }
 
