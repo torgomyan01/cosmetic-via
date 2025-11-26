@@ -698,3 +698,29 @@ phoneInput.each((index, element) => {
   };
   const mask = IMask(element, maskOptions);
 });
+
+$("#show-password").on("click", function () {
+  $(this).hide();
+  $("#hide-password").show();
+  $(this).siblings("input").attr("type", "text");
+});
+
+$("#hide-password").on("click", function () {
+  $(this).hide();
+  $("#show-password").show();
+  $(this).siblings("input").attr("type", "password");
+});
+
+const loginRegisterTabs = $(".login-register-tab");
+const loginRegisterTabContents = $(".login-register-tab-content");
+
+loginRegisterTabs.on("click", function () {
+  loginRegisterTabs.removeClass("active");
+  $(this).addClass("active");
+
+  const findID = $(this).data("tab");
+
+  loginRegisterTabContents.hide();
+
+  $(`#${findID}`).show();
+});
