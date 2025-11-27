@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/slick.css" />
     <link rel="stylesheet" href="icons/icons.css" />
 
+    <script src="js/imask.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/aos.js"></script>
@@ -39,7 +40,7 @@
       }
     </script>
 
-    <title>Catalog | CosmeticVia</title>
+    <title>Login Register | CosmeticVia</title>
   </head>
 
   <body>
@@ -429,257 +430,177 @@
       </div>
     </header>
 
-    <div class="basket">
+    <section class="account">
       <div class="container max">
-        <!-- Breadcrumbs -->
         <div class="breadcrumbs">
           <a href="#">Главная</a>
           /
-          <span>Корзина</span>
+          <span>Личный Кабинет</span>
         </div>
 
-        <h1 class="basket-title">Корзина</h1>
+        <div class="account-content">
+          <div class="account-content-menu">
+            <div class="account-content-menu-avatar">
+              <img src="images/icons/avatar-rounded.svg" alt="user" />
+              <h3>Сергей Сергеев</h3>
 
-        <div class="basket-content">
-          <div class="basket-content-left">
-            <div class="basket-table">
-              <div class="basket-table-header">
-                <p>Наименование товара</p>
-                <p>INCI</p>
-                <p>Цена</p>
-                <p>Итоговая стоимость</p>
-              </div>
-              <div class="basket-table-body">
-                <div class="basket-table-body-item-row">
-                  <div class="basket-table-body-item-row-image">
-                    <img src="images/section2-img2.png" alt="image" />
-                    Жидкость для приготовления моющего средства
-
-                    <div class="basket-table-body-item-row-image-mobile">
-                      <div class="basket-table-count">
-                        <button class="basket-table-count-btn minus">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span>1</span>
-                        <button class="basket-table-count-btn plus">
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
-
-                      <div class="basket-table-body-heart">
-                        <button class="basket-table-body-heart-btn">
-                          <img
-                            src="images/icons/heard-full.svg"
-                            alt="heart-green"
-                          />
-                        </button>
-                        <i class="fa-solid fa-xmark"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-info"
-                    data-mobtitle="INCI"
-                  >
-                    <h4>Diethylhexyl Sodium Sulfosuccinate</h4>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-price"
-                    data-mobtitle="Цена"
-                  >
-                    <span class="price"> 1 999 ₽ </span>
-                    <div class="basket-table-count">
-                      <button class="basket-table-count-btn minus">
-                        <i class="fa-solid fa-minus"></i>
-                      </button>
-                      <span>1</span>
-                      <button class="basket-table-count-btn plus">
-                        <i class="fa-solid fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-total"
-                    data-mobtitle="Итоговая стоимость"
-                  >
-                    <span class="total">1 999 ₽</span>
-
-                    <div class="basket-table-body-heart">
-                      <button class="basket-table-body-heart-btn">
-                        <img
-                          src="images/icons/heard-full.svg"
-                          alt="heart-green"
-                        />
-                      </button>
-                      <i class="fa-solid fa-xmark"></i>
-                    </div>
-                  </div>
-                </div>
-                <div class="basket-table-body-item-row">
-                  <div class="basket-table-body-item-row-image">
-                    <img src="images/section2-img2.png" alt="image" />
-                    Жидкость для приготовления моющего средства
-
-                    <div class="basket-table-body-item-row-image-mobile">
-                      <div class="basket-table-count">
-                        <button class="basket-table-count-btn minus">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span>1</span>
-                        <button class="basket-table-count-btn plus">
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
-
-                      <div class="basket-table-body-heart">
-                        <button class="basket-table-body-heart-btn">
-                          <img
-                            src="images/icons/heart-green.svg"
-                            alt="heart-green"
-                          />
-                        </button>
-                        <i class="fa-solid fa-xmark"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-info"
-                    data-mobtitle="INCI"
-                  >
-                    <h4>Diethylhexyl Sodium Sulfosuccinate</h4>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-price"
-                    data-mobtitle="Цена"
-                  >
-                    <span class="price"> 1 999 ₽ </span>
-                    <div class="basket-table-count">
-                      <button class="basket-table-count-btn minus">
-                        <i class="fa-solid fa-minus"></i>
-                      </button>
-                      <span>1</span>
-                      <button class="basket-table-count-btn plus">
-                        <i class="fa-solid fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-total"
-                    data-mobtitle="Итоговая стоимость"
-                  >
-                    <span class="total">1 999 ₽</span>
-
-                    <div class="basket-table-body-heart">
-                      <button class="basket-table-body-heart-btn">
-                        <img
-                          src="images/icons/heart-green.svg"
-                          alt="heart-green"
-                        />
-                      </button>
-                      <i class="fa-solid fa-xmark"></i>
-                    </div>
-                  </div>
-                </div>
-                <div class="basket-table-body-item-row">
-                  <div class="basket-table-body-item-row-image">
-                    <img src="images/section2-img2.png" alt="image" />
-                    Жидкость для приготовления моющего средства
-
-                    <div class="basket-table-body-item-row-image-mobile">
-                      <div class="basket-table-count">
-                        <button class="basket-table-count-btn minus">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span>1</span>
-                        <button class="basket-table-count-btn plus">
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
-
-                      <div class="basket-table-body-heart">
-                        <button class="basket-table-body-heart-btn">
-                          <img
-                            src="images/icons/heart-green.svg"
-                            alt="heart-green"
-                          />
-                        </button>
-                        <i class="fa-solid fa-xmark"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-info"
-                    data-mobtitle="INCI"
-                  >
-                    <h4>Diethylhexyl Sodium Sulfosuccinate</h4>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-price"
-                    data-mobtitle="Цена"
-                  >
-                    <span class="price"> 1 999 ₽ </span>
-                    <div class="basket-table-count">
-                      <button class="basket-table-count-btn minus">
-                        <i class="fa-solid fa-minus"></i>
-                      </button>
-                      <span>1</span>
-                      <button class="basket-table-count-btn plus">
-                        <i class="fa-solid fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-total"
-                    data-mobtitle="Итоговая стоимость"
-                  >
-                    <span class="total">1 999 ₽</span>
-
-                    <div class="basket-table-body-heart">
-                      <button class="basket-table-body-heart-btn">
-                        <img
-                          src="images/icons/heart-green.svg"
-                          alt="heart-green"
-                        />
-                      </button>
-                      <i class="fa-solid fa-xmark"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <a href="#" class="account-content-menu-avatar-exit">
+                <img src="images/icons/exit.svg" alt="time-back"
+              /></a>
             </div>
+            <div class="account-content-menu-list-wrapper-mobile">
+              <div class="account-content-menu-list-wrapper">
+                <div class="account-content-menu-list-mobile">
+                  <img src="images/icons/packet-search.svg" alt="home" />
+                  Полезное
 
-            <div class="basket-content-left-bottom">
-              <p class="basket-content-left-bottom-total">Итого:</p>
-              <b class="basket-content-left-bottom-price">5 997 ₽</b>
-              <button>
-                Очистить все
-                <img src="images/icons/trash-remove.svg" alt="trash" />
-              </button>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+
+                <hr class="account-content-menu-list-hr" />
+
+                <ul class="account-content-menu-list">
+                  <li>
+                    <a href="#">
+                      <img src="images/icons/home.svg" alt="home" /> Главная</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="images/icons/user_.svg" alt="home" />
+                      Мои данные</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="images/icons/orders.svg" alt="orders" />Мои
+                      заявки на заказ</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="images/icons/time-back.svg"
+                        alt="time-back"
+                      />Ранее приобретённые товары</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="images/icons/heart-green.svg"
+                        alt="time-back"
+                      />Избранное</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="active">
+                      <img
+                        src="images/icons/packet-search.svg"
+                        alt="time-back"
+                      />Полезное</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="images/icons/support-messages.svg"
+                        alt="time-back"
+                      />Связаться с менеджером</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="images/icons/quations.svg"
+                        alt="time-back"
+                      />Часто задаваемые вопросы</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="images/icons/subscribe-email.svg"
+                        alt="time-back"
+                      />Подписаться на рассылĸу</a
+                    >
+                  </li>
+                  <li class="hr"></li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="images/icons/exit.svg"
+                        alt="time-back"
+                      />Выход</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="basket-content-right">
-            <div class="basket-checkout">
-              <div class="basket-checkout-info">
-                <h5>Стоимость товаров</h5>
-                <span>5 997 ₽</span>
-              </div>
-              <div class="basket-checkout-info">
-                <h5>Кол-во товаров</h5>
-                <span>3</span>
-              </div>
+          <div class="account-content-info">
+            <h4 class="account-content-info-title">Полезное</h4>
 
-              <div class="basket-checkout-info total">
-                <h5>Итоговая стоимость</h5>
-                <span>5 997 ₽</span>
+            <div class="usefull-content">
+              <div class="usefull-content-text">
+                <div class="usefull-content-paragraphs">
+                  <p>
+                    Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру
+                    сгенерировать несколько абзацев более менее осмысленного
+                    текста рыбы на русском языке, а начинающему оратору отточить
+                    навык публичных выступлений в домашних условиях. При
+                    создании генератора мы использовали небезизвестный
+                    универсальный код речей.
+                  </p>
+                  <p>
+                    Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру
+                    сгенерировать несколько абзацев более менее осмысленного
+                    текста рыбы на русском языке, а начинающему оратору отточить
+                    навык публичных выступлений в домашних условиях. При
+                    создании генератора мы использовали небезизвестный
+                    универсальный код речей.
+                  </p>
+                  <p>
+                    Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру
+                    сгенерировать несколько абзацев более менее осмысленного
+                    текста рыбы на русском языке, а начинающему оратору отточить
+                    навык публичных выступлений в домашних условиях. При
+                    создании генератора мы использовали небезизвестный
+                    универсальный код речей.
+                  </p>
+                  <p>
+                    Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру
+                    сгенерировать несколько абзацев более менее осмысленного
+                    текста рыбы на русском языке, а начинающему оратору отточить
+                    навык публичных выступлений в домашних условиях. При
+                    создании генератора мы использовали небезизвестный
+                    универсальный код речей. Сайт рыбатекст поможет дизайнеру,
+                    верстальщику, вебмастеру сгенерировать несколько абзацев
+                    более менее осмысленного текста рыбы на русском языке, а
+                    начинающему оратору отточить навык публичных выступлений в
+                    домашних условиях.
+                  </p>
+                </div>
+                <div class="usefull-content-links">
+                  <a href="#" class="usefull-content-link"
+                    >Ссылка на скачивание</a
+                  >
+                  <a href="#" class="usefull-content-link"
+                    >Ссылка на скачивание</a
+                  >
+                  <a href="#" class="usefull-content-link"
+                    >Ссылка на скачивание</a
+                  >
+                </div>
               </div>
-
-              <button class="btn-green">Отправить заявку на заказ</button>
+              <div class="usefull-content-image">
+                <img src="images/section3-photo.png" alt="Полезное" />
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
+    </section>
     <footer class="footer">
       <div class="footer-top">
         <img src="images/logo.svg" alt="logo" class="footer-top-logo" />

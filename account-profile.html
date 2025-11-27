@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/slick.css" />
     <link rel="stylesheet" href="icons/icons.css" />
 
+    <script src="js/imask.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/aos.js"></script>
@@ -39,7 +40,7 @@
       }
     </script>
 
-    <title>Catalog | CosmeticVia</title>
+    <title>Login Register | CosmeticVia</title>
   </head>
 
   <body>
@@ -429,257 +430,380 @@
       </div>
     </header>
 
-    <div class="basket">
+    <section class="account">
       <div class="container max">
-        <!-- Breadcrumbs -->
         <div class="breadcrumbs">
           <a href="#">Главная</a>
           /
-          <span>Корзина</span>
+          <span>Личный Кабинет</span>
         </div>
 
-        <h1 class="basket-title">Корзина</h1>
+        <div class="account-content">
+          <div class="account-content-menu">
+            <div class="account-content-menu-avatar">
+              <img src="images/icons/avatar-rounded.svg" alt="user" />
+              <h3>Сергей Сергеев</h3>
 
-        <div class="basket-content">
-          <div class="basket-content-left">
-            <div class="basket-table">
-              <div class="basket-table-header">
-                <p>Наименование товара</p>
-                <p>INCI</p>
-                <p>Цена</p>
-                <p>Итоговая стоимость</p>
-              </div>
-              <div class="basket-table-body">
-                <div class="basket-table-body-item-row">
-                  <div class="basket-table-body-item-row-image">
-                    <img src="images/section2-img2.png" alt="image" />
-                    Жидкость для приготовления моющего средства
-
-                    <div class="basket-table-body-item-row-image-mobile">
-                      <div class="basket-table-count">
-                        <button class="basket-table-count-btn minus">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span>1</span>
-                        <button class="basket-table-count-btn plus">
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
-
-                      <div class="basket-table-body-heart">
-                        <button class="basket-table-body-heart-btn">
-                          <img
-                            src="images/icons/heard-full.svg"
-                            alt="heart-green"
-                          />
-                        </button>
-                        <i class="fa-solid fa-xmark"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-info"
-                    data-mobtitle="INCI"
-                  >
-                    <h4>Diethylhexyl Sodium Sulfosuccinate</h4>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-price"
-                    data-mobtitle="Цена"
-                  >
-                    <span class="price"> 1 999 ₽ </span>
-                    <div class="basket-table-count">
-                      <button class="basket-table-count-btn minus">
-                        <i class="fa-solid fa-minus"></i>
-                      </button>
-                      <span>1</span>
-                      <button class="basket-table-count-btn plus">
-                        <i class="fa-solid fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-total"
-                    data-mobtitle="Итоговая стоимость"
-                  >
-                    <span class="total">1 999 ₽</span>
-
-                    <div class="basket-table-body-heart">
-                      <button class="basket-table-body-heart-btn">
-                        <img
-                          src="images/icons/heard-full.svg"
-                          alt="heart-green"
-                        />
-                      </button>
-                      <i class="fa-solid fa-xmark"></i>
-                    </div>
-                  </div>
-                </div>
-                <div class="basket-table-body-item-row">
-                  <div class="basket-table-body-item-row-image">
-                    <img src="images/section2-img2.png" alt="image" />
-                    Жидкость для приготовления моющего средства
-
-                    <div class="basket-table-body-item-row-image-mobile">
-                      <div class="basket-table-count">
-                        <button class="basket-table-count-btn minus">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span>1</span>
-                        <button class="basket-table-count-btn plus">
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
-
-                      <div class="basket-table-body-heart">
-                        <button class="basket-table-body-heart-btn">
-                          <img
-                            src="images/icons/heart-green.svg"
-                            alt="heart-green"
-                          />
-                        </button>
-                        <i class="fa-solid fa-xmark"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-info"
-                    data-mobtitle="INCI"
-                  >
-                    <h4>Diethylhexyl Sodium Sulfosuccinate</h4>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-price"
-                    data-mobtitle="Цена"
-                  >
-                    <span class="price"> 1 999 ₽ </span>
-                    <div class="basket-table-count">
-                      <button class="basket-table-count-btn minus">
-                        <i class="fa-solid fa-minus"></i>
-                      </button>
-                      <span>1</span>
-                      <button class="basket-table-count-btn plus">
-                        <i class="fa-solid fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-total"
-                    data-mobtitle="Итоговая стоимость"
-                  >
-                    <span class="total">1 999 ₽</span>
-
-                    <div class="basket-table-body-heart">
-                      <button class="basket-table-body-heart-btn">
-                        <img
-                          src="images/icons/heart-green.svg"
-                          alt="heart-green"
-                        />
-                      </button>
-                      <i class="fa-solid fa-xmark"></i>
-                    </div>
-                  </div>
-                </div>
-                <div class="basket-table-body-item-row">
-                  <div class="basket-table-body-item-row-image">
-                    <img src="images/section2-img2.png" alt="image" />
-                    Жидкость для приготовления моющего средства
-
-                    <div class="basket-table-body-item-row-image-mobile">
-                      <div class="basket-table-count">
-                        <button class="basket-table-count-btn minus">
-                          <i class="fa-solid fa-minus"></i>
-                        </button>
-                        <span>1</span>
-                        <button class="basket-table-count-btn plus">
-                          <i class="fa-solid fa-plus"></i>
-                        </button>
-                      </div>
-
-                      <div class="basket-table-body-heart">
-                        <button class="basket-table-body-heart-btn">
-                          <img
-                            src="images/icons/heart-green.svg"
-                            alt="heart-green"
-                          />
-                        </button>
-                        <i class="fa-solid fa-xmark"></i>
-                      </div>
-                    </div>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-info"
-                    data-mobtitle="INCI"
-                  >
-                    <h4>Diethylhexyl Sodium Sulfosuccinate</h4>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-price"
-                    data-mobtitle="Цена"
-                  >
-                    <span class="price"> 1 999 ₽ </span>
-                    <div class="basket-table-count">
-                      <button class="basket-table-count-btn minus">
-                        <i class="fa-solid fa-minus"></i>
-                      </button>
-                      <span>1</span>
-                      <button class="basket-table-count-btn plus">
-                        <i class="fa-solid fa-plus"></i>
-                      </button>
-                    </div>
-                  </div>
-                  <div
-                    class="basket-table-body-item-row-total"
-                    data-mobtitle="Итоговая стоимость"
-                  >
-                    <span class="total">1 999 ₽</span>
-
-                    <div class="basket-table-body-heart">
-                      <button class="basket-table-body-heart-btn">
-                        <img
-                          src="images/icons/heart-green.svg"
-                          alt="heart-green"
-                        />
-                      </button>
-                      <i class="fa-solid fa-xmark"></i>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <a href="#" class="account-content-menu-avatar-exit">
+                <img src="images/icons/exit.svg" alt="time-back"
+              /></a>
             </div>
+            <div class="account-content-menu-list-wrapper-mobile">
+              <div class="account-content-menu-list-wrapper">
+                <div class="account-content-menu-list-mobile">
+                  <img src="images/icons/home.svg" alt="home" />
+                  Главная Кабинета
 
-            <div class="basket-content-left-bottom">
-              <p class="basket-content-left-bottom-total">Итого:</p>
-              <b class="basket-content-left-bottom-price">5 997 ₽</b>
-              <button>
-                Очистить все
-                <img src="images/icons/trash-remove.svg" alt="trash" />
-              </button>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </div>
+
+                <hr class="account-content-menu-list-hr" />
+
+                <ul class="account-content-menu-list">
+                  <li>
+                    <a href="#" class="active">
+                      <img src="images/icons/home.svg" alt="home" /> Главная</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="images/icons/user_.svg" alt="home" />
+                      Мои данные</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img src="images/icons/orders.svg" alt="orders" />Мои
+                      заявки на заказ</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="images/icons/time-back.svg"
+                        alt="time-back"
+                      />Ранее приобретённые товары</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="images/icons/heart-green.svg"
+                        alt="time-back"
+                      />Избранное</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="images/icons/packet-search.svg"
+                        alt="time-back"
+                      />Избранное</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="images/icons/support-messages.svg"
+                        alt="time-back"
+                      />Связаться с менеджером</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="images/icons/quations.svg"
+                        alt="time-back"
+                      />Часто задаваемые вопросы</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="images/icons/subscribe-email.svg"
+                        alt="time-back"
+                      />Подписаться на рассылĸу</a
+                    >
+                  </li>
+                  <li class="hr"></li>
+                  <li>
+                    <a href="#">
+                      <img
+                        src="images/icons/exit.svg"
+                        alt="time-back"
+                      />Выход</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="basket-content-right">
-            <div class="basket-checkout">
-              <div class="basket-checkout-info">
-                <h5>Стоимость товаров</h5>
-                <span>5 997 ₽</span>
-              </div>
-              <div class="basket-checkout-info">
-                <h5>Кол-во товаров</h5>
-                <span>3</span>
+          <div class="account-content-info">
+            <h4 class="account-content-info-title">Мои данные</h4>
+
+            <div class="account-content-info-form">
+              <!-- Персональная информация -->
+              <div class="account-form-section">
+                <h5 class="account-form-section-title">
+                  Персональная информация
+                </h5>
+                <div class="account-form-row">
+                  <label class="def-input-gray">
+                    <input
+                      type="text"
+                      placeholder="Ваше имя"
+                      value="Сергей"
+                      class="account-input-name"
+                    />
+                    <span class="input-label">Ваше имя</span>
+                  </label>
+                  <label class="def-input-gray">
+                    <input
+                      type="text"
+                      placeholder="Ваша фамилия"
+                      value="Сергеев"
+                      class="account-input-surname"
+                    />
+                    <span class="input-label">Ваша фамилия</span>
+                  </label>
+                </div>
+                <div class="account-form-row">
+                  <label class="def-input-gray">
+                    <input
+                      type="text"
+                      placeholder="Телефон"
+                      value="+7 954 458-25-65"
+                      class="account-input-phone number-mask"
+                    />
+                    <span class="input-label">Телефон</span>
+                  </label>
+                  <label class="def-input-gray">
+                    <input
+                      type="email"
+                      placeholder="Email"
+                      value="Poctha@mail.ru"
+                      class="account-input-email"
+                    />
+                    <span class="input-label">Email</span>
+                  </label>
+                </div>
+                <div class="account-form-row">
+                  <label class="def-input-gray city-combobox">
+                    <input
+                      type="text"
+                      placeholder="Ваш город"
+                      value="Москва"
+                      class="account-input-city-input"
+                      id="city-input"
+                    />
+                    <div class="city-select-trigger" id="city-select-trigger">
+                      <span class="city-select-label">Ваш город</span>
+
+                      <i
+                        class="fa-solid fa-chevron-down input-dropdown-icon"
+                      ></i>
+                    </div>
+                    <select
+                      class="account-input-city-select d-none"
+                      id="city-select"
+                    >
+                      <option value="Москва" selected>Москва</option>
+                      <option value="Санкт-Петербург">Санкт-Петербург</option>
+                      <option value="Новосибирск">Новосибирск</option>
+                      <option value="Екатеринбург">Екатеринбург</option>
+                      <option value="Казань">Казань</option>
+                      <option value="Нижний Новгород">Нижний Новгород</option>
+                      <option value="Челябинск">Челябинск</option>
+                      <option value="Самара">Самара</option>
+                      <option value="Омск">Омск</option>
+                      <option value="Ростов-на-Дону">Ростов-на-Дону</option>
+                      <option value="Уфа">Уфа</option>
+                      <option value="Красноярск">Красноярск</option>
+                      <option value="Воронеж">Воронеж</option>
+                      <option value="Пермь">Пермь</option>
+                      <option value="Волгоград">Волгоград</option>
+                      <option value="Краснодар">Краснодар</option>
+                      <option value="Саратов">Саратов</option>
+                      <option value="Тюмень">Тюмень</option>
+                      <option value="Тольятти">Тольятти</option>
+                      <option value="Ижевск">Ижевск</option>
+                      <option value="Барнаул">Барнаул</option>
+                      <option value="Ульяновск">Ульяновск</option>
+                      <option value="Иркутск">Иркутск</option>
+                      <option value="Хабаровск">Хабаровск</option>
+                      <option value="Ярославль">Ярославль</option>
+                      <option value="Владивосток">Владивосток</option>
+                      <option value="Махачкала">Махачкала</option>
+                      <option value="Томск">Томск</option>
+                      <option value="Оренбург">Оренбург</option>
+                      <option value="Кемерово">Кемерово</option>
+                      <option value="Новокузнецк">Новокузнецк</option>
+                      <option value="Рязань">Рязань</option>
+                      <option value="Набережные Челны">Набережные Челны</option>
+                      <option value="Астрахань">Астрахань</option>
+                      <option value="Пенза">Пенза</option>
+                      <option value="Киров">Киров</option>
+                      <option value="Липецк">Липецк</option>
+                      <option value="Чебоксары">Чебоксары</option>
+                      <option value="Калининград">Калининград</option>
+                      <option value="Тула">Тула</option>
+                      <option value="Курск">Курск</option>
+                      <option value="Сочи">Сочи</option>
+                      <option value="Ставрополь">Ставрополь</option>
+                      <option value="Улан-Удэ">Улан-Удэ</option>
+                      <option value="Тверь">Тверь</option>
+                      <option value="Магнитогорск">Магнитогорск</option>
+                      <option value="Иваново">Иваново</option>
+                      <option value="Брянск">Брянск</option>
+                      <option value="Белгород">Белгород</option>
+                      <option value="Сургут">Сургут</option>
+                      <option value="Владимир">Владимир</option>
+                      <option value="Нижний Тагил">Нижний Тагил</option>
+                      <option value="Архангельск">Архангельск</option>
+                      <option value="Чита">Чита</option>
+                      <option value="Смоленск">Смоленск</option>
+                      <option value="Калуга">Калуга</option>
+                      <option value="Череповец">Череповец</option>
+                      <option value="Орёл">Орёл</option>
+                      <option value="Волжский">Волжский</option>
+                      <option value="Мурманск">Мурманск</option>
+                    </select>
+                    <div class="city-dropdown" id="city-dropdown">
+                      <div
+                        class="city-dropdown-list"
+                        id="city-dropdown-list"
+                      ></div>
+                    </div>
+                  </label>
+                </div>
               </div>
 
-              <div class="basket-checkout-info total">
-                <h5>Итоговая стоимость</h5>
-                <span>5 997 ₽</span>
+              <!-- Данные для входа -->
+              <div class="account-form-section">
+                <h5 class="account-form-section-title">Данные для входа</h5>
+                <div class="account-form-row">
+                  <label class="def-input-gray">
+                    <input
+                      type="password"
+                      placeholder="Пароль"
+                      value="Test password"
+                      class="account-input-password"
+                      id="password-input"
+                    />
+                    <span class="input-label">Пароль</span>
+                    <i class="fa-regular fa-eye" id="show-password-1"></i>
+                    <i
+                      class="fa-regular fa-eye-slash d-none"
+                      id="hide-password-1"
+                    ></i>
+                  </label>
+                  <label class="def-input-gray">
+                    <input
+                      type="password"
+                      placeholder="Пароль повторно"
+                      value="Test password"
+                      class="account-input-password-repeat"
+                      id="password-repeat-input"
+                    />
+                    <span class="input-label">Пароль повторно</span>
+                    <i class="fa-regular fa-eye" id="show-password-2"></i>
+                    <i
+                      class="fa-regular fa-eye-slash d-none"
+                      id="hide-password-2"
+                    ></i>
+                  </label>
+                </div>
               </div>
 
-              <button class="btn-green">Отправить заявку на заказ</button>
+              <!-- Информация о компании -->
+              <div class="account-form-section">
+                <h5 class="account-form-section-title">
+                  Информация о компании
+                </h5>
+                <div class="account-form-row">
+                  <label class="def-input-gray account-form-full-width">
+                    <input
+                      type="text"
+                      placeholder="Наименование компании"
+                      value="Тоо Жана Курылыс Строй-Фин. Тех при управлении образования г.. Москвы"
+                      class="account-input-company-name"
+                    />
+                    <span class="input-label">Наименование компании</span>
+                  </label>
+                </div>
+                <div class="account-form-row">
+                  <label class="def-input-gray">
+                    <input
+                      type="text"
+                      placeholder="ИНН"
+                      value="914 254 845 8752 1478 2458"
+                      class="account-input-inn inn-mask"
+                    />
+                    <span class="input-label">ИНН</span>
+                  </label>
+                  <label class="def-input-gray">
+                    <input
+                      type="text"
+                      placeholder="КПП"
+                      value="0000 0000 845 8752 1478 2458"
+                      class="account-input-kpp kpp-mask"
+                    />
+                    <span class="input-label">КПП</span>
+                  </label>
+                </div>
+                <div class="account-form-row">
+                  <label class="def-input-gray">
+                    <input
+                      type="text"
+                      placeholder="Наименование банка"
+                      value="Тинькоф банк"
+                      class="account-input-bank-name"
+                    />
+                    <span class="input-label">Наименование банка</span>
+                  </label>
+                  <label class="def-input-gray">
+                    <input
+                      type="text"
+                      placeholder="БИК"
+                      value="0000 0000 845 8752 1478 2458"
+                      class="account-input-bik bik-mask"
+                    />
+                    <span class="input-label">БИК</span>
+                  </label>
+                </div>
+                <div class="account-form-row">
+                  <label class="def-input-gray">
+                    <input
+                      type="text"
+                      placeholder="Р/сч"
+                      value="0000 0000 845 8752 1478 2458"
+                      class="account-input-rs rs-mask"
+                    />
+                    <span class="input-label">Р/сч</span>
+                  </label>
+                  <label class="def-input-gray">
+                    <input
+                      type="text"
+                      placeholder="К/сч"
+                      value="0000 0000 845 8752 1478 2458"
+                      class="account-input-ks ks-mask"
+                    />
+                    <span class="input-label">К/сч</span>
+                  </label>
+                </div>
+              </div>
+
+              <!-- Кнопка сохранения -->
+              <div class="account-form-actions">
+                <button type="button" class="btn-green">
+                  Сохранить изменения
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-
+    </section>
     <footer class="footer">
       <div class="footer-top">
         <img src="images/logo.svg" alt="logo" class="footer-top-logo" />
@@ -814,7 +938,6 @@
         </div>
       </div>
     </footer>
-
     <script src="js/script.js"></script>
   </body>
 </html>
