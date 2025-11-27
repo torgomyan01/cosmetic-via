@@ -4684,7 +4684,7 @@ a {
 }
 .account-content-menu {
   width: 304px;
-  min-height: 304px;
+  min-width: 304px;
 }
 .account-content-menu-avatar {
   display: flex;
