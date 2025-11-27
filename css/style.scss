@@ -4458,6 +4458,7 @@ a {
   align-items: center;
   gap: 8px;
   position: relative;
+  transition: all 0.3s ease;
   input,
   select {
     width: 100%;
@@ -4522,6 +4523,9 @@ a {
     &:hover {
       opacity: 1;
     }
+  }
+  &:focus-within {
+    border-color: #858c68;
   }
 }
 

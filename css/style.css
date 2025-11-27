@@ -4289,6 +4289,7 @@ a {
   align-items: center;
   gap: 8px;
   position: relative;
+  transition: all 0.3s ease;
 }
 .def-input-gray input,
 .def-input-gray select {
@@ -4356,6 +4357,9 @@ a {
 .def-input-gray i.fa-eye:hover,
 .def-input-gray i.fa-eye-slash:hover {
   opacity: 1;
+}
+.def-input-gray:focus-within {
+  border-color: #858c68;
 }
 
 .account-content-info-form {
