@@ -907,3 +907,38 @@ $(document).on("click", function (e) {
 accountContentMenuListWrapper.on("click", function (e) {
   e.stopPropagation();
 });
+
+// Account Order History Slider
+const $accountOrderHistorySlider = $(".account-order-history-section-list");
+
+if ($accountOrderHistorySlider.length) {
+  $accountOrderHistorySlider.slick({
+    infinite: true,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    centerMode: false,
+    centerPadding: "0px",
+    arrows: false,
+    dots: true,
+    responsive: [
+      {
+        breakpoint: 1375,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "20px",
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          centerMode: true,
+          centerPadding: "16px",
+        },
+      },
+    ],
+  });
+}

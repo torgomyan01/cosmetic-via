@@ -5062,6 +5062,73 @@ a {
   }
 }
 
+.account-order-history-section {
+  margin-bottom: 60px;
+}
+.account-order-history-section-title {
+  align-self: stretch;
+  color: #4b4b4b;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  margin-bottom: -150px;
+}
+@media (max-width: 992px) {
+  .account-order-history-section-title {
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+  }
+}
+.account-order-history-section-list {
+  margin-right: -20px;
+}
+@media (max-width: 992px) {
+  .account-order-history-section-list {
+    margin-left: -20px;
+  }
+}
+.account-order-history-section-list .slick-track {
+  padding-bottom: 150px;
+  padding-top: 180px;
+}
+.account-order-history-section-list .product-card {
+  width: 100%;
+  margin: 0;
+  margin-right: 50px;
+  box-shadow: 0 49px 34.8px -21px rgba(0, 0, 0, 0.15);
+}
+@media (max-width: 1450px) {
+  .account-order-history-section-list .product-card {
+    margin-right: 20px;
+  }
+}
+.account-order-history-section-list .slick-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: -124px;
+  list-style: none;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+.account-order-history-section-list .slick-dots li {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #d9d9d9;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.account-order-history-section-list .slick-dots li.slick-active {
+  background-color: #858c68;
+}
+.account-order-history-section-list .slick-dots li button {
+  display: none;
+}
+
 .home-content {
   width: 100%;
   max-width: 850px;
