@@ -942,3 +942,21 @@ if ($accountOrderHistorySlider.length) {
     ],
   });
 }
+
+// Account FAQ Accordion
+$(document).ready(function () {
+  $(".account-faq-item-header").on("click", function () {
+    const $item = $(this).closest(".account-faq-item");
+    const $allItems = $(".account-faq-item");
+
+    // Toggle the clicked item
+    if ($item.hasClass("active")) {
+      $item.removeClass("active");
+    } else {
+      // Close all items first
+      $allItems.removeClass("active");
+      // Open the clicked item
+      $item.addClass("active");
+    }
+  });
+});
