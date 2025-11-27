@@ -696,7 +696,58 @@ phoneInput.each((index, element) => {
   const maskOptions = {
     mask: "+{7}(000)000-00-00",
   };
-  const mask = IMask(element, maskOptions);
+  // eslint-disable-next-line no-undef
+  IMask(element, maskOptions);
+});
+
+// INN Mask (14 digits with spaces)
+const innInput = $(".inn-mask");
+innInput.each((index, element) => {
+  const maskOptions = {
+    mask: "000 000 000 0000 0000 0000",
+  };
+  // eslint-disable-next-line no-undef
+  IMask(element, maskOptions);
+});
+
+// KPP Mask (9 digits with spaces)
+const kppInput = $(".kpp-mask");
+kppInput.each((index, element) => {
+  const maskOptions = {
+    mask: "0000 0000 000 0000 0000 0000",
+  };
+  // eslint-disable-next-line no-undef
+  IMask(element, maskOptions);
+});
+
+// BIC Mask (9 digits with spaces)
+const bikInput = $(".bik-mask");
+bikInput.each((index, element) => {
+  const maskOptions = {
+    mask: "0000 0000 000 0000 0000 0000",
+  };
+  // eslint-disable-next-line no-undef
+  IMask(element, maskOptions);
+});
+
+// RS (Settlement Account) Mask (20 digits with spaces)
+const rsInput = $(".rs-mask");
+rsInput.each((index, element) => {
+  const maskOptions = {
+    mask: "0000 0000 0000 0000 0000",
+  };
+  // eslint-disable-next-line no-undef
+  IMask(element, maskOptions);
+});
+
+// KS (Correspondent Account) Mask (20 digits with spaces)
+const ksInput = $(".ks-mask");
+ksInput.each((index, element) => {
+  const maskOptions = {
+    mask: "0000 0000 0000 0000 0000",
+  };
+  // eslint-disable-next-line no-undef
+  IMask(element, maskOptions);
 });
 
 $("#show-password").on("click", function () {
@@ -710,6 +761,109 @@ $("#hide-password").on("click", function () {
   $("#show-password").show();
   $(this).siblings("input").attr("type", "password");
 });
+
+// Password visibility toggle for account profile
+$("#show-password-1").on("click", function () {
+  $(this).addClass("d-none");
+  $("#hide-password-1").removeClass("d-none");
+  $("#password-input").attr("type", "text");
+});
+
+$("#hide-password-1").on("click", function () {
+  $(this).addClass("d-none");
+  $("#show-password-1").removeClass("d-none");
+  $("#password-input").attr("type", "password");
+});
+
+$("#show-password-2").on("click", function () {
+  $(this).addClass("d-none");
+  $("#hide-password-2").removeClass("d-none");
+  $("#password-repeat-input").attr("type", "text");
+});
+
+$("#hide-password-2").on("click", function () {
+  $(this).addClass("d-none");
+  $("#show-password-2").removeClass("d-none");
+  $("#password-repeat-input").attr("type", "password");
+});
+
+// City Custom Dropdown functionality
+const cityInput = $("#city-input");
+const citySelect = $("#city-select");
+const citySelectTrigger = $("#city-select-trigger");
+const cityDropdown = $("#city-dropdown");
+const cityDropdownList = $("#city-dropdown-list");
+
+// Initialize dropdown with options from select
+function initCityDropdown() {
+  if (!citySelect.length || !cityDropdownList.length) return;
+
+  cityDropdownList.empty();
+  const selectedValue = citySelect.val();
+
+  citySelect.find("option").each(function () {
+    const optionValue = $(this).val();
+    const optionText = $(this).text();
+    const isSelected = optionValue === selectedValue;
+
+    const dropdownItem = $('<div class="city-dropdown-item"></div>')
+      .text(optionText)
+      .data("value", optionValue);
+
+    if (isSelected) {
+      dropdownItem.addClass("selected");
+      cityInput.val(optionValue);
+    }
+
+    dropdownItem.on("click", function () {
+      const value = $(this).data("value");
+      citySelect.val(value);
+      cityInput.val(value);
+      cityDropdownList.find(".city-dropdown-item").removeClass("selected");
+      $(this).addClass("selected");
+      closeCityDropdown();
+    });
+
+    cityDropdownList.append(dropdownItem);
+  });
+}
+
+// Open dropdown
+function openCityDropdown() {
+  cityDropdown.addClass("active");
+  citySelectTrigger.addClass("active");
+}
+
+// Close dropdown
+function closeCityDropdown() {
+  cityDropdown.removeClass("active");
+  citySelectTrigger.removeClass("active");
+}
+
+// Toggle dropdown
+citySelectTrigger.on("click", function (e) {
+  e.stopPropagation();
+  if (cityDropdown.hasClass("active")) {
+    closeCityDropdown();
+  } else {
+    openCityDropdown();
+  }
+});
+
+// Close dropdown when clicking outside
+$(document).on("click", function (e) {
+  if (
+    !$(e.target).closest(".city-combobox").length &&
+    !$(e.target).closest(".city-dropdown").length
+  ) {
+    closeCityDropdown();
+  }
+});
+
+// Initialize on page load
+if (citySelect.length && cityInput.length) {
+  initCityDropdown();
+}
 
 const loginRegisterTabs = $(".login-register-tab");
 const loginRegisterTabContents = $(".login-register-tab-content");
