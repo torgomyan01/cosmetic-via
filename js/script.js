@@ -724,3 +724,32 @@ loginRegisterTabs.on("click", function () {
 
   $(`#${findID}`).show();
 });
+
+const accountContentMenuListMobile = $(".account-content-menu-list-mobile");
+const accountContentMenuList = $(".account-content-menu-list");
+const accountContentMenuListWrapper = $(".account-content-menu-list-wrapper");
+
+accountContentMenuListMobile.on("click", function (e) {
+  e.stopPropagation();
+  $(this).toggleClass("active");
+  accountContentMenuList.toggleClass("active");
+  accountContentMenuListWrapper.toggleClass("active");
+});
+
+// Close menu when clicking outside
+$(document).on("click", function (e) {
+  if (
+    accountContentMenuListWrapper.hasClass("active") &&
+    !$(e.target).closest(accountContentMenuListWrapper).length &&
+    !$(e.target).closest(accountContentMenuListMobile).length
+  ) {
+    accountContentMenuListMobile.removeClass("active");
+    accountContentMenuList.removeClass("active");
+    accountContentMenuListWrapper.removeClass("active");
+  }
+});
+
+// Prevent menu from closing when clicking inside menu content
+accountContentMenuListWrapper.on("click", function (e) {
+  e.stopPropagation();
+});
