@@ -5188,4 +5188,29 @@ a {
     letter-spacing: -0.18px;
   }
 }
+
+.favorites {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 50px;
+}
+@media (max-width: 1500px) {
+  .favorites {
+    gap: 30px;
+  }
+}
+@media (max-width: 1426px) {
+  .favorites {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+@media (max-width: 500px) {
+  .favorites {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.favorites .product-card {
+  width: 100%;
+}
 /*# sourceMappingURL=style.css.map */
