@@ -7799,3 +7799,36 @@ a {
     }
   }
 }
+
+.not-found {
+  svg {
+    width: 100%;
+    max-width: 895px;
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  &-description {
+    color: #434540;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 35px;
+    letter-spacing: -0.3px;
+    text-transform: uppercase;
+    margin-top: 40px;
+    margin-bottom: 67px;
+
+    @media (max-width: 768px) {
+      font-size: 24px;
+      margin-bottom: 40px;
+      margin-bottom: 30px;
+    }
+  }
+}

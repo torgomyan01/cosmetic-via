@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/aos.css" />
+    <link rel="stylesheet" href="css/slick.css" />
+    <link rel="stylesheet" href="icons/icons.css" />
+
+    <script src="js/imask.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <script src="js/aos.js"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Название компании",
+        "url": "https://www.example.com",
+        "logo": "https://www.example.com/logo.png",
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+7 123 456-78-90",
+            "contactType": "customer service"
+          }
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Адрес компании",
+          "addressLocality": "Город",
+          "addressRegion": "Регион",
+          "postalCode": "Индекс",
+          "addressCountry": "RU"
+        },
+        "description": "Краткое описание деятельности компании",
+        "sameAs": ["https://vk.com/company", "https://t.me/company"]
+      }
+    </script>
+
+    <title>Login Register | CosmeticVia</title>
+  </head>
+
+  <body>
+    <div class="mobile-menu">
+      <div class="mobile-menu-fon"></div>
+      <div class="mobile-menu-content">
+        <i class="fa-solid fa-xmark"></i>
+
+        <label class="mobile-menu-content-search">
+          <input type="text" placeholder="Поиск по сайту" />
+          <img src="images/icons/search-green.svg" alt="search" />
+        </label>
+
+        <div class="mobile-menu-content-list">
+          <div class="mobile-menu-content-list-box">
+            <p class="mobile-menu-content-list-title">
+              Каталог <i class="fa-solid fa-chevron-down"></i>
+            </p>
+            <ul class="mobile-menu-content-list-items">
+              <li>
+                <a href="#">Производители</a>
+              </li>
+              <li>
+                <a href="#">Производители</a>
+              </li>
+              <li>
+                <a href="#">Производители</a>
+              </li>
+              <li>
+                <a href="#">Производители</a>
+              </li>
+            </ul>
+          </div>
+          <div class="mobile-menu-content-list-box">
+            <p class="mobile-menu-content-list-title">
+              Применение <i class="fa-solid fa-chevron-down"></i>
+            </p>
+            <ul class="mobile-menu-content-list-items">
+              <li>
+                <a href="#">Производители</a>
+              </li>
+              <li>
+                <a href="#">Производители</a>
+              </li>
+              <li>
+                <a href="#">Производители</a>
+              </li>
+              <li>
+                <a href="#">Производители</a>
+              </li>
+            </ul>
+          </div>
+          <div class="mobile-menu-content-list-box">
+            <p class="mobile-menu-content-list-title">Производители</p>
+          </div>
+          <div class="mobile-menu-content-list-box">
+            <p class="mobile-menu-content-list-title">
+              О компании <i class="fa-solid fa-chevron-down"></i>
+            </p>
+            <ul class="mobile-menu-content-list-items">
+              <li>
+                <a href="#">О компании</a>
+              </li>
+              <li>
+                <a href="#">О компании</a>
+              </li>
+              <li>
+                <a href="#">О компании</a>
+              </li>
+              <li>
+                <a href="#">О компании</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <a href="tel:+7 952 482-47-58" class="mobile-menu-content-phone"
+          >+7 952 482-47-58</a
+        >
+        <a href="#" class="mobile-menu-content-language">RU</a>
+
+        <hr />
+
+        <ul class="mobile-menu-content-account-list">
+          <li>
+            <a href="#">
+              <img src="images/icons/user-green.svg" alt="user" /> Личный
+              кабинет</a
+            >
+          </li>
+          <li>
+            <a href="#">
+              <div class="mobile-menu-content-notification">
+                <div class="mobile-menu-content-notification-count">9</div>
+                <img src="images/icons/basket-green.svg" alt="basket" />
+              </div>
+              Корзина
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <div class="mobile-menu-content-notification">
+                <div class="mobile-menu-content-notification-count">2</div>
+                <img src="images/icons/basket-green.svg" alt="basket" />
+              </div>
+              Избранное
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="desktop-menu" id="application">
+      <div class="container desktop-menu-content">
+        <div class="desktop-menu-content-left">
+          <ul>
+            <li class="active"><a href="#">Средства по уходу за телом</a></li>
+            <li><a href="#">Антисептики (санитайзеры)</a></li>
+            <li><a href="#">Зубные пасты</a></li>
+            <li><a href="#">Краски для волос</a></li>
+            <li><a href="#">Масла</a></li>
+            <li><a href="#">Салфетки</a></li>
+            <li><a href="#">Средства для загара</a></li>
+            <li><a href="#">Бытовая химия</a></li>
+            <li><a href="#">Декоративная косметика</a></li>
+            <li><a href="#">Средства по уходу за волосами</a></li>
+            <li><a href="#">Средства по уходу за кожей лица</a></li>
+          </ul>
+        </div>
+        <div class="desktop-menu-content-sublist">
+          <h3 class="desktop-menu-content-sublist-title">
+            Средства по уходу за телом
+          </h3>
+          <div class="desktop-menu-content-sublist-list">
+            <ul>
+              <li><a href="#">Жидкость для снятия макияжа</a></li>
+              <li><a href="#">Кремы для лица</a></li>
+              <li><a href="#">Лосьоны для лица</a></li>
+              <li><a href="#">Маски для лица</a></li>
+              <li><a href="#">Мицеллярная вода</a></li>
+              <li><a href="#">Молочко для лица</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Пенка для умывания</a></li>
+              <li><a href="#">Пилинг</a></li>
+              <li><a href="#">Скрабы для лица</a></li>
+              <li><a href="#">Средства для бритья</a></li>
+              <li><a href="#">Сыворотка</a></li>
+              <li><a href="#">Тоник</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="desktop-menu-content-ads">
+          <div class="desktop-menu-content-ads-box">
+            <img src="images/section2-img2.png" alt="" />
+            <div class="desktop-menu-content-ads-box-content">
+              <h5 class="desktop-menu-content-ads-box-content-title">
+                Порошок для моющего средства Htfg-345
+              </h5>
+              <p class="desktop-menu-content-ads-box-content-description">
+                INC IDiethylhexyl Sodium Sulfosuccinate
+              </p>
+              <button class="btn-green">Подробнее</button>
+            </div>
+          </div>
+          <div class="desktop-menu-content-ads-box">
+            <img src="images/section2-img2.png" alt="" />
+            <div class="desktop-menu-content-ads-box-content">
+              <h5 class="desktop-menu-content-ads-box-content-title">
+                Порошок для моющего средства Htfg-345
+              </h5>
+              <p class="desktop-menu-content-ads-box-content-description">
+                INC IDiethylhexyl Sodium Sulfosuccinate
+              </p>
+              <button class="btn-green">Подробнее</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="desktop-menu" id="manufacturers">
+      <div class="container desktop-menu-content">
+        <div class="desktop-menu-content-left">
+          <ul>
+            <li class="active"><a href="#">Активные ингредиенты</a></li>
+            <li><a href="#">ПАВ</a></li>
+            <li><a href="#">Солюбилизаторы</a></li>
+            <li><a href="#">Частицы</a></li>
+            <li><a href="#">Натуральные абразивы</a></li>
+            <li><a href="#">Декоративные частицы</a></li>
+            <li><a href="#">Функциональные компоненты</a></li>
+            <li><a href="#">Кондиционирующие добавки</a></li>
+            <li><a href="#">Силиконы</a></li>
+            <li><a href="#">Консерванты</a></li>
+            <li><a href="#">Отдушки и капсулы</a></li>
+            <li><a href="#">Продукты для Oral care</a></li>
+            <li><a href="#">УФ-защита</a></li>
+            <li><a href="#">Масла</a></li>
+            <li><a href="#">Продукты для бытовой химии</a></li>
+            <li><a href="#">Красители</a></li>
+            <li><a href="#">Пигменты</a></li>
+            <li><a href="#">Перламутры</a></li>
+            <li><a href="#">Наполнители</a></li>
+          </ul>
+        </div>
+        <div class="desktop-menu-content-sublist">
+          <h3 class="desktop-menu-content-sublist-title">
+            Активные ингредиенты
+          </h3>
+          <div class="desktop-menu-content-sublist-list">
+            <ul>
+              <li><a href="#">Активные ингредиенты для лица и тела</a></li>
+              <li>
+                <a href="#">Активные ингредиенты для волос и кожи головы</a>
+              </li>
+              <li><a href="#">Антиоксиданты</a></li>
+              <li><a href="#">Бисаболол</a></li>
+              <li>
+                <a href="#">Гиалуроновые кислоты и активы на их основе</a>
+              </li>
+              <li><a href="#">Инкапсулированные активные ингредиенты</a></li>
+              <li><a href="#">Кислоты и их производные</a></li>
+              <li><a href="#">Коллаген</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Пенка для умывания</a></li>
+              <li><a href="#">НУФ (натуральный увлажняющий фактор)</a></li>
+              <li><a href="#">Пептиды</a></li>
+              <li><a href="#">Пребиотики</a></li>
+              <li><a href="#">Пробиотики</a></li>
+              <li><a href="#">Сквалан</a></li>
+              <li><a href="#">Церамиды</a></li>
+              <li><a href="#">Шелк</a></li>
+              <li><a href="#">Увлажняющие добавки</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="desktop-menu-content-ads">
+          <div class="desktop-menu-content-ads-box">
+            <img src="images/section2-img2.png" alt="" />
+            <div class="desktop-menu-content-ads-box-content">
+              <h5 class="desktop-menu-content-ads-box-content-title">
+                Порошок для моющего средства Htfg-345
+              </h5>
+              <p class="desktop-menu-content-ads-box-content-description">
+                INC IDiethylhexyl Sodium Sulfosuccinate
+              </p>
+              <button class="btn-green">Подробнее</button>
+            </div>
+          </div>
+          <div class="desktop-menu-content-ads-box">
+            <img src="images/section2-img2.png" alt="" />
+            <div class="desktop-menu-content-ads-box-content">
+              <h5 class="desktop-menu-content-ads-box-content-title">
+                Порошок для моющего средства Htfg-345
+              </h5>
+              <p class="desktop-menu-content-ads-box-content-description">
+                INC IDiethylhexyl Sodium Sulfosuccinate
+              </p>
+              <button class="btn-green">Подробнее</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="desktop-menu" id="company">
+      <div class="container desktop-menu-content">
+        <div class="desktop-menu-content-sublist">
+          <h3 class="desktop-menu-content-sublist-title">О компании</h3>
+          <div class="desktop-menu-content-sublist-list">
+            <ul>
+              <li><a href="#">О нас</a></li>
+              <li><a href="#">Новости</a></li>
+              <li><a href="#">Команда</a></li>
+              <li><a href="#">Карьера</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Лаборатория</a></li>
+              <li><a href="#">Наука</a></li>
+              <li><a href="#">Склад</a></li>
+              <li><a href="#">Контакты</a></li>
+            </ul>
+            <ul>
+              <li><a href="#">Тренинги</a></li>
+              <li><a href="#">Статьи</a></li>
+              <li><a href="#">Часто задаваемые вопросы</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="bg-header dont-header">
+        <div class="header-logo-mobile">
+          <img src="images/logo.svg" alt="logo" class="header-img" />
+          <div class="header-mobile-menu">
+            <p>Меню</p>
+            <img src="images/menu-icon.svg" alt="" />
+          </div>
+        </div>
+        <div class="header-menu">
+          <nav>
+            <ul>
+              <li data-menu="manufacturers">
+                <img
+                  src="images/menu-icon.svg"
+                  alt="menu-icon"
+                  id="catalog-menu-icon"
+                />
+                <i
+                  class="fa-regular fa-xmark d-none"
+                  id="close-catalog-menu-icon"
+                  style="font-size: 20px"
+                ></i>
+                <span>КАТАЛОГ</span>
+              </li>
+              <li>
+                <span>Производители</span>
+              </li>
+              <li data-menu="application">
+                <span>Применение</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </li>
+              <li data-menu="company">
+                <span>О компании</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </li>
+            </ul>
+          </nav>
+          <img src="images/logo.svg" alt="logo" class="header-logo" />
+          <div class="header-menu-contact">
+            <div class="search-wrapper">
+              <label>
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M22 22L20 20"
+                    stroke="white"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+
+                <input type="text" id="search-input" placeholder="Поиск" />
+              </label>
+              <div class="search-dropdown">
+                <ul class="search-suggestions"></ul>
+              </div>
+            </div>
+            <p>+7 952 482-47-58</p>
+            <p>RU</p>
+            <div class="header-menu-icons">
+              <img class="search-midea" src="images/icons/search.svg" alt="" />
+              <img src="images/icons/user.svg" alt="user" />
+              <div class="header-menu-icons-basket">
+                <img src="images/icons/basket.svg" alt="basket" />
+                <div class="header-menu-icons-basket-count">
+                  <p>9</p>
+                </div>
+              </div>
+              <div class="header-menu-icons-basket">
+                <img src="images/icons/heart.svg" alt="basket" />
+                <div class="header-menu-icons-basket-count">
+                  <p>1</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="not-found">
+      <div class="container max">
+        <div class="not-found-content">
+          <svg
+            width="895"
+            viewBox="0 0 895 402"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18.5098 320.32L227.406 15.6802H233.39V396.48H215.438V58.6562L47.8858 304.544H292.686V320.32H18.5098Z"
+              fill="#EDEDED"
+            />
+            <path
+              d="M350.635 206.08C350.635 230.379 352.992 253.408 357.707 275.168C362.784 296.928 370.037 316.15 379.467 332.832C388.896 349.152 400.32 362.027 413.739 371.456C427.157 380.523 442.208 385.056 458.891 385.056C476.299 385.056 491.531 380.523 504.587 371.456C518.005 362.027 529.429 349.152 538.859 332.832C548.288 316.15 555.36 296.928 560.075 275.168C564.789 253.408 567.147 230.379 567.147 206.08C567.147 181.782 564.789 158.752 560.075 136.992C555.36 115.232 548.288 96.1923 538.859 79.8722C529.429 63.1896 518.005 50.3149 504.587 41.2482C491.531 31.8189 476.299 27.1042 458.891 27.1042C442.208 27.1042 427.157 31.8189 413.739 41.2482C400.32 50.3149 388.896 63.1896 379.467 79.8722C370.037 96.1923 362.784 115.232 357.707 136.992C352.992 158.752 350.635 181.782 350.635 206.08ZM333.227 206.08C333.227 169.451 338.304 136.448 348.459 107.072C358.613 77.3336 373.12 53.7602 391.979 36.3522C410.837 18.9442 433.141 10.2402 458.891 10.2402C485.003 10.2402 507.488 18.9442 526.347 36.3522C545.205 53.7602 559.712 77.3336 569.867 107.072C580.021 136.448 585.099 169.451 585.099 206.08C585.099 242.71 580.021 275.894 569.867 305.632C559.712 335.008 545.205 358.4 526.347 375.808C507.488 393.216 485.003 401.92 458.891 401.92C433.141 401.92 410.837 393.216 391.979 375.808C373.12 358.4 358.613 335.008 348.459 305.632C338.304 275.894 333.227 242.71 333.227 206.08Z"
+              fill="#EDEDED"
+            />
+            <path
+              d="M620.692 320.32L829.588 15.6802H835.572V396.48H817.62V58.6562L650.068 304.544H894.868V320.32H620.692Z"
+              fill="#EDEDED"
+            />
+            <path
+              d="M0 310.08L208.896 5.43999H214.88V386.24H196.928V48.416L29.376 294.304H274.176V310.08H0Z"
+              fill="#858C68"
+            />
+            <path
+              d="M332.125 195.84C332.125 220.139 334.482 243.168 339.197 264.928C344.274 286.688 351.527 305.909 360.957 322.592C370.386 338.912 381.81 351.787 395.229 361.216C408.647 370.283 423.698 374.816 440.381 374.816C457.789 374.816 473.021 370.283 486.077 361.216C499.495 351.787 510.919 338.912 520.349 322.592C529.778 305.909 536.85 286.688 541.565 264.928C546.279 243.168 548.637 220.139 548.637 195.84C548.637 171.541 546.279 148.512 541.565 126.752C536.85 104.992 529.778 85.952 520.349 69.632C510.919 52.9493 499.495 40.0747 486.077 31.008C473.021 21.5787 457.789 16.864 440.381 16.864C423.698 16.864 408.647 21.5787 395.229 31.008C381.81 40.0747 370.386 52.9493 360.957 69.632C351.527 85.952 344.274 104.992 339.197 126.752C334.482 148.512 332.125 171.541 332.125 195.84ZM314.717 195.84C314.717 159.211 319.794 126.208 329.949 96.832C340.103 67.0933 354.61 43.52 373.469 26.112C392.327 8.704 414.631 0 440.381 0C466.493 0 488.978 8.704 507.837 26.112C526.695 43.52 541.202 67.0933 551.357 96.832C561.511 126.208 566.589 159.211 566.589 195.84C566.589 232.469 561.511 265.653 551.357 295.392C541.202 324.768 526.695 348.16 507.837 365.568C488.978 382.976 466.493 391.68 440.381 391.68C414.631 391.68 392.327 382.976 373.469 365.568C354.61 348.16 340.103 324.768 329.949 295.392C319.794 265.653 314.717 232.469 314.717 195.84Z"
+              fill="#858C68"
+            />
+            <path
+              d="M602.182 310.08L811.078 5.43999H817.062V386.24H799.11V48.416L631.558 294.304H876.359V310.08H602.182Z"
+              fill="#858C68"
+            />
+          </svg>
+
+          <p class="not-found-description">Страница не найдена</p>
+          <a href="/" class="btn-green">Вернуться на Главную</a>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="footer-top">
+        <img src="images/logo.svg" alt="logo" class="footer-top-logo" />
+        <p class="footer-top-description">+7&nbsp;495&nbsp;249-88-50</p>
+      </div>
+      <div class="footer-hr"></div>
+
+      <div class="footer-content">
+        <nav class="footer-content-box">
+          <h4 class="footer-content-box-title">Покупателю</h4>
+          <ul>
+            <li class="footer-content-box-item"><a href="#">Каталог</a></li>
+            <li class="footer-content-box-item">
+              <a href="#">Производители</a>
+            </li>
+            <li class="footer-content-box-item">
+              <a href="#">Применение</a>
+            </li>
+            <li class="footer-content-box-item"><a href="#">Контакты</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-content-box">
+          <h4 class="footer-content-box-title">О&nbsp;компании</h4>
+          <ul>
+            <li class="footer-content-box-item"><a href="#">О&nbsp;нас</a></li>
+            <li class="footer-content-box-item"><a href="#">Новости</a></li>
+            <li class="footer-content-box-item"><a href="#">Команда</a></li>
+            <li class="footer-content-box-item"><a href="#"> Карьера</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-content-box">
+          <h4 class="footer-content-box-title hidden">Контакты</h4>
+          <ul>
+            <li class="footer-content-box-item">
+              <a href="#">Лаборатория </a>
+            </li>
+            <li class="footer-content-box-item"><a href="#"> Наука</a></li>
+            <li class="footer-content-box-item"><a href="#">Склад</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-content-box">
+          <h4 class="footer-content-box-title hidden">Контакты</h4>
+          <ul>
+            <li class="footer-content-box-item"><a href="#">Тренинги</a></li>
+            <li class="footer-content-box-item"><a href="#">Статьи</a></li>
+            <li class="footer-content-box-item">
+              <a href="#">Часто задаваемые <br />вопросы</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="footer-content-box">
+          <h4 class="footer-content-box-title">Контакты</h4>
+          <ul>
+            <li class="footer-content-box-item">
+              <a href="#">+7&nbsp;495&nbsp;249-88-50</a>
+            </li>
+            <li class="footer-content-box-item">
+              <a href="#">info@cosmeticvia.ru</a>
+            </li>
+            <li class="footer-content-box-item">
+              <a href="#"
+                >г.&nbsp;Москва, Рязанский проспект, <br />
+                дом.&nbsp;32, корп.&nbsp;3, офис 412</a
+              >
+            </li>
+            <li class="footer-content-box-item telegram">
+              <img src="images/icons/telegram.svg" alt="telegram" />
+              <a href="#">Наш&nbsp;телеграмм</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer-content-box">
+          <h4 class="footer-content-box-title hidden">Контакты</h4>
+          <ul>
+            <li class="footer-content-box-item footer-content-box-telegram">
+              <img src="images/icons/user.svg" alt="telegram" />
+              <a href="#">Личный кабинет</a>
+            </li>
+            <li
+              class="footer-content-box-item footer-content-box-telegram footer-content-box-basket"
+            >
+              <div class="footer-content-box-item footer-content-box-telegram">
+                <img src="images/icons/basket.svg" alt="basket" />
+                <div class="footer-content-box-icons-count">
+                  <a>1</a>
+                </div>
+              </div>
+              <a href="#">Корзина</a>
+            </li>
+            <li class="footer-content-box-item footer-content-box-telegram">
+              <div class="footer-content-box-item footer-content-box-telegram">
+                <img src="images/icons/heart.svg" alt="basket" />
+                <div class="footer-content-box-icons-count">
+                  <a>1</a>
+                </div>
+              </div>
+              <a href="#">Избранное</a>
+            </li>
+
+            <li class="footer-content-box-item"><a href="#">RU</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-content-mobile">
+        <div class="footer-content-mobile-box">
+          <p class="footer-content-mobile-box-info">
+            +7&nbsp;495&nbsp;249-88-50
+          </p>
+          <a href="#" class="footer-content-mobile-box-info"
+            >info@cosmeticvia.ru</a
+          >
+          <a href="#" class="footer-content-mobile-box-info"
+            >г.&nbsp;Москва, Рязанский проспект, дом.&nbsp;32, корп.&nbsp;3,
+            офис 412</a
+          >
+          <div class="footer-content-box-item telegram">
+            <img src="images/icons/telegram.svg" alt="telegram" />
+            <a href="#">Наш&nbsp;телеграмм</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-hr"></div>
+        <div class="footer-bottom-content">
+          <p class="footer-bottom-content-description ploicy">
+            Политика конфендициальности
+          </p>
+          <p class="footer-bottom-content-description">
+            All rights reserved 2025
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+  </body>
+</html>
