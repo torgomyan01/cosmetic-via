@@ -499,6 +499,161 @@ $(document).ready(function () {
     .appendTo("head");
 });
 
+// Search page autocomplete functionality (separate from global search)
+$(document).ready(function () {
+  const searchPageInput = $("#search-page-input");
+  const searchPageDropdown = $(".search-page-dropdown");
+  const searchPageSuggestions = $(".search-page-suggestions");
+  const searchPageLabel = $(".search-page-wrapper .def-input-gray");
+
+  // Sample search suggestions data (you can replace this with an API call)
+  const allSearchPageSuggestions = [
+    "AIVK",
+    "AEVER Ingredient Co. Ltd",
+    "ALCO",
+    "Apoena Biotech",
+    "AY YILDIZ",
+    "Шампуни",
+    "Шампура",
+    "Шалфей",
+    "Шанижки",
+    "Шиповник",
+    "Шоколад",
+    "Шампунь для волос",
+    "Шампунь для тела",
+  ];
+
+  // Filter suggestions based on input
+  function filterSearchPageSuggestions(query) {
+    if (!query || query.trim() === "") {
+      return [];
+    }
+
+    const lowerQuery = query.toLowerCase();
+    return allSearchPageSuggestions.filter((suggestion) =>
+      suggestion.toLowerCase().includes(lowerQuery)
+    );
+  }
+
+  // Display suggestions
+  function displaySearchPageSuggestions(suggestions) {
+    searchPageSuggestions.empty();
+
+    if (suggestions.length === 0) {
+      searchPageDropdown.removeClass("active");
+      searchPageLabel.removeClass("active");
+      return;
+    }
+
+    suggestions.forEach((suggestion) => {
+      const li = $("<li>").text(suggestion);
+      li.on("click", function () {
+        searchPageInput.val(suggestion);
+        searchPageDropdown.removeClass("active");
+        searchPageLabel.removeClass("active");
+      });
+      searchPageSuggestions.append(li);
+    });
+
+    searchPageDropdown.addClass("active");
+    searchPageLabel.addClass("active");
+  }
+
+  // Handle input events
+  searchPageInput.on("input", function () {
+    const query = $(this).val();
+    const suggestions = filterSearchPageSuggestions(query);
+    displaySearchPageSuggestions(suggestions);
+  });
+
+  // Handle focus events
+  searchPageInput.on("focus", function () {
+    const query = $(this).val();
+    const suggestions = filterSearchPageSuggestions(query);
+    // Only add active class if there are suggestions
+    if (suggestions.length > 0) {
+      displaySearchPageSuggestions(suggestions);
+    } else {
+      // Remove active class if no suggestions
+      searchPageLabel.removeClass("active");
+      searchPageDropdown.removeClass("active");
+    }
+  });
+
+  // Handle blur events
+  searchPageInput.on("blur", function () {
+    // Delay to allow click events on suggestions to fire first
+    setTimeout(function () {
+      if (!searchPageDropdown.hasClass("active")) {
+        searchPageLabel.removeClass("active");
+      }
+    }, 200);
+  });
+
+  // Close dropdown when clicking outside
+  $(document).on("click", function (e) {
+    if (
+      !$(e.target).closest(".search-page-wrapper").length &&
+      !$(e.target).is(".search-page-wrapper")
+    ) {
+      searchPageDropdown.removeClass("active");
+      searchPageLabel.removeClass("active");
+    }
+  });
+
+  // Handle keyboard navigation
+  searchPageInput.on("keydown", function (e) {
+    const activeItem = searchPageSuggestions.find("li.highlighted");
+    const allItems = searchPageSuggestions.find("li");
+
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      if (activeItem.length) {
+        activeItem.removeClass("highlighted");
+        const next = activeItem.next();
+        if (next.length) {
+          next.addClass("highlighted");
+        } else {
+          allItems.first().addClass("highlighted");
+        }
+      } else {
+        allItems.first().addClass("highlighted");
+      }
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      if (activeItem.length) {
+        activeItem.removeClass("highlighted");
+        const prev = activeItem.prev();
+        if (prev.length) {
+          prev.addClass("highlighted");
+        } else {
+          allItems.last().addClass("highlighted");
+        }
+      } else {
+        allItems.last().addClass("highlighted");
+      }
+    } else if (e.key === "Enter") {
+      if (activeItem.length) {
+        e.preventDefault();
+        searchPageInput.val(activeItem.text());
+        searchPageDropdown.removeClass("active");
+        searchPageLabel.removeClass("active");
+      }
+    } else if (e.key === "Escape") {
+      searchPageDropdown.removeClass("active");
+      searchPageLabel.removeClass("active");
+    }
+  });
+
+  // Add CSS for highlighted item
+  $("<style>")
+    .prop("type", "text/css")
+    .html(
+      ".search-page-suggestions li.highlighted { background-color: rgba(139, 151, 124, 0.15) !important; }"
+    )
+    .appendTo("head");
+});
+
 // Catalog Filter functionality
 $(document).ready(function () {
   // Initialize active subsection icons - ensure minus icon for active subsections
