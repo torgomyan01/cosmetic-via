@@ -58,6 +58,10 @@ a {
   border: 1px solid white;
   cursor: pointer;
   gap: 10px;
+  transition: all 0.3s ease;
+}
+.btn-white:active {
+  background-color: rgba(133, 140, 104, 0.2509803922) !important;
 }
 .btn-white i {
   transition: all 0.3s ease;
@@ -72,9 +76,19 @@ a {
 }
 
 .container {
-  max-width: calc(100% - 200px) !important;
+  max-width: 1680px;
   width: 100%;
   margin: 0 auto;
+}
+@media (max-width: 1680px) {
+  .container {
+    padding: 0 100px;
+  }
+}
+@media (max-width: 1400px) {
+  .container {
+    padding: 0 60px;
+  }
 }
 @media (max-width: 1130px) {
   .container {
@@ -82,7 +96,7 @@ a {
   }
 }
 .container.max {
-  max-width: calc(100% - 200px) !important;
+  max-width: 1820px;
 }
 @media (max-width: 1820px) {
   .container.max {

@@ -60,6 +60,11 @@ a {
   border: 1px solid white;
   cursor: pointer;
   gap: 10px;
+  transition: all 0.3s ease;
+
+  &:active {
+    background-color: #858c6840 !important;
+  }
 
   i {
     transition: all 0.3s ease;
@@ -77,24 +82,24 @@ a {
 }
 
 .container {
-  max-width: calc(100% - 200px) !important;
+  max-width: 1680px;
   width: 100%;
   margin: 0 auto;
 
-  // @media (max-width: 1680px) {
-  //   padding: 0 100px;
-  // }
+  @media (max-width: 1680px) {
+    padding: 0 100px;
+  }
 
-  // @media (max-width: 1400px) {
-  //   padding: 0 60px;
-  // }
+  @media (max-width: 1400px) {
+    padding: 0 60px;
+  }
 
   @media (max-width: 1130px) {
     padding: 0 16px;
   }
 
   &.max {
-    max-width: calc(100% - 200px) !important;
+    max-width: 1820px;
 
     @media (max-width: 1820px) {
       padding: 0 16px;
