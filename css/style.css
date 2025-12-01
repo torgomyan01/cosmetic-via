@@ -76,16 +76,6 @@ a {
   width: 100%;
   margin: 0 auto;
 }
-@media (max-width: 1680px) {
-  .container {
-    padding: 0 100px;
-  }
-}
-@media (max-width: 1400px) {
-  .container {
-    padding: 0 60px;
-  }
-}
 @media (max-width: 1130px) {
   .container {
     padding: 0 16px;
