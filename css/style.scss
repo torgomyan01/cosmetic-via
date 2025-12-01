@@ -94,7 +94,7 @@ a {
   }
 
   &.max {
-    max-width: 1820px;
+    max-width: calc(100% - 200px) !important;
 
     @media (max-width: 1820px) {
       padding: 0 16px;
@@ -6069,10 +6069,18 @@ a {
         padding-left: 30px;
         margin-top: 16px;
         li {
-          align-self: stretch;
-          color: #4b4b4b;
-          font-size: 18px;
-          font-weight: 400;
+          a {
+            align-self: stretch;
+            color: #4b4b4b;
+            font-size: 18px;
+            font-weight: 400;
+            transition: 0.3s ease;
+            cursor: pointer;
+
+            &:hover {
+              color: #858c68;
+            }
+          }
         }
       }
 

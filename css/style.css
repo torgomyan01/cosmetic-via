@@ -92,7 +92,7 @@ a {
   }
 }
 .container.max {
-  max-width: 1820px;
+  max-width: calc(100% - 200px) !important;
 }
 @media (max-width: 1820px) {
   .container.max {
@@ -5851,11 +5851,16 @@ a {
   padding-left: 30px;
   margin-top: 16px;
 }
-.application-content-item-list li {
+.application-content-item-list li a {
   align-self: stretch;
   color: #4b4b4b;
   font-size: 18px;
   font-weight: 400;
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+.application-content-item-list li a:hover {
+  color: #858c68;
 }
 .application-content-item.image {
   display: flex;
