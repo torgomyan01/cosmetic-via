@@ -72,7 +72,7 @@ a {
 }
 
 .container {
-  max-width: 1680px;
+  max-width: calc(100% - 200px) !important;
   width: 100%;
   margin: 0 auto;
 }
