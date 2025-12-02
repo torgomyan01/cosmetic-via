@@ -755,6 +755,14 @@ $(document).ready(function () {
   });
 });
 
+// Catalog Description Toggle for Mobile
+$(document).ready(function () {
+  $(".catalog-description-toggle-mobile").on("click", function () {
+    const $wrapper = $(this).closest(".catalog-description-wrapper");
+    $wrapper.toggleClass("expanded");
+  });
+});
+
 // Product Page Functionality
 $(document).ready(function () {
   // Product Page Packaging Button Selection
@@ -1114,4 +1122,19 @@ $(document).ready(function () {
       $item.addClass("active");
     }
   });
+});
+
+const heartIcons = $(
+  ".find-manufacturer-content-box .fanufacturers-all-item-list li img"
+);
+
+heartIcons.on("click", function () {
+  const $icon = $(this);
+  if ($icon.hasClass("active")) {
+    $icon.removeClass("active");
+    $icon.attr("src", "images/icons/heart-gray.svg");
+  } else {
+    $icon.addClass("active");
+    $icon.attr("src", "images/icons/heart-green-full.svg");
+  }
 });

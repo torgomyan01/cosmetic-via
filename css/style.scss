@@ -2581,6 +2581,12 @@ a {
       letter-spacing: -1px;
       text-transform: uppercase;
 
+      @media (max-width: 1525px) {
+        font-size: 80px;
+        line-height: 90px;
+        letter-spacing: -0.8px;
+      }
+
       @media (max-width: 1400px) {
         font-size: 60px;
         line-height: 80px;
@@ -2604,6 +2610,12 @@ a {
     text-transform: uppercase;
     display: inline-block;
 
+    @media (max-width: 1525px) {
+      font-size: 80px;
+      line-height: 90px;
+      letter-spacing: -0.8px;
+    }
+
     @media (max-width: 1400px) {
       font-size: 60px;
       line-height: 80px;
@@ -2616,13 +2628,73 @@ a {
     }
   }
 
+  &-description-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 910px;
+    margin-top: 23px;
+
+    @media (max-width: 992px) {
+      .catalog-description {
+        max-height: 120px;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+      }
+
+      &.expanded .catalog-description {
+        max-height: none;
+      }
+
+      .catalog-description-toggle-mobile {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        margin-top: 16px;
+        padding: 12px;
+        background: transparent;
+        border: 1px solid #8b957c;
+        border-radius: 8px;
+        color: #8b957c;
+        font-size: 14px;
+        font-weight: 400;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: #8b957c;
+          color: white;
+        }
+
+        .toggle-text-collapse {
+          display: none;
+        }
+      }
+
+      &.expanded .catalog-description-toggle-mobile {
+        .toggle-text-expand {
+          display: none;
+        }
+
+        .toggle-text-collapse {
+          display: inline;
+        }
+      }
+    }
+
+    @media (min-width: 993px) {
+      .catalog-description-toggle-mobile {
+        display: none;
+      }
+    }
+  }
+
   &-description {
     width: 100%;
     max-width: 910px;
     color: #4b4b4b;
     font-size: 16px;
     font-weight: 400;
-    margin-top: 23px;
   }
 
   &-content {
@@ -5099,6 +5171,9 @@ a {
 
               @media (max-width: 992px) {
                 margin-bottom: 0;
+              }
+              img {
+                cursor: pointer;
               }
               a {
                 color: #434540;
