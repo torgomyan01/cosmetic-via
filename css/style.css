@@ -2508,7 +2508,7 @@ a {
   letter-spacing: -1px;
   text-transform: uppercase;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .catalog-title-container span {
     font-size: 60px;
     line-height: 80px;
@@ -2532,7 +2532,7 @@ a {
   text-transform: uppercase;
   display: inline-block;
 }
-@media (max-width: 1200px) {
+@media (max-width: 1400px) {
   .catalog-title {
     font-size: 60px;
     line-height: 80px;
@@ -3493,6 +3493,11 @@ a {
   font-size: 16px;
   font-weight: 400;
 }
+.basket-checkout-info-warning {
+  color: #4b4b4b;
+  font-size: 16px;
+  font-weight: 400;
+}
 .basket-checkout-info.total {
   margin-top: 16px;
 }
@@ -3528,10 +3533,16 @@ a {
 .basket-content-right {
   width: 25%;
   min-height: 100%;
+  min-width: 360px;
 }
 @media (max-width: 1100px) {
   .basket-content-right {
     width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .basket-content-right {
+    min-width: 100%;
   }
 }
 .basket-content-left {
