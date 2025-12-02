@@ -82,20 +82,17 @@ a {
 }
 
 .container {
-  max-width: 1680px;
+  max-width: 1400px;
   width: 100%;
   margin: 0 auto;
 
-  @media (max-width: 1680px) {
-    padding: 0 100px;
-  }
-
-  @media (max-width: 1400px) {
-    padding: 0 60px;
-  }
-
-  @media (max-width: 1130px) {
+  @media (max-width: 1432px) {
     padding: 0 16px;
+  }
+
+
+  &.home{
+    max-width: 1860px;
   }
 
   &.max {
@@ -2581,12 +2578,6 @@ a {
       letter-spacing: -1px;
       text-transform: uppercase;
 
-      @media (max-width: 1525px) {
-        font-size: 80px;
-        line-height: 90px;
-        letter-spacing: -0.8px;
-      }
-
       @media (max-width: 1400px) {
         font-size: 60px;
         line-height: 80px;
@@ -2603,18 +2594,12 @@ a {
   &-title {
     align-self: stretch;
     color: #434540;
-    font-size: 100px;
+    font-size: 90px;
     font-weight: 200;
     line-height: 100px;
     letter-spacing: -1px;
     text-transform: uppercase;
     display: inline-block;
-
-    @media (max-width: 1525px) {
-      font-size: 80px;
-      line-height: 90px;
-      letter-spacing: -0.8px;
-    }
 
     @media (max-width: 1400px) {
       font-size: 60px;
@@ -2713,7 +2698,6 @@ a {
     min-width: 320px;
     width: 320px;
     border-radius: 20px;
-    padding: 24px;
     position: sticky;
     top: 100px;
     overflow-y: auto;
@@ -3089,7 +3073,7 @@ a {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 
-    @media (max-width: 1570px) {
+    @media (max-width: 1432px) {
       grid-template-columns: repeat(2, 1fr);
     }
 
