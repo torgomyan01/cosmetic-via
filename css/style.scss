@@ -90,8 +90,7 @@ a {
     padding: 0 16px;
   }
 
-
-  &.home{
+  &.home {
     max-width: 1860px;
   }
 
@@ -1005,13 +1004,13 @@ a {
 
   i {
     display: none;
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       display: block;
     }
   }
 
   .text {
-    @media (max-width: 768px) {
+    @media (max-width: 1000px) {
       display: none;
     }
   }
@@ -2583,9 +2582,10 @@ a {
         line-height: 80px;
         letter-spacing: -0.8px;
       }
+
       @media (max-width: 992px) {
-        font-size: 32px;
-        line-height: 32px;
+        font-size: calc(6vw - 2px);
+        line-height: unset;
         letter-spacing: -0.32px;
       }
     }
@@ -2607,8 +2607,8 @@ a {
       letter-spacing: -0.8px;
     }
     @media (max-width: 992px) {
-      font-size: 32px;
-      line-height: 32px;
+      font-size: 7vw;
+      line-height: unset;
       letter-spacing: -0.32px;
     }
   }
@@ -3073,7 +3073,7 @@ a {
     grid-template-columns: repeat(3, 1fr);
     gap: 24px;
 
-    @media (max-width: 1432px) {
+    @media (max-width: 900px) {
       grid-template-columns: repeat(2, 1fr);
     }
 
