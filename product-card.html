@@ -588,7 +588,27 @@
                 </div>
 
                 <div class="product-page-checkout-buttons">
-                  <button class="btn-green">Добавить к заказу</button>
+                  <button class="btn-green" id="add-to-order-btn">
+                    Добавить к заказу
+                  </button>
+                  <div
+                    class="product-page-quantity-selector hidden"
+                    id="quantity-selector"
+                  >
+                    <button
+                      class="quantity-btn quantity-btn-minus"
+                      id="quantity-decrease"
+                    >
+                      <i class="fa-solid fa-minus"></i>
+                    </button>
+                    <span class="quantity-value" id="quantity-value">1</span>
+                    <button
+                      class="quantity-btn quantity-btn-plus"
+                      id="quantity-increase"
+                    >
+                      <i class="fa-solid fa-plus"></i>
+                    </button>
+                  </div>
                   <button class="btn-white">
                     <img src="images/icons/section2-heart.svg" alt="heart" />
                   </button>

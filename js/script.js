@@ -131,15 +131,23 @@ $(window).on("resize", function () {
 productPageContentLeftSlider();
 
 function productPageContentLeftSlider() {
+  const $slider = $(".product-page-content-left");
+
   if (window.innerWidth <= 1170) {
-    $(".product-page-content-left").slick({
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false,
-      dots: true,
-    });
+    // Check if slider is already initialized
+    if (!$slider.hasClass("slick-initialized")) {
+      $slider.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        dots: true,
+      });
+    }
   } else {
-    $(".product-page-content-left").slick("destroy");
+    // Only destroy if slider is initialized
+    if ($slider.hasClass("slick-initialized")) {
+      $slider.slick("destroy");
+    }
   }
 }
 
@@ -1137,4 +1145,35 @@ heartIcons.on("click", function () {
     $icon.addClass("active");
     $icon.attr("src", "images/icons/heart-green-full.svg");
   }
+});
+
+// Product Page Quantity Selector
+$(document).ready(function () {
+  const $addToOrderBtn = $("#add-to-order-btn");
+  const $quantitySelector = $("#quantity-selector");
+  const $quantityValue = $("#quantity-value");
+  const $quantityDecrease = $("#quantity-decrease");
+  const $quantityIncrease = $("#quantity-increase");
+
+  let quantity = 1;
+
+  // Show quantity selector when "Добавить к заказу" button is clicked
+  $addToOrderBtn.on("click", function () {
+    $addToOrderBtn.hide();
+    $quantitySelector.removeClass("hidden");
+  });
+
+  // Decrease quantity
+  $quantityDecrease.on("click", function () {
+    if (quantity > 1) {
+      quantity--;
+      $quantityValue.text(quantity);
+    }
+  });
+
+  // Increase quantity
+  $quantityIncrease.on("click", function () {
+    quantity++;
+    $quantityValue.text(quantity);
+  });
 });
