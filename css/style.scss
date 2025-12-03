@@ -1051,6 +1051,11 @@ a {
     cursor: pointer;
     transition: background-color 0.2s ease;
 
+    @media (max-width: 768px) {
+      width: 62px;
+      height: 62px;
+    }
+
     &:hover {
       background: #f0f0f0;
     }

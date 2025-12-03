@@ -1033,6 +1033,12 @@ a {
   cursor: pointer;
   transition: background-color 0.2s ease;
 }
+@media (max-width: 768px) {
+  .product-card-quantity-selector .quantity-btn {
+    width: 62px;
+    height: 62px;
+  }
+}
 .product-card-quantity-selector .quantity-btn:hover {
   background: #f0f0f0;
 }
