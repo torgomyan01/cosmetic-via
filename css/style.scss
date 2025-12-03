@@ -2577,9 +2577,13 @@ a {
       letter-spacing: -1px;
       text-transform: uppercase;
 
+      @media (max-width: 1400px) {
+        font-size: 40px;
+        line-height: unset;
+      }
+
       @media (max-width: 992px) {
         font-size: calc(6vw - 2px);
-        line-height: unset;
         letter-spacing: -0.32px;
       }
     }

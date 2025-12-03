@@ -2501,10 +2501,15 @@ a {
   letter-spacing: -1px;
   text-transform: uppercase;
 }
+@media (max-width: 1400px) {
+  .catalog-title-container span {
+    font-size: 40px;
+    line-height: unset;
+  }
+}
 @media (max-width: 992px) {
   .catalog-title-container span {
     font-size: calc(6vw - 2px);
-    line-height: unset;
     letter-spacing: -0.32px;
   }
 }
