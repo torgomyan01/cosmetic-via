@@ -1020,6 +1020,60 @@ a {
   }
 }
 
+.product-card-quantity-selector {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  border-radius: 45px;
+  width: 100%;
+  min-height: 48px;
+
+  &.hidden {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    min-height: 63px;
+  }
+
+  .quantity-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 88px;
+    min-width: 32px;
+    background: #eee;
+    border: none;
+    border-radius: 1000px;
+    color: #858c68;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background: #f0f0f0;
+    }
+
+    &:active {
+      background: #e8e8e8;
+    }
+
+    i {
+      font-size: 14px;
+      color: #858c68;
+    }
+  }
+
+  .quantity-value {
+    color: #434540;
+    font-size: 18px;
+    font-weight: 400;
+    min-width: 20px;
+    text-align: center;
+  }
+}
+
 .product-card-heart {
   background: #eee;
   border-radius: 70px;

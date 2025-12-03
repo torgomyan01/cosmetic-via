@@ -1177,3 +1177,47 @@ $(document).ready(function () {
     $quantityValue.text(quantity);
   });
 });
+
+// Product Card Quantity Selector (for catalog and other pages with multiple product cards)
+$(document).ready(function () {
+  // Handle "Добавить к заказу" button click for all product cards
+  $(document).on("click", ".product-card-btn", function () {
+    const $btn = $(this);
+    const $card = $btn.closest(".product-card");
+    const $quantitySelector = $card.find(".product-card-quantity-selector");
+
+    // Hide button and show quantity selector
+    $btn.hide();
+    $quantitySelector.removeClass("hidden");
+  });
+
+  // Handle decrease quantity button
+  $(document).on(
+    "click",
+    ".product-card-quantity-selector .quantity-btn-minus",
+    function () {
+      const $btn = $(this);
+      const $quantityValue = $btn.siblings(".quantity-value");
+      let quantity = parseInt($quantityValue.text()) || 1;
+
+      if (quantity > 1) {
+        quantity--;
+        $quantityValue.text(quantity);
+      }
+    }
+  );
+
+  // Handle increase quantity button
+  $(document).on(
+    "click",
+    ".product-card-quantity-selector .quantity-btn-plus",
+    function () {
+      const $btn = $(this);
+      const $quantityValue = $btn.siblings(".quantity-value");
+      let quantity = parseInt($quantityValue.text()) || 1;
+
+      quantity++;
+      $quantityValue.text(quantity);
+    }
+  );
+});
