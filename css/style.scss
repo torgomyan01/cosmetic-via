@@ -8183,7 +8183,7 @@ a {
     &-items {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 50px;
+      gap: 30px;
 
       @media (max-width: 1300px) {
         gap: 20px;

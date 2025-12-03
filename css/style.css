@@ -8166,7 +8166,7 @@ a {
 .search-content-items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 50px;
+  gap: 30px;
 }
 @media (max-width: 1300px) {
   .search-content-items {
