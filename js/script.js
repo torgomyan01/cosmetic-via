@@ -1,15 +1,22 @@
+// -----------------------------------
+// ------ AOS И ОСНОВНЫЕ СЛАЙДЕРЫ ----
+// -----------------------------------
+
+// Инициализация анимации AOS на странице
 // eslint-disable-next-line no-undef
 AOS.init({
   once: true,
   duration: 1000,
 });
 
+// Слайдер в блоке лаборатории
 $("#slider-laboratory").slick({
   slidesToShow: 1,
   slidesToScroll: 1,
   dots: true,
 });
 
+// Слайдер «Популярные продукты» на главной
 // First, check if the required DOM elements exist to prevent 'undefined' errors that break slick.
 const $sliderPopularProducts = $("#slider-popular-products");
 const $prevArrow = $(".block-popular-products-top-block-slide-icon.prev");
@@ -54,8 +61,12 @@ $sliderPopularProducts.slick({
   ],
 });
 
-// Initialize each block-news slider independently
-// Find all sliders and initialize each one separately
+// -----------------------------------
+// ------ СЕКЦИЯ НОВОСТЕЙ (Табы) -----
+// -----------------------------------
+
+// Инициализация каждого слайдера новостей отдельно
+// Находим все слайдеры и инициализируем каждый по отдельности
 $(".block-news-slider").each(function () {
   const $slider = $(this);
   // Find the parent container that contains both slider and content
@@ -106,6 +117,11 @@ $(".block-news-slider").each(function () {
   });
 });
 
+// -----------------------------------
+// ------ ОБРАБОТКА РЕСАЙЗА ОКНА -----
+// -----------------------------------
+
+// Пересчёт размеров активных элементов при изменении ширины окна
 $(window).on("resize", function () {
   // Resize all active sliders
   $(".block-news-slider").each(function () {
@@ -130,6 +146,7 @@ $(window).on("resize", function () {
 
 productPageContentLeftSlider();
 
+// Слайдер изображений товара (левая колонка) на мобильных разрешениях
 function productPageContentLeftSlider() {
   const $slider = $(".product-page-content-left");
 
@@ -151,6 +168,7 @@ function productPageContentLeftSlider() {
   }
 }
 
+// Установка высоты описания блока новостей по высоте активного элемента
 function resizeBlockNewsContentDescription(element, contentDescription) {
   if (window.innerWidth > 768 && contentDescription.length) {
     contentDescription.height(element.height());
@@ -159,7 +177,11 @@ function resizeBlockNewsContentDescription(element, contentDescription) {
   }
 }
 
-// Mobile menu list box
+// -----------------------------------
+// ------ МОБИЛЬНОЕ МЕНЮ -------------
+// -----------------------------------
+
+// Элементы выпадающего списка в мобильном меню
 const mobileMenuListBox = $(".mobile-menu-content-list-box");
 
 mobileMenuListBox.on("click", function () {
@@ -172,7 +194,7 @@ mobileMenuListBox.on("click", function () {
 });
 // Mobile menu list box
 
-// Mobile menu
+// Основное мобильное меню – открытие/закрытие полного экрана
 const mobileMenu = $(".mobile-menu");
 const headerMobileMenu = $(".header-mobile-menu");
 const mobileMenuClose = $(".mobile-menu-content .fa-xmark");
@@ -187,6 +209,11 @@ mobileMenuClose.on("click", function () {
   $(document.body).css("overflow", "auto");
 });
 
+// -----------------------------------
+// ------ СЛАЙДЕР В ДЕСКТОП-МЕНЮ -----
+// -----------------------------------
+
+// Слайдер рекламных баннеров внутри десктопного меню
 $(".desktop-menu-content-ads").slick({
   slidesToShow: 1,
   slidesToScroll: 1,
@@ -194,7 +221,11 @@ $(".desktop-menu-content-ads").slick({
   dots: true,
 });
 
-// Desktop menu functionality
+// -----------------------------------
+// ------ ДЕСКТОПНОЕ ВЫПАДАЮЩЕЕ МЕНЮ -
+// -----------------------------------
+
+// Логика работы десктопного выпадающего меню
 const desktopMenu = $(".desktop-menu");
 const desktopMenuItems = $(".header .bg-header .header-menu li");
 
@@ -209,6 +240,7 @@ function openDesktopMenu(menuId, menuItem) {
 
   // Prevent body scroll
   $(document.body).css("overflow", "hidden");
+  $(window).scrollTop(0);
 }
 
 function closeDesktopMenu() {
@@ -274,7 +306,11 @@ $(document).on("keydown", function (e) {
   }
 });
 
-// Dynamic Modal functionality - supports multiple modals on the same page
+// -----------------------------------
+// ------ МОДАЛЬНЫЕ ОКНА -------------
+// -----------------------------------
+
+// Динамический менеджер модальных окон – поддерживает несколько модалок на странице
 const ModalManager = {
   // Open a modal by its ID
   open: function (modalId) {
@@ -359,7 +395,11 @@ $(document).ready(function () {
   ModalManager.init();
 });
 
-// Search autocomplete functionality
+// -----------------------------------
+// ------ ПОИСК (ХЕДЕР, АВТОДОП.) ----
+// -----------------------------------
+
+// Автодополнение в поле поиска в шапке сайта
 $(document).ready(function () {
   const searchInput = $("#search-input");
   const searchDropdown = $(".search-dropdown");
@@ -507,7 +547,11 @@ $(document).ready(function () {
     .appendTo("head");
 });
 
-// Search page autocomplete functionality (separate from global search)
+// -----------------------------------
+// ------ ПОИСКОВАЯ СТРАНИЦА ---------
+// -----------------------------------
+
+// Автодополнение на отдельной странице поиска (отдельная логика от глобального поиска)
 $(document).ready(function () {
   const searchPageInput = $("#search-page-input");
   const searchPageDropdown = $(".search-page-dropdown");
@@ -662,7 +706,11 @@ $(document).ready(function () {
     .appendTo("head");
 });
 
-// Catalog Filter functionality
+// -----------------------------------
+// ------ ФИЛЬТР КАТАЛОГА ------------
+// -----------------------------------
+
+// Логика фильтрации, аккордеонов и пагинации каталога
 $(document).ready(function () {
   // Initialize active subsection icons - ensure minus icon for active subsections
   $(".catalog-filter-subsection.active .catalog-filter-subsection-toggle").each(
@@ -763,7 +811,11 @@ $(document).ready(function () {
   });
 });
 
-// Catalog Description Toggle for Mobile
+// -----------------------------------
+// ------ ОПИСАНИЕ КАТАЛОГА (МОБИЛ.) -
+// -----------------------------------
+
+// Сворачивание/разворачивание описания каталога на мобильных
 $(document).ready(function () {
   $(".catalog-description-toggle-mobile").on("click", function () {
     const $wrapper = $(this).closest(".catalog-description-wrapper");
@@ -771,7 +823,11 @@ $(document).ready(function () {
   });
 });
 
-// Product Page Functionality
+// -----------------------------------
+// ------ СТРАНИЦА ТОВАРА ------------
+// -----------------------------------
+
+// Логика выбора упаковки, применения и раскрытия описания на странице товара
 $(document).ready(function () {
   // Product Page Packaging Button Selection
   $(".product-page-packaging-btn").on("click", function (e) {
@@ -830,7 +886,11 @@ $(document).ready(function () {
   });
 });
 
-// Basket Functionality
+// -----------------------------------
+// ------ КОРЗИНА --------------------
+// -----------------------------------
+
+// Логика увеличения/уменьшения количества товара в корзине
 $(document).ready(function () {
   $(".basket-table-count-btn.minus").on("click", function () {
     const $btn = $(this);
@@ -861,6 +921,11 @@ function disableMinusButton(count) {
   }
 }
 
+// -----------------------------------
+// ------ МАСКИ ДЛЯ ПОЛЕЙ ФОРМ -------
+// -----------------------------------
+
+// Маска телефона
 const phoneInput = $(".number-mask");
 
 phoneInput.each((index, element) => {
@@ -871,7 +936,7 @@ phoneInput.each((index, element) => {
   IMask(element, maskOptions);
 });
 
-// INN Mask (14 digits with spaces)
+// Маска ИНН
 const innInput = $(".inn-mask");
 innInput.each((index, element) => {
   const maskOptions = {
@@ -881,7 +946,7 @@ innInput.each((index, element) => {
   IMask(element, maskOptions);
 });
 
-// KPP Mask (9 digits with spaces)
+// Маска КПП
 const kppInput = $(".kpp-mask");
 kppInput.each((index, element) => {
   const maskOptions = {
@@ -891,7 +956,7 @@ kppInput.each((index, element) => {
   IMask(element, maskOptions);
 });
 
-// BIC Mask (9 digits with spaces)
+// Маска БИК
 const bikInput = $(".bik-mask");
 bikInput.each((index, element) => {
   const maskOptions = {
@@ -901,7 +966,7 @@ bikInput.each((index, element) => {
   IMask(element, maskOptions);
 });
 
-// RS (Settlement Account) Mask (20 digits with spaces)
+// Маска Р/С (расчётный счёт)
 const rsInput = $(".rs-mask");
 rsInput.each((index, element) => {
   const maskOptions = {
@@ -911,7 +976,7 @@ rsInput.each((index, element) => {
   IMask(element, maskOptions);
 });
 
-// KS (Correspondent Account) Mask (20 digits with spaces)
+// Маска К/С (корреспондентский счёт)
 const ksInput = $(".ks-mask");
 ksInput.each((index, element) => {
   const maskOptions = {
@@ -921,6 +986,11 @@ ksInput.each((index, element) => {
   IMask(element, maskOptions);
 });
 
+// -----------------------------------
+// ------ ПАРОЛИ (ПОКАЗ/СКРЫТИЕ) -----
+// -----------------------------------
+
+// Переключение видимости пароля на форме логина/регистрации
 $("#show-password").on("click", function () {
   $(this).hide();
   $("#hide-password").show();
@@ -933,7 +1003,7 @@ $("#hide-password").on("click", function () {
   $(this).siblings("input").attr("type", "password");
 });
 
-// Password visibility toggle for account profile
+// Переключение видимости пароля в профиле аккаунта (два отдельных поля)
 $("#show-password-1").on("click", function () {
   $(this).addClass("d-none");
   $("#hide-password-1").removeClass("d-none");
@@ -958,14 +1028,18 @@ $("#hide-password-2").on("click", function () {
   $("#password-repeat-input").attr("type", "password");
 });
 
-// City Custom Dropdown functionality
+// -----------------------------------
+// ------ ВЫБОР ГОРОДА (DROPDOWN) ----
+// -----------------------------------
+
+// Кастомный комбобокс выбора города на основе скрытого select
 const cityInput = $("#city-input");
 const citySelect = $("#city-select");
 const citySelectTrigger = $("#city-select-trigger");
 const cityDropdown = $("#city-dropdown");
 const cityDropdownList = $("#city-dropdown-list");
 
-// Initialize dropdown with options from select
+// Инициализация списка городов из select
 function initCityDropdown() {
   if (!citySelect.length || !cityDropdownList.length) return;
 
@@ -999,19 +1073,19 @@ function initCityDropdown() {
   });
 }
 
-// Open dropdown
+// Открыть выпадающий список
 function openCityDropdown() {
   cityDropdown.addClass("active");
   citySelectTrigger.addClass("active");
 }
 
-// Close dropdown
+// Закрыть выпадающий список
 function closeCityDropdown() {
   cityDropdown.removeClass("active");
   citySelectTrigger.removeClass("active");
 }
 
-// Toggle dropdown
+// Переключение состояния выпадающего списка
 citySelectTrigger.on("click", function (e) {
   e.stopPropagation();
   if (cityDropdown.hasClass("active")) {
@@ -1021,7 +1095,7 @@ citySelectTrigger.on("click", function (e) {
   }
 });
 
-// Close dropdown when clicking outside
+// Закрытие дропдауна при клике вне компонента
 $(document).on("click", function (e) {
   if (
     !$(e.target).closest(".city-combobox").length &&
@@ -1031,11 +1105,16 @@ $(document).on("click", function (e) {
   }
 });
 
-// Initialize on page load
+// Инициализация комбобокса при загрузке страницы
 if (citySelect.length && cityInput.length) {
   initCityDropdown();
 }
 
+// -----------------------------------
+// ------ ТАБЫ ЛОГИН/РЕГИСТРАЦИЯ -----
+// -----------------------------------
+
+// Переключение вкладок «Вход» / «Регистрация»
 const loginRegisterTabs = $(".login-register-tab");
 const loginRegisterTabContents = $(".login-register-tab-content");
 
@@ -1050,6 +1129,11 @@ loginRegisterTabs.on("click", function () {
   $(`#${findID}`).show();
 });
 
+// -----------------------------------
+// ------ МЕНЮ АККАУНТА (МОБИЛЬНОЕ) --
+// -----------------------------------
+
+// Мобильное выпадающее меню разделов личного кабинета
 const accountContentMenuListMobile = $(".account-content-menu-list-mobile");
 const accountContentMenuList = $(".account-content-menu-list");
 const accountContentMenuListWrapper = $(".account-content-menu-list-wrapper");
@@ -1061,7 +1145,7 @@ accountContentMenuListMobile.on("click", function (e) {
   accountContentMenuListWrapper.toggleClass("active");
 });
 
-// Close menu when clicking outside
+// Закрытие мобильного меню аккаунта при клике вне его
 $(document).on("click", function (e) {
   if (
     accountContentMenuListWrapper.hasClass("active") &&
@@ -1074,12 +1158,16 @@ $(document).on("click", function (e) {
   }
 });
 
-// Prevent menu from closing when clicking inside menu content
+// Блокируем закрытие при клике внутри обёртки меню
 accountContentMenuListWrapper.on("click", function (e) {
   e.stopPropagation();
 });
 
-// Account Order History Slider
+// -----------------------------------
+// ------ ИСТОРИЯ ЗАКАЗОВ (СЛАЙДЕР) --
+// -----------------------------------
+
+// Слайдер карточек заказов в истории заказов аккаунта
 const $accountOrderHistorySlider = $(".account-order-history-section-list");
 
 if ($accountOrderHistorySlider.length) {
@@ -1114,7 +1202,11 @@ if ($accountOrderHistorySlider.length) {
   });
 }
 
-// Account FAQ Accordion
+// -----------------------------------
+// ------ АККОРДЕОН FAQ В АККАУНТЕ ---
+// -----------------------------------
+
+// Раскрытие/сворачивание вопросов и ответов в разделе FAQ личного кабинета
 $(document).ready(function () {
   $(".account-faq-item-header").on("click", function () {
     const $item = $(this).closest(".account-faq-item");
@@ -1132,6 +1224,11 @@ $(document).ready(function () {
   });
 });
 
+// -----------------------------------
+// ------ ИЗБРАННЫЕ ПРОИЗВОДИТЕЛИ ----
+// -----------------------------------
+
+// Переключение иконки «избранное» в списке производителей
 const heartIcons = $(
   ".find-manufacturer-content-box .fanufacturers-all-item-list li img"
 );
@@ -1147,7 +1244,11 @@ heartIcons.on("click", function () {
   }
 });
 
-// Product Page Quantity Selector
+// -----------------------------------
+// ------ КОЛИЧЕСТВО ТОВАРА (СТР. ТОВАРА)
+// -----------------------------------
+
+// Счётчик количества для кнопки «Добавить к заказу» на странице товара
 $(document).ready(function () {
   const $addToOrderBtn = $("#add-to-order-btn");
   const $quantitySelector = $("#quantity-selector");
@@ -1178,7 +1279,11 @@ $(document).ready(function () {
   });
 });
 
-// Product Card Quantity Selector (for catalog and other pages with multiple product cards)
+// -----------------------------------
+// ------ КОЛИЧЕСТВО ТОВАРА (КАРТОЧКИ)
+// -----------------------------------
+
+// Счётчик количества в карточках товара (каталог и другие списки)
 $(document).ready(function () {
   // Handle "Добавить к заказу" button click for all product cards
   $(document).on("click", ".product-card-btn", function () {
