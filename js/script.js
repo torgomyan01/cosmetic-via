@@ -17,7 +17,7 @@ $("#slider-laboratory").slick({
 });
 
 // Слайдер «Популярные продукты» на главной
-// First, check if the required DOM elements exist to prevent 'undefined' errors that break slick.
+// Сначала проверяем, что все нужные элементы есть в DOM, чтобы slick не упал с ошибкой
 const $sliderPopularProducts = $("#slider-popular-products");
 const $prevArrow = $(".block-popular-products-top-block-slide-icon.prev");
 const $nextArrow = $(".block-popular-products-top-block-slide-icon.next");
@@ -66,11 +66,11 @@ $sliderPopularProducts.slick({
 // -----------------------------------
 
 // Инициализация каждого слайдера новостей отдельно
-// Находим все слайдеры и инициализируем каждый по отдельности
+// Находим каждый слайдер новостей и настраиваем его логику табов
 $(".block-news-slider").each(function () {
   const $slider = $(this);
-  // Find the parent container that contains both slider and content
-  // This works for both .block-news and .warehouse-content-section-content structures
+  // Родительский контейнер, в котором лежат и слайдер, и контент
+  // Работает и для блоков .block-news, и для .warehouse-content-section-content
   const $container = $slider.parent();
   const $sliderButtons = $slider.find(".block-news-slider-button");
   const $contentContainer = $container.find(".block-news-content");
@@ -79,10 +79,10 @@ $(".block-news-slider").each(function () {
     ".block-news-content-description"
   );
 
-  // Hide all content items in this slider
+  // Скрываем все элементы контента внутри этого слайдера
   $contentItems.hide();
 
-  // Find and show the active content
+  // Находим и показываем контент, соответствующий активной кнопке
   const activeIndex = $sliderButtons.filter(".active").data("tab");
   const $activeContent = $contentContainer.find(
     `[data-tabContent="${activeIndex}"]`
@@ -93,19 +93,19 @@ $(".block-news-slider").each(function () {
     resizeBlockNewsContentDescription($activeContent, $contentDescription);
   }
 
-  // Handle button clicks within this slider
+  // Обработка кликов по кнопкам-таба внутри текущего слайдера
   $sliderButtons.on("click", function () {
     const $clickedButton = $(this);
     const newActiveIndex = $clickedButton.data("tab");
 
-    // Remove active class from all buttons in this slider
+    // Убираем класс active у всех кнопок этого слайдера
     $sliderButtons.removeClass("active");
-    // Add active class to clicked button
+    // Добавляем класс active к нажатой кнопке
     $clickedButton.addClass("active");
 
-    // Hide all content items in this slider
+    // Скрываем весь контент
     $contentItems.hide();
-    // Show the selected content
+    // Показываем только контент, соответствующий выбранному табу
     const $newActiveContent = $contentContainer.find(
       `[data-tabContent="${newActiveIndex}"]`
     );
@@ -123,7 +123,7 @@ $(".block-news-slider").each(function () {
 
 // Пересчёт размеров активных элементов при изменении ширины окна
 $(window).on("resize", function () {
-  // Resize all active sliders
+  // Для каждого слайдера новостей пересчитываем высоту описания под активный таб
   $(".block-news-slider").each(function () {
     const $slider = $(this);
     const $container = $slider.parent();
@@ -151,7 +151,7 @@ function productPageContentLeftSlider() {
   const $slider = $(".product-page-content-left");
 
   if (window.innerWidth <= 1170) {
-    // Check if slider is already initialized
+    // Если слайдер ещё не инициализирован, запускаем slick
     if (!$slider.hasClass("slick-initialized")) {
       $slider.slick({
         slidesToShow: 1,
@@ -161,7 +161,7 @@ function productPageContentLeftSlider() {
       });
     }
   } else {
-    // Only destroy if slider is initialized
+    // При широком экране уничтожаем slick, только если он был инициализирован
     if ($slider.hasClass("slick-initialized")) {
       $slider.slick("destroy");
     }
@@ -192,7 +192,7 @@ mobileMenuListBox.on("click", function () {
   mobileMenuListBox.removeClass("active");
   $(this).addClass("active");
 });
-// Mobile menu list box
+// Конец логики списка в мобильном меню
 
 // Основное мобильное меню – открытие/закрытие полного экрана
 const mobileMenu = $(".mobile-menu");
@@ -230,32 +230,32 @@ const desktopMenu = $(".desktop-menu");
 const desktopMenuItems = $(".header .bg-header .header-menu li");
 
 function openDesktopMenu(menuId, menuItem) {
-  // Close all menus first
+  // Сначала закрываем все открытые меню
   desktopMenu.removeClass("active");
   desktopMenuItems.removeClass("active");
 
-  // Open the selected menu
+  // Открываем конкретное меню по переданному ID
   $(`#${menuId}`).addClass("active");
   menuItem.addClass("active");
 
-  // Prevent body scroll
+  // Блокируем прокрутку страницы под открытым меню и поднимаем страницу к началу
   $(document.body).css("overflow", "hidden");
   $(window).scrollTop(0);
 }
 
 function closeDesktopMenu() {
-  // Close all menus
+  // Закрываем все меню и сбрасываем активные элементы
   desktopMenu.removeClass("active");
   desktopMenuItems.removeClass("active");
 
   $("#catalog-menu-icon").removeClass("d-none");
   $("#close-catalog-menu-icon").addClass("d-none");
 
-  // Restore body scroll
+  // Возвращаем стандартную прокрутку страницы
   $(document.body).css("overflow", "auto");
 }
 
-// Handle menu item clicks
+// Обработка кликов по пунктам верхнего меню (открытие/закрытие подменю)
 desktopMenuItems.on("click", function (e) {
   e.stopPropagation();
   const menuId = $(this).data("menu");
@@ -273,19 +273,18 @@ desktopMenuItems.on("click", function (e) {
     const isCurrentlyActive = $menuItem.hasClass("active");
 
     if (isCurrentlyActive) {
-      // If menu is already open, close it
+      // Если меню уже открыто, при повторном клике — закрываем
       closeDesktopMenu();
     } else {
-      // Open the selected menu
+      // Иначе открываем выбранное меню
       openDesktopMenu(menuId, $menuItem);
     }
   }
 });
 
-// Close menu when clicking on the background/overlay
+// Закрываем меню при клике по фону / подложке вокруг контента меню
 desktopMenu.on("click", function (e) {
-  // Close if clicking directly on the menu container (background) or its ::before pseudo-element
-  // The ::before has pointer-events: none, so clicks pass through to the menu container
+  // Если клик пришёлся по самому контейнеру (фону), а не по содержимому
   if (
     $(e.target).is(desktopMenu) ||
     !$(e.target).closest(".desktop-menu-content").length
@@ -294,12 +293,12 @@ desktopMenu.on("click", function (e) {
   }
 });
 
-// Prevent menu from closing when clicking inside menu content
+// Не даём меню закрываться при клике внутри его контента
 desktopMenu.find(".desktop-menu-content").on("click", function (e) {
   e.stopPropagation();
 });
 
-// Close menu on Escape key
+// Закрытие меню по клавише Escape
 $(document).on("keydown", function (e) {
   if (e.key === "Escape" && desktopMenu.hasClass("active")) {
     closeDesktopMenu();
@@ -312,7 +311,7 @@ $(document).on("keydown", function (e) {
 
 // Динамический менеджер модальных окон – поддерживает несколько модалок на странице
 const ModalManager = {
-  // Open a modal by its ID
+  // Открыть конкретное модальное окно по его ID
   open: function (modalId) {
     const modal = $(`#${modalId}`);
     if (modal.length) {
@@ -321,7 +320,7 @@ const ModalManager = {
     }
   },
 
-  // Close a modal by its ID
+  // Закрыть конкретное модальное окно по его ID
   close: function (modalId) {
     const modal = $(`#${modalId}`);
     if (modal.length) {
@@ -330,7 +329,7 @@ const ModalManager = {
     }
   },
 
-  // Close all active modals
+  // Закрыть все активные модальные окна сразу
   closeAll: function () {
     $(".modal-overlay.active").each(function () {
       $(this).removeClass("active");
@@ -338,23 +337,23 @@ const ModalManager = {
     $(document.body).css("overflow", "auto");
   },
 
-  // Initialize modal functionality
+  // Инициализация обработчиков для модальных окон
   init: function () {
-    // Handle buttons with data-modal attribute (open modal)
+    // Клик по элементам с атрибутом data-modal — открываем указанную модалку
     $(document).on("click", "[data-modal]", function (e) {
       e.preventDefault();
       const modalId = $(this).data("modal");
       ModalManager.open(modalId);
     });
 
-    // Handle buttons with data-close-modal attribute (close specific modal)
+    // Клик по элементам с атрибутом data-close-modal — закрываем конкретную модалку
     $(document).on("click", "[data-close-modal]", function (e) {
       e.preventDefault();
       const modalId = $(this).data("close-modal");
       ModalManager.close(modalId);
     });
 
-    // Handle buttons inside modal content that should close the modal
+    // Кнопки внутри модального окна, которые должны его закрывать
     $(document).on("click", ".modal-content [data-modal-close]", function (e) {
       e.preventDefault();
       const modal = $(this).closest(".modal-overlay");
@@ -363,7 +362,7 @@ const ModalManager = {
       }
     });
 
-    // Close modal when clicking on overlay
+    // Закрываем модальное окно по клику на фон (оверлей) вокруг контента
     $(document).on("click", ".modal-overlay", function (e) {
       if ($(e.target).is($(this))) {
         const modalId = $(this).attr("id");
@@ -371,17 +370,17 @@ const ModalManager = {
       }
     });
 
-    // Prevent modal from closing when clicking inside modal content
+    // Не закрываем модалку при клике по её контенту
     $(document).on("click", ".modal-content", function (e) {
       e.stopPropagation();
     });
 
-    // Close modal on Escape key (closes the topmost active modal)
+    // Закрываем последнюю (верхнюю) активную модалку по клавише Escape
     $(document).on("keydown", function (e) {
       if (e.key === "Escape") {
         const activeModals = $(".modal-overlay.active");
         if (activeModals.length > 0) {
-          // Close the last opened modal (topmost in DOM)
+          // Закрываем последнюю открытую (верхнюю по DOM) модалку
           const lastModal = activeModals.last();
           ModalManager.close(lastModal.attr("id"));
         }
@@ -390,7 +389,7 @@ const ModalManager = {
   },
 };
 
-// Initialize modal system when DOM is ready
+// Инициализация системы модальных окон при загрузке DOM
 $(document).ready(function () {
   ModalManager.init();
 });
@@ -406,7 +405,7 @@ $(document).ready(function () {
   const searchSuggestions = $(".search-suggestions");
   const searchLabel = $(".search-wrapper label");
 
-  // Sample search suggestions data (you can replace this with an API call)
+  // Демонстрационный список подсказок (можно заменить на реальные данные с сервера)
   const allSuggestions = [
     "Шампуни",
     "Шампура",
@@ -418,7 +417,7 @@ $(document).ready(function () {
     "Шампунь для тела",
   ];
 
-  // Filter suggestions based on input
+  // Фильтрация подсказок по введённому тексту
   function filterSuggestions(query) {
     if (!query || query.trim() === "") {
       return [];
@@ -430,7 +429,7 @@ $(document).ready(function () {
     );
   }
 
-  // Display suggestions
+  // Отрисовка списка подсказок в выпадающем блоке
   function displaySuggestions(suggestions) {
     searchSuggestions.empty();
 
@@ -454,30 +453,30 @@ $(document).ready(function () {
     searchLabel.addClass("active");
   }
 
-  // Handle input events
+  // Обработка ввода в поле поиска – пересчёт подсказок
   searchInput.on("input", function () {
     const query = $(this).val();
     const suggestions = filterSuggestions(query);
     displaySuggestions(suggestions);
   });
 
-  // Handle focus events
+  // При фокусе в поле поиска показываем подсказки (если они есть)
   searchInput.on("focus", function () {
     const query = $(this).val();
     const suggestions = filterSuggestions(query);
-    // Only add active class if there are suggestions
+    // Добавляем класс активности только если есть варианты подсказок
     if (suggestions.length > 0) {
       displaySuggestions(suggestions);
     } else {
-      // Remove active class if no suggestions
+      // Если подсказок нет – убираем подсветку/открытие дропдауна
       searchLabel.removeClass("active");
       searchDropdown.removeClass("active");
     }
   });
 
-  // Handle blur events
+  // При потере фокуса убираем активное состояние подписи (с задержкой для клика по подсказке)
   searchInput.on("blur", function () {
-    // Delay to allow click events on suggestions to fire first
+    // Делаем небольшую задержку, чтобы успел отработать клик по подсказке
     setTimeout(function () {
       if (!searchDropdown.hasClass("active")) {
         searchLabel.removeClass("active");
@@ -485,7 +484,7 @@ $(document).ready(function () {
     }, 200);
   });
 
-  // Close dropdown when clicking outside
+  // Закрываем дропдаун, если клик был вне области поиска
   $(document).on("click", function (e) {
     if (
       !$(e.target).closest(".search-wrapper").length &&
@@ -496,7 +495,7 @@ $(document).ready(function () {
     }
   });
 
-  // Handle keyboard navigation
+  // Навигация по подсказкам с клавиатуры (стрелки, Enter, Escape)
   searchInput.on("keydown", function (e) {
     const activeItem = searchSuggestions.find("li.highlighted");
     const allItems = searchSuggestions.find("li");
@@ -538,7 +537,7 @@ $(document).ready(function () {
     }
   });
 
-  // Add CSS for highlighted item
+  // Динамически добавляем CSS-правило для подсвеченного элемента подсказки
   $("<style>")
     .prop("type", "text/css")
     .html(
@@ -558,7 +557,7 @@ $(document).ready(function () {
   const searchPageSuggestions = $(".search-page-suggestions");
   const searchPageLabel = $(".search-page-wrapper .def-input-gray");
 
-  // Sample search suggestions data (you can replace this with an API call)
+  // Демонстрационный набор подсказок для страницы поиска (можно заменить на данные с сервера)
   const allSearchPageSuggestions = [
     "AIVK",
     "AEVER Ingredient Co. Ltd",
@@ -575,7 +574,7 @@ $(document).ready(function () {
     "Шампунь для тела",
   ];
 
-  // Filter suggestions based on input
+  // Фильтрация подсказок на странице поиска по введённому тексту
   function filterSearchPageSuggestions(query) {
     if (!query || query.trim() === "") {
       return [];
@@ -587,7 +586,7 @@ $(document).ready(function () {
     );
   }
 
-  // Display suggestions
+  // Отрисовка подсказок в выпадающем списке на странице поиска
   function displaySearchPageSuggestions(suggestions) {
     searchPageSuggestions.empty();
 
@@ -611,30 +610,30 @@ $(document).ready(function () {
     searchPageLabel.addClass("active");
   }
 
-  // Handle input events
+  // Обработка ввода в поле поиска на отдельной странице
   searchPageInput.on("input", function () {
     const query = $(this).val();
     const suggestions = filterSearchPageSuggestions(query);
     displaySearchPageSuggestions(suggestions);
   });
 
-  // Handle focus events
+  // Обработка фокуса на поле поиска – показать/скрыть подсказки
   searchPageInput.on("focus", function () {
     const query = $(this).val();
     const suggestions = filterSearchPageSuggestions(query);
-    // Only add active class if there are suggestions
+    // Добавляем активный класс, только если есть подсказки
     if (suggestions.length > 0) {
       displaySearchPageSuggestions(suggestions);
     } else {
-      // Remove active class if no suggestions
+      // Если подсказок нет — убираем активное состояние
       searchPageLabel.removeClass("active");
       searchPageDropdown.removeClass("active");
     }
   });
 
-  // Handle blur events
+  // При потере фокуса даём время на клик по подсказке и затем скрываем активное состояние
   searchPageInput.on("blur", function () {
-    // Delay to allow click events on suggestions to fire first
+    // Задержка нужна, чтобы сначала отработал клик по подсказке
     setTimeout(function () {
       if (!searchPageDropdown.hasClass("active")) {
         searchPageLabel.removeClass("active");
@@ -642,7 +641,7 @@ $(document).ready(function () {
     }, 200);
   });
 
-  // Close dropdown when clicking outside
+  // Закрываем выпадающий блок при клике вне поискового блока
   $(document).on("click", function (e) {
     if (
       !$(e.target).closest(".search-page-wrapper").length &&
@@ -653,7 +652,7 @@ $(document).ready(function () {
     }
   });
 
-  // Handle keyboard navigation
+  // Навигация по подсказкам на странице поиска с клавиатуры
   searchPageInput.on("keydown", function (e) {
     const activeItem = searchPageSuggestions.find("li.highlighted");
     const allItems = searchPageSuggestions.find("li");
@@ -697,7 +696,7 @@ $(document).ready(function () {
     }
   });
 
-  // Add CSS for highlighted item
+  // Добавляем CSS-правило для подсвеченного элемента в списке подсказок
   $("<style>")
     .prop("type", "text/css")
     .html(
@@ -712,27 +711,27 @@ $(document).ready(function () {
 
 // Логика фильтрации, аккордеонов и пагинации каталога
 $(document).ready(function () {
-  // Initialize active subsection icons - ensure minus icon for active subsections
+  // Инициализируем иконки подкатегорий: для активных сразу ставим иконку «минус»
   $(".catalog-filter-subsection.active .catalog-filter-subsection-toggle").each(
     function () {
       $(this).removeClass("fa-plus").addClass("fa-minus");
     }
   );
 
-  // Toggle filter sections
+  // Открытие/закрытие основных секций фильтра
   $(".catalog-filter-section-header").on("click", function () {
     const section = $(this).closest(".catalog-filter-section");
     section.toggleClass("active");
   });
 
-  // Toggle filter subsections
+  // Открытие/закрытие подкатегорий фильтра
   $(".catalog-filter-subsection-header").on("click", function () {
     const subsection = $(this).closest(".catalog-filter-subsection");
     const toggleIcon = subsection.find(".catalog-filter-subsection-toggle");
 
     subsection.toggleClass("active");
 
-    // Change icon
+    // Переключаем иконку «плюс/минус» в зависимости от состояния
     if (subsection.hasClass("active")) {
       toggleIcon.removeClass("fa-plus").addClass("fa-minus");
     } else {
@@ -740,17 +739,17 @@ $(document).ready(function () {
     }
   });
 
-  // Reset filter
+  // Сброс фильтра к начальному состоянию
   $(".catalog-filter-reset").on("click", function (e) {
     e.preventDefault();
 
-    // Close all sections and reset icons
+    // Закрываем все секции и подкатегории и возвращаем иконки в состояние «плюс»
     $(".catalog-filter-section.active, .catalog-filter-subsection.active").each(
       function () {
         const $this = $(this);
         const toggleIcon = $this.find(".catalog-filter-subsection-toggle");
 
-        // Reset icon to plus
+        // Возвращаем иконку в состояние «плюс»
         if (toggleIcon.length) {
           toggleIcon.removeClass("fa-minus").addClass("fa-plus");
         }
@@ -764,24 +763,24 @@ $(document).ready(function () {
     $("#packaging-toggle-modal").prop("checked", false);
   });
 
-  // Pagination functionality
+  // Логика клика по конкретной странице пагинации
   $(".catalog-pagination-number").on("click", function (e) {
     e.preventDefault();
 
-    // Remove active and current classes from all numbers
+    // Снимаем классы active/current со всех номеров
     $(".catalog-pagination-number").removeClass("active current");
 
-    // Add current class to clicked number
+    // Помечаем кликнутый номер как текущий
     $(this).addClass("current");
 
-    // Add active class to previous number if exists
+    // Если есть предыдущий номер — подсвечиваем его как «активный»
     const prevNumber = $(this).prev(".catalog-pagination-number");
     if (prevNumber.length && !prevNumber.hasClass("current")) {
       prevNumber.addClass("active");
     }
   });
 
-  // Pagination arrow navigation
+  // Переход по стрелке «назад» в пагинации
   $(".catalog-pagination-prev").on("click", function (e) {
     e.preventDefault();
     const current = $(".catalog-pagination-number.current");
@@ -791,7 +790,7 @@ $(document).ready(function () {
       current.removeClass("current");
       prev.removeClass("active").addClass("current");
 
-      // Update active state
+      // Обновляем состояние: номер перед текущим тоже подсвечиваем как «активный»
       const prevPrev = prev.prev(".catalog-pagination-number");
       if (prevPrev.length) {
         prevPrev.addClass("active");
@@ -829,25 +828,25 @@ $(document).ready(function () {
 
 // Логика выбора упаковки, применения и раскрытия описания на странице товара
 $(document).ready(function () {
-  // Product Page Packaging Button Selection
+  // Обработка кликов по кнопкам выбора упаковки на странице товара
   $(".product-page-packaging-btn").on("click", function (e) {
     e.preventDefault();
     const $btn = $(this);
     const $allButtons = $(".product-page-packaging-btn");
     const isActive = $btn.hasClass("product-page-packaging-btn-active");
 
-    // If clicking on the close icon, remove active state
+    // Если клик пришёл по иконке «закрыть», снимаем активное состояние с кнопки
     if ($(e.target).hasClass("product-page-packaging-close")) {
       $btn.removeClass("product-page-packaging-btn-active");
       $btn.find(".product-page-packaging-close").remove();
       return;
     }
 
-    // Remove active class and close icon from all buttons
+    // Снимаем активный класс и иконку закрытия со всех кнопок
     $allButtons.removeClass("product-page-packaging-btn-active");
     $allButtons.find(".product-page-packaging-close").remove();
 
-    // Add active class and close icon to clicked button
+    // Добавляем активный класс и иконку закрытия только к нажатой кнопке
     if (!isActive) {
       $btn.addClass("product-page-packaging-btn-active");
       if (!$btn.find(".product-page-packaging-close").length) {
@@ -858,26 +857,26 @@ $(document).ready(function () {
     }
   });
 
-  // Product Page Application Button Selection
+  // Переключение кнопок «Область применения» на странице товара
   $(".product-page-application-btn").on("click", function () {
     $(".product-page-application-btn").removeClass("active");
     $(this).addClass("active");
   });
 
-  // Product Page Description Toggle
+  // Переключатель «показать/скрыть» для длинного описания товара
   $(".product-page-description-toggle").on("click", function (e) {
     e.preventDefault();
     const $toggle = $(this);
     const $text = $(".product-page-description-text");
 
     if ($text.text().includes("....")) {
-      // Expand description
+      // Полностью раскрываем текст описания
       $text.text(
         "Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору опочить навык публичных выступлений в домашних условиях. При создании генератора мы использовали небезизвестный универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти предложений в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового восприятия."
       );
       $toggle.text("Скрыть");
     } else {
-      // Collapse description
+      // Сворачиваем текст описания до короткой версии
       $text.text(
         "Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более менее осмысленного текста рыбы на русском языке, а начинающему оратору опочить навык публичных выступлений в домашних условиях. При созд...."
       );
@@ -1258,13 +1257,13 @@ $(document).ready(function () {
 
   let quantity = 1;
 
-  // Show quantity selector when "Добавить к заказу" button is clicked
+  // При клике по кнопке «Добавить к заказу» скрываем её и показываем счётчик
   $addToOrderBtn.on("click", function () {
     $addToOrderBtn.hide();
     $quantitySelector.removeClass("hidden");
   });
 
-  // Decrease quantity
+  // Уменьшаем количество (не даём опуститься ниже 1)
   $quantityDecrease.on("click", function () {
     if (quantity > 1) {
       quantity--;
@@ -1272,7 +1271,7 @@ $(document).ready(function () {
     }
   });
 
-  // Increase quantity
+  // Увеличиваем количество
   $quantityIncrease.on("click", function () {
     quantity++;
     $quantityValue.text(quantity);
@@ -1285,18 +1284,18 @@ $(document).ready(function () {
 
 // Счётчик количества в карточках товара (каталог и другие списки)
 $(document).ready(function () {
-  // Handle "Добавить к заказу" button click for all product cards
+  // Обработка клика по кнопке «Добавить к заказу» для всех карточек товара
   $(document).on("click", ".product-card-btn", function () {
     const $btn = $(this);
     const $card = $btn.closest(".product-card");
     const $quantitySelector = $card.find(".product-card-quantity-selector");
 
-    // Hide button and show quantity selector
+    // Скрываем кнопку и показываем блок с количеством
     $btn.hide();
     $quantitySelector.removeClass("hidden");
   });
 
-  // Handle decrease quantity button
+  // Обработка уменьшения количества в карточке товара
   $(document).on(
     "click",
     ".product-card-quantity-selector .quantity-btn-minus",
@@ -1312,7 +1311,7 @@ $(document).ready(function () {
     }
   );
 
-  // Handle increase quantity button
+  // Обработка увеличения количества в карточке товара
   $(document).on(
     "click",
     ".product-card-quantity-selector .quantity-btn-plus",
