@@ -1325,3 +1325,239 @@ $(document).ready(function () {
     }
   );
 });
+
+// -----------------------------------
+// ------ CUSTOM SELECT (SELECT2-LIKE) --
+// -----------------------------------
+
+// Custom Select Component - Select2-like functionality
+$(document).ready(function () {
+  function initCustomSelect($wrapper) {
+    const $select = $wrapper.find(".custom-select-hidden");
+    const $trigger = $wrapper.find(".custom-select-trigger");
+    const $selected = $wrapper.find(".custom-select-selected");
+    const $dropdown = $wrapper.find(".custom-select-dropdown");
+    const $options = $wrapper.find(".custom-select-options");
+    const $searchInput = $wrapper.find(".custom-select-search-input");
+
+    let allOptions = [];
+    let filteredOptions = [];
+    let highlightedIndex = -1;
+    const wrapperId =
+      "custom-select-" + Math.random().toString(36).substr(2, 9);
+    $wrapper.attr("data-select-id", wrapperId);
+
+    // Initialize options from select element
+    function initOptions() {
+      allOptions = [];
+      $select.find("option").each(function () {
+        const value = $(this).val();
+        const text = $(this).text();
+        allOptions.push({ value, text });
+      });
+      filteredOptions = [...allOptions];
+      renderOptions();
+    }
+
+    // Render options in dropdown
+    function renderOptions() {
+      $options.empty();
+
+      if (filteredOptions.length === 0) {
+        $options.html(
+          '<div class="custom-select-no-results">Ничего не найдено</div>'
+        );
+        return;
+      }
+
+      filteredOptions.forEach((option, index) => {
+        const $option = $('<div class="custom-select-option"></div>')
+          .text(option.text)
+          .data("value", option.value)
+          .data("index", index);
+
+        if (option.value === $select.val()) {
+          $option.addClass("selected");
+        }
+
+        $option.on("click", function () {
+          selectOption(option.value, option.text);
+        });
+
+        $options.append($option);
+      });
+
+      highlightedIndex = -1;
+    }
+
+    // Select an option
+    function selectOption(value, text) {
+      $select.val(value);
+      $selected.text(text).removeClass("placeholder");
+      $dropdown.removeClass("active");
+      $trigger.removeClass("active");
+      $searchInput.val("");
+      filteredOptions = [...allOptions];
+      renderOptions();
+      $select.trigger("change");
+    }
+
+    // Filter options based on search
+    function filterOptions(query) {
+      if (!query || query.trim() === "") {
+        filteredOptions = [...allOptions];
+      } else {
+        const lowerQuery = query.toLowerCase();
+        filteredOptions = allOptions.filter((option) =>
+          option.text.toLowerCase().includes(lowerQuery)
+        );
+      }
+      renderOptions();
+      highlightedIndex = -1;
+    }
+
+    // Open dropdown
+    function openDropdown() {
+      $dropdown.addClass("active");
+      $trigger.addClass("active");
+
+      // Check if dropdown goes below viewport
+      setTimeout(function () {
+        const triggerRect = $trigger[0].getBoundingClientRect();
+        const viewportHeight = window.innerHeight;
+        const spaceBelow = viewportHeight - triggerRect.bottom;
+        const spaceAbove = triggerRect.top;
+
+        // Estimate dropdown height (search + options)
+        const estimatedDropdownHeight =
+          60 + Math.min(filteredOptions.length * 48, 300);
+
+        // If dropdown doesn't fit below, open it upward
+        if (spaceBelow < estimatedDropdownHeight && spaceAbove > spaceBelow) {
+          $dropdown.addClass("open-up");
+          // Set max-height based on available space above
+          const maxHeight = Math.min(spaceAbove - 20, 300);
+          $dropdown.css("max-height", maxHeight + "px");
+        } else {
+          $dropdown.removeClass("open-up");
+          // Reset max-height for normal dropdown
+          $dropdown.css("max-height", "");
+        }
+      }, 0);
+
+      $searchInput.focus();
+      renderOptions();
+    }
+
+    // Close dropdown
+    function closeDropdown() {
+      $dropdown.removeClass("active");
+      $dropdown.removeClass("open-up");
+      $dropdown.css("max-height", "");
+      $trigger.removeClass("active");
+      $searchInput.val("");
+      filteredOptions = [...allOptions];
+      renderOptions();
+      highlightedIndex = -1;
+    }
+
+    // Highlight option
+    function highlightOption(index) {
+      $options.find(".custom-select-option").removeClass("highlighted");
+      if (index >= 0 && index < filteredOptions.length) {
+        $options
+          .find(".custom-select-option")
+          .eq(index)
+          .addClass("highlighted")
+          .get(0)
+          ?.scrollIntoView({ block: "nearest", behavior: "smooth" });
+      }
+    }
+
+    // Initialize
+    initOptions();
+
+    // Set initial selected value
+    const initialValue = $select.val();
+    if (initialValue) {
+      const initialOption = allOptions.find(
+        (opt) => opt.value === initialValue
+      );
+      if (initialOption) {
+        $selected.text(initialOption.text).removeClass("placeholder");
+      }
+    } else {
+      $selected.addClass("placeholder");
+    }
+
+    // Toggle dropdown on trigger click
+    $trigger.on("click", function (e) {
+      e.stopPropagation();
+      if ($dropdown.hasClass("active")) {
+        closeDropdown();
+      } else {
+        openDropdown();
+      }
+    });
+
+    // Search input handler
+    $searchInput.on("input", function () {
+      const query = $(this).val();
+      filterOptions(query);
+    });
+
+    // Keyboard navigation
+    $searchInput.on("keydown", function (e) {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        highlightedIndex =
+          highlightedIndex < filteredOptions.length - 1
+            ? highlightedIndex + 1
+            : 0;
+        highlightOption(highlightedIndex);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        highlightedIndex =
+          highlightedIndex > 0
+            ? highlightedIndex - 1
+            : filteredOptions.length - 1;
+        highlightOption(highlightedIndex);
+      } else if (e.key === "Enter") {
+        e.preventDefault();
+        if (
+          highlightedIndex >= 0 &&
+          highlightedIndex < filteredOptions.length
+        ) {
+          const option = filteredOptions[highlightedIndex];
+          selectOption(option.value, option.text);
+        }
+      } else if (e.key === "Escape") {
+        closeDropdown();
+      }
+    });
+
+    // Close dropdown when clicking outside the select wrapper
+    $(document).on("click." + wrapperId, function (e) {
+      // Check if dropdown is active
+      if ($dropdown.hasClass("active")) {
+        // Check if click is outside the wrapper
+        const clickedInsideWrapper = $(e.target).closest($wrapper).length > 0;
+
+        // Close if clicked outside wrapper
+        if (!clickedInsideWrapper) {
+          closeDropdown();
+        }
+      }
+    });
+
+    // Prevent dropdown from closing when clicking inside dropdown content
+    $dropdown.on("click", function (e) {
+      e.stopPropagation();
+    });
+  }
+
+  // Initialize all custom selects on the page
+  $(".custom-select-wrapper").each(function () {
+    initCustomSelect($(this));
+  });
+});

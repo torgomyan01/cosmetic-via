@@ -25,6 +25,7 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/slick.min.js"></script>
+    <script src="js/imask.js"></script>
 
     <title>CosmeticVia</title>
   </head>
@@ -246,13 +247,76 @@
         <input type="text" />
       </button>
 
-      <button
-        class="btn-green"
-        data-modal="successModal"
-        style="margin-top: 20px"
-      >
-        Открыть модальное окно
-      </button>
+      <div style="display: flex; gap: 10px; margin-bottom: 50px">
+        <div class="custom-select-wrapper">
+          <select
+            id="country-select"
+            name="country"
+            class="custom-select-hidden"
+          >
+            <option value="">Выберите страну</option>
+            <option value="armenia">Армения</option>
+            <option value="russia">Россия</option>
+            <option value="georgia">Грузия</option>
+            <option value="iran">Иран</option>
+            <option value="turkey">Турция</option>
+            <option value="usa">США</option>
+            <option value="ukraine">Украина</option>
+            <option value="belarus">Беларусь</option>
+            <option value="kazakhstan">Казахстан</option>
+            <option value="germany">Германия</option>
+            <option value="france">Франция</option>
+            <option value="italy">Италия</option>
+            <option value="spain">Испания</option>
+            <option value="uk">Великобритания</option>
+            <option value="china">Китай</option>
+            <option value="japan">Япония</option>
+            <option value="south-korea">Южная Корея</option>
+            <option value="india">Индия</option>
+            <option value="brazil">Бразилия</option>
+            <option value="canada">Канада</option>
+          </select>
+          <div class="custom-select-trigger def-input-gray">
+            <span class="custom-select-selected">Выберите страну</span>
+            <i class="fa-solid fa-chevron-down custom-select-arrow"></i>
+          </div>
+          <div class="custom-select-dropdown">
+            <div class="custom-select-search">
+              <input
+                type="text"
+                class="custom-select-search-input"
+                placeholder="Поиск..."
+              />
+            </div>
+            <div class="custom-select-options"></div>
+          </div>
+        </div>
+        <label class="def-input-gray">
+          <input
+            type="text"
+            placeholder="+7 000 000 000*"
+            class="number-mask"
+          />
+        </label>
+      </div>
+
+      <div style="display: flex; gap: 10px; margin-bottom: 50px">
+        <button
+          class="btn-green"
+          data-modal="successModal"
+          style="margin-top: 20px"
+        >
+          Открыть модальное окно
+        </button>
+
+        <button
+          class="btn-green"
+          data-modal="requsetModal"
+          style="margin-top: 20px"
+        >
+          Заявки на заказ
+        </button>
+      </div>
     </div>
 
     <style>
@@ -477,6 +541,93 @@
         <h2 class="modal-title">ВАШЕ СООБЩЕНИЕ ОТПРАВЛЕНО!</h2>
         <p class="modal-message">Мы свяжемся с вами в ближайшее время</p>
         <button class="btn-green-outline" data-modal-close>Ок</button>
+      </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="requsetModal">
+      <div class="modal-content" style="max-width: 600px">
+        <button class="modal-close" data-close-modal="requsetModal">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <h2 class="modal-title">Заявка на заказ</h2>
+        <p class="modal-message">Мы свяжемся с вами в ближайшее время</p>
+
+        <form action="#" class="requset-modal-form">
+          <label class="def-input-gray">
+            <input type="text" placeholder="Имя*" />
+          </label>
+          <label class="def-input-gray">
+            <input type="text" placeholder="Наименование компании*" />
+          </label>
+          <label class="def-input-gray">
+            <input type="text" placeholder="ИНН*" />
+          </label>
+          <div class="custom-select-wrapper">
+            <select
+              id="country-select"
+              name="country"
+              class="custom-select-hidden"
+            >
+              <option value="">Выберите страну</option>
+              <option value="armenia">Армения</option>
+              <option value="russia">Россия</option>
+              <option value="georgia">Грузия</option>
+              <option value="iran">Иран</option>
+              <option value="turkey">Турция</option>
+              <option value="usa">США</option>
+              <option value="ukraine">Украина</option>
+              <option value="belarus">Беларусь</option>
+              <option value="kazakhstan">Казахстан</option>
+              <option value="germany">Германия</option>
+              <option value="france">Франция</option>
+              <option value="italy">Италия</option>
+              <option value="spain">Испания</option>
+              <option value="uk">Великобритания</option>
+              <option value="china">Китай</option>
+              <option value="japan">Япония</option>
+              <option value="south-korea">Южная Корея</option>
+              <option value="india">Индия</option>
+              <option value="brazil">Бразилия</option>
+              <option value="canada">Канада</option>
+            </select>
+            <div class="custom-select-trigger def-input-gray">
+              <span class="custom-select-selected">Выберите страну</span>
+              <i class="fa-solid fa-chevron-down custom-select-arrow"></i>
+            </div>
+            <div class="custom-select-dropdown">
+              <div class="custom-select-search">
+                <input
+                  type="text"
+                  class="custom-select-search-input"
+                  placeholder="Поиск..."
+                />
+              </div>
+              <div class="custom-select-options"></div>
+            </div>
+          </div>
+          <label class="def-input-gray">
+            <input
+              type="text"
+              placeholder="+7 000 000 000*"
+              class="number-mask"
+            />
+          </label>
+          <label class="def-input-gray">
+            <input type="text" placeholder="Email*" />
+          </label>
+          <button class="btn-green-outline" data-modal-close="requsetModal">
+            Отправить
+          </button>
+
+          <label class="catalog-filter-checkbox requset-modal-form-checkbox">
+            <input type="checkbox" />
+            <span class="requset-modal-form-checkbox-text">
+              Я ознакомлен и согласен с
+              <a href="#">Политикой обработки персональных</a> данных
+            </span>
+          </label>
+        </form>
       </div>
     </div>
 
