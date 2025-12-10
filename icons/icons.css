@@ -183,6 +183,22 @@
   content: "\f004";
 }
 
+.fa-play:before {
+  content: "\f04b";
+}
+
+.fa-pause:before {
+  content: "\f04c";
+}
+
+.fa-expand:before {
+  content: "\f065";
+}
+
+.fa-compress:before {
+  content: "\f066";
+}
+
 /*---------------------------------*/
 
 @font-face {

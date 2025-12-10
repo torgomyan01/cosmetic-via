@@ -1561,3 +1561,158 @@ $(document).ready(function () {
     initCustomSelect($(this));
   });
 });
+
+// -----------------------------------
+// ------ HEADER VIDEO PLAYER --------
+// -----------------------------------
+
+// Video player controls for header video
+$(document).ready(function () {
+  const $video = $("#header-video");
+  const $playPauseBtn = $("#header-video-play-pause");
+  const $fullscreenBtn = $("#header-video-fullscreen");
+  const $playPauseIcon = $playPauseBtn.find("i");
+
+  // Check if video element exists
+  if (!$video.length) {
+    return;
+  }
+
+  // Initialize video state - start playing if autoplay is set
+  const videoElement = $video[0];
+  const $coverImage = $(".header-content-images-img");
+
+  // Initially show cover image
+  if ($coverImage.length) {
+    $coverImage.css("opacity", "1");
+  }
+
+  // Ensure video plays on load if autoplay attribute is present
+  if ($video.attr("autoplay") !== undefined) {
+    videoElement
+      .play()
+      .then(function () {
+        // If autoplay succeeds, hide cover image and show video
+        $video.addClass("playing");
+        if ($coverImage.length) {
+          $coverImage.css("opacity", "0");
+        }
+        updatePlayPauseIcon();
+      })
+      .catch(function (error) {
+        console.log("Autoplay prevented:", error);
+        // If autoplay fails, keep cover image visible
+        if ($coverImage.length) {
+          $coverImage.css("opacity", "1");
+        }
+      });
+  }
+
+  // Update play/pause icon based on video state and show/hide cover image
+  function updatePlayPauseIcon() {
+    if (videoElement.paused) {
+      $playPauseIcon.removeClass("fa-pause").addClass("fa-play");
+      $video.removeClass("playing");
+      // Show cover image when paused
+      if ($coverImage.length) {
+        $coverImage.css("opacity", "1");
+      }
+    } else {
+      $playPauseIcon.removeClass("fa-play").addClass("fa-pause");
+      $video.addClass("playing");
+      // Hide cover image when playing
+      if ($coverImage.length) {
+        $coverImage.css("opacity", "0");
+      }
+    }
+  }
+
+  // Toggle play/pause
+  $playPauseBtn.on("click", function (e) {
+    e.stopPropagation();
+    if (videoElement.paused) {
+      videoElement.play();
+    } else {
+      videoElement.pause();
+    }
+    updatePlayPauseIcon();
+  });
+
+  // Update icon when video state changes
+  videoElement.addEventListener("play", updatePlayPauseIcon);
+  videoElement.addEventListener("pause", updatePlayPauseIcon);
+
+  // Handle video load - if autoplay works, hide cover image
+  videoElement.addEventListener("playing", function () {
+    updatePlayPauseIcon();
+  });
+
+  // Fullscreen functionality
+  $fullscreenBtn.on("click", function (e) {
+    e.stopPropagation();
+
+    if (!document.fullscreenElement) {
+      // Enter fullscreen
+      if (videoElement.requestFullscreen) {
+        videoElement.requestFullscreen();
+      } else if (videoElement.webkitRequestFullscreen) {
+        videoElement.webkitRequestFullscreen();
+      } else if (videoElement.mozRequestFullScreen) {
+        videoElement.mozRequestFullScreen();
+      } else if (videoElement.msRequestFullscreen) {
+        videoElement.msRequestFullscreen();
+      }
+    } else {
+      // Exit fullscreen
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    }
+  });
+
+  // Update fullscreen icon when entering/exiting fullscreen
+  document.addEventListener("fullscreenchange", function () {
+    const $fullscreenIcon = $fullscreenBtn.find("i");
+    if (document.fullscreenElement) {
+      $fullscreenIcon.removeClass("fa-expand").addClass("fa-compress");
+    } else {
+      $fullscreenIcon.removeClass("fa-compress").addClass("fa-expand");
+    }
+  });
+
+  document.addEventListener("webkitfullscreenchange", function () {
+    const $fullscreenIcon = $fullscreenBtn.find("i");
+    if (document.webkitFullscreenElement) {
+      $fullscreenIcon.removeClass("fa-expand").addClass("fa-compress");
+    } else {
+      $fullscreenIcon.removeClass("fa-compress").addClass("fa-expand");
+    }
+  });
+
+  document.addEventListener("mozfullscreenchange", function () {
+    const $fullscreenIcon = $fullscreenBtn.find("i");
+    if (document.mozFullScreenElement) {
+      $fullscreenIcon.removeClass("fa-expand").addClass("fa-compress");
+    } else {
+      $fullscreenIcon.removeClass("fa-compress").addClass("fa-expand");
+    }
+  });
+
+  document.addEventListener("msfullscreenchange", function () {
+    const $fullscreenIcon = $fullscreenBtn.find("i");
+    if (document.msFullscreenElement) {
+      $fullscreenIcon.removeClass("fa-expand").addClass("fa-compress");
+    } else {
+      $fullscreenIcon.removeClass("fa-compress").addClass("fa-expand");
+    }
+  });
+
+  // Initial icon state
+  updatePlayPauseIcon();
+});
