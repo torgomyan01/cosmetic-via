@@ -375,7 +375,7 @@
           </nav>
           <img src="images/logo.svg" alt="logo" class="header-logo" />
           <div class="header-menu-contact">
-            <div class="search-wrapper">
+            <form action="#" method="post" class="search-wrapper">
               <label>
                 <svg
                   width="24"
@@ -405,7 +405,7 @@
               <div class="search-dropdown">
                 <ul class="search-suggestions"></ul>
               </div>
-            </div>
+            </form>
             <p>+7 952 482-47-58</p>
             <p>RU</p>
             <div class="header-menu-icons">
@@ -1294,6 +1294,35 @@
           </div>
 
           <div class="catalog-result">
+            <div class="catalog-result-sort">
+              <label class="catalog-result-sort-label">Сортировка</label>
+              <div class="custom-select-wrapper">
+                <select
+                  id="sort-select"
+                  name="sort"
+                  class="custom-select-hidden"
+                >
+                  <option value="популярные">Популярные</option>
+                  <option value="новые">Новые</option>
+                  <option value="сначала дешевые">Сначала дешевые</option>
+                  <option value="сначала дорогие">Сначала дорогие</option>
+                </select>
+                <div class="custom-select-trigger def-input-gray">
+                  <span class="custom-select-selected">Популярные</span>
+                  <i class="fa-solid fa-chevron-down custom-select-arrow"></i>
+                </div>
+                <div class="custom-select-dropdown">
+                  <div class="custom-select-search">
+                    <input
+                      type="text"
+                      class="custom-select-search-input"
+                      placeholder="Поиск..."
+                    />
+                  </div>
+                  <div class="custom-select-options"></div>
+                </div>
+              </div>
+            </div>
             <div class="catalog-result-grid">
               <div class="product-card">
                 <div class="product-card-images">

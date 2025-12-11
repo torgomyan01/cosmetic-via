@@ -3163,6 +3163,20 @@ a {
       }
     }
 
+    &-sort {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      justify-content: start;
+      .custom-select-wrapper {
+        width: 100%;
+        max-width: 300px;
+      }
+      .custom-select-search {
+        display: none;
+      }
+    }
+
     &-text {
       color: #4b4b4b;
       font-size: 24px;

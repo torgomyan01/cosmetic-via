@@ -3036,6 +3036,19 @@ a {
     margin-bottom: 60px;
   }
 }
+.catalog-result-sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: start;
+}
+.catalog-result-sort .custom-select-wrapper {
+  width: 100%;
+  max-width: 300px;
+}
+.catalog-result-sort .custom-select-search {
+  display: none;
+}
 .catalog-result-text {
   color: #4b4b4b;
   font-size: 24px;
